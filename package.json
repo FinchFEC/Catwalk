@@ -1,0 +1,41 @@
+{
+  "name": "FEC-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "clean": "rm dist/bundle.js",
+    "build-dev": "webpack -d --mode development",
+    "build-prod": "webpack -p --mode production",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "moment": "^2.27.0",
+    "lodash": "^4.17.19"
+  },
+  "devDependencies": {
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "jest": "^26.2.2",
+    "babel-jest": "^26.2.2",
+    "mocha": "^8.1.1",
+    "chai": "^4.2.0",
+    "css-loader": "^4.2.0",
+    "sass-loader": "^9.0.3",
+    "node-sass": "^4.14.1",
+    "style-loader": "^1.2.1",
+    "file-loader": "^6.0.0",
+    "url-loader": "^4.1.0",
+    "lodash-webpack-plugin": "^0.11.5",
+    "prettier": "^2.0.5"
+  }
+}
