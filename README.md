@@ -1,6 +1,6 @@
-# FEC-project
+# FEC-Project
 
-FEC project.
+FEC-Project
 
 ## Building and running on localhost
 
