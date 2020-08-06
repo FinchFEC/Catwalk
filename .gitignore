@@ -6,6 +6,9 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
+# Travis.yml
+.travis.yml
+
 # Package-lock.json
 package-lock.json
 
