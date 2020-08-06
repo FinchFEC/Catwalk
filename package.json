@@ -10,13 +10,18 @@
     "clean": "rm dist/bundle.js",
     "build-dev": "webpack -d --mode development",
     "build-prod": "webpack -p --mode production",
-    "test": "mocha"
+    "test": "mocha",
+    "start": "nodemon src/server/index.js"
   },
   "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "lodash": "^4.17.19",
+    "moment": "^2.27.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "moment": "^2.27.0",
-    "lodash": "^4.17.19"
+    "react-redux": "^7.2.1",
+    "redux": "^4.0.5"
   },
   "devDependencies": {
     "webpack": "^4.44.1",
