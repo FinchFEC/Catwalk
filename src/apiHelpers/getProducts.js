@@ -1,4 +1,5 @@
 import axios from "axios";
+import productList from "../client/redux/action-creators/productList.js";
 
 getProducts = (callback) => {
   axios
@@ -6,7 +7,7 @@ getProducts = (callback) => {
     .then((data) => {
       console.log(data);
       if (callback) {
-        callback(data);
+        callback(productList(data));
       }
     })
     .catch((err) => {

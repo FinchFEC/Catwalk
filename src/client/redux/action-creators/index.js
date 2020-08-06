@@ -1,8 +1,8 @@
 //import individual action creators
-import getProductList from './getProductList.js';
+import getProductList from "./getProductList.js";
 
 const actionCreators = {
-  getProductList
+  getProductList,
 };
 
 export default actionCreators;
