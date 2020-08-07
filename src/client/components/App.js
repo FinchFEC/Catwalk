@@ -1,5 +1,6 @@
-import React from 'react';
-import ProductListContainer from '../redux/containers/productListContainer.js';
+import React from "react";
+import ProductListContainer from "../redux/containers/productListContainer.js";
+import Overview from "./widgets/overview/Overview.js";
 import RelatedProducts from './widgets/related-products/relatedMaster.jsx';
 
 class App extends React.Component {
@@ -8,6 +9,9 @@ class App extends React.Component {
     return (
       <div>
         <h1>Hello {name}</h1>
+        <div>
+          <Overview />
+        </div>
         <div>
           <RelatedProducts/>
         </div>
