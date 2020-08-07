@@ -1,5 +1,5 @@
 {
-  "name": "FEC-project",
+  "name": "fec-project",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,7 @@
     "clean": "rm dist/bundle.js",
     "build-dev": "webpack -d --mode development --watch",
     "build-prod": "webpack -p --mode production",
-    "test": "mocha --watch",
+    "test": "mochagit",
     "lint": "eslint --fix src/",
     "start": "nodemon src/server/index.js"
   },
