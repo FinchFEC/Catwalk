@@ -1,7 +1,7 @@
 import axios from 'axios';
 import productList from '../client/redux/action-creators/productList.js';
 
-getProducts = (callback) => {
+let getProducts = (callback) => {
   axios
     .get('http://18.224.200.47/products/list')
     .then((data) => {
