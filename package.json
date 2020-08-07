@@ -12,9 +12,14 @@
     "build-prod": "webpack -p --mode production",
     "test": "mocha",
     "lint": "eslint --fix src/",
-    "start": "nodemon src/server/index.js"
+    "start": "nodemon src/server/index.js",
+    "build-rr": "webpack --mode=development --watch --config src/client/components/widgets/ratings-reviews/webpack.config.js"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-regular-svg-icons": "^5.14.0",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/react-fontawesome": "^0.1.11",
     "axios": "^0.19.2",
     "express": "^4.17.1",
     "lodash": "^4.17.19",
