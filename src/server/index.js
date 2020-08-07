@@ -1,11 +1,13 @@
 const express = require('express');
-const app = express();
 const path = require('path');
+
+const app = express();
 
 const PORT = 3000;
 
 app.use(express.static(path.join(__dirname, '../../dist/')));
 
 app.listen(PORT, () => {
+  // eslint-disable-next-line no-console
   console.log('listening on port', PORT);
 });

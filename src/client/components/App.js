@@ -1,5 +1,5 @@
-import React from "react";
-import ProductListContainer from "../redux/containers/productListContainer.js";
+import React from 'react';
+import ProductListContainer from '../redux/containers/productListContainer.js';
 
 class App extends React.Component {
   render() {
