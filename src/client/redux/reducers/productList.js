@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-const productList = (state = [], action) => {
-=======
 import Redux from "redux";
 
 var productList = (
@@ -26,9 +23,8 @@ var productList = (
   ],
   action
 ) => {
->>>>>>> master
   switch (action.type) {
-    case 'GET_PRODUCT_LIST':
+    case "GET_PRODUCT_LIST":
       return action.products;
     default:
       return state;
