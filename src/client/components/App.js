@@ -1,5 +1,6 @@
-import React from 'react';
-import ProductListContainer from '../redux/containers/productListContainer.js';
+import React from "react";
+import ProductListContainer from "../redux/containers/productListContainer.js";
+import Overview from "./widgets/overview/Overview.js";
 
 class App extends React.Component {
   render() {
@@ -8,7 +9,7 @@ class App extends React.Component {
       <div>
         <h1>Hello {name}</h1>
         <div>
-          <ProductListContainer />
+          <Overview />
         </div>
       </div>
     );

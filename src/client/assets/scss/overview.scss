@@ -1,0 +1,9 @@
+$primary-color: #333;
+
+.overview-component {
+  color: $primary-color;
+  font-size: 16px;
+  .announcement {
+    text-align: center;
+  }
+}
