@@ -1,15 +1,16 @@
 import React from 'react';
 import ProductListContainer from '../redux/containers/productListContainer.js';
+import RR from './widgets/ratings-reviews/rr.jsx';
 
 class App extends React.Component {
   render() {
-    const { name } = this.props;
     return (
       <div>
-        <h1>Hello {name}</h1>
+        <h1>Hello</h1>
         <div>
           <ProductListContainer />
         </div>
+        <RR />
       </div>
     );
   }
