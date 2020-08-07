@@ -1,4 +1,4 @@
-//import all individual container components
+// import all individual container components
 
 const containers = {};
 

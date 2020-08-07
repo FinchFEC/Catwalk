@@ -1,8 +1,8 @@
-import Redux from "redux";
+import Redux from 'redux';
 
-var productList = (state = [], action) => {
+const productList = (state = [], action) => {
   switch (action.type) {
-    case "GET_PRODUCT_LIST":
+    case 'GET_PRODUCT_LIST':
       return action.products;
     default:
       return state;
