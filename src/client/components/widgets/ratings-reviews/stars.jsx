@@ -24,6 +24,6 @@ class Stars extends React.Component {
 
 export default Stars;
 
-Star.propTypes = {
+Stars.propTypes = {
   rating: PropTypes.number,
 };
