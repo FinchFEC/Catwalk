@@ -10,7 +10,7 @@
     "clean": "rm dist/bundle.js",
     "build-dev": "webpack -d --mode development --watch",
     "build-prod": "webpack -p --mode production",
-    "test": "mocha --watch",
+    "test": "mocha",
     "start": "nodemon src/server/index.js",
     "build-rr": "webpack --mode=development --watch --config src/client/components/widgets/ratings-reviews/webpack.config.js"
   },
