@@ -2,8 +2,6 @@
 
 FEC-Project
 
-[![Build Status](https://travis-ci.com/FinchFEC/FEC-Project.svg?branch=master)](https://travis-ci.com/FinchFEC/FEC-Project)
-
 ## Building and running on localhost
 
 First install dependencies:
