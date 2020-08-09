@@ -1,7 +1,7 @@
 import React from 'react';
-import ProductListContainer from '../redux/containers/productListContainer';
-import RR from './widgets/ratings-reviews/ratings-reviews';
-import RelatedProducts from './widgets/related-products/relatedMaster';
+import ProductListContainer from '../redux/containers/productListContainer.js';
+import Overview from './widgets/overview/Overview.js';
+import RelatedProducts from './widgets/related-products/relatedMaster.jsx';
 
 class App extends React.Component {
   render() {
@@ -9,9 +9,11 @@ class App extends React.Component {
       <div>
         <h1>Hello</h1>
         <div>
+          <Overview />
+        </div>
+        <div>
           <RelatedProducts />
         </div>
-        <RR />
       </div>
     );
   }
