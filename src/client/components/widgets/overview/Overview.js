@@ -8,8 +8,10 @@ const Overview = () => {
     <div className="overview-component">
       <header>
         <p className="announcement">
-          SITE-WIDE ANNOUNCEMENT MESSAGE! &mdash; SALE / DISCOUNT OFFER &mdash;{" "}
-          <a href="">NEW PRODUCT HIGHLIGHT</a>{" "}
+          SITE-WIDE ANNOUNCEMENT MESSAGE! &mdash; SALE / DISCOUNT OFFER &mdash;
+          {" "}
+          <a href="">NEW PRODUCT HIGHLIGHT</a>
+          {" "}
         </p>
       </header>
       <div>

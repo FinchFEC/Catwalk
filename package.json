@@ -14,7 +14,7 @@
     "lint": "eslint --fix src/",
     "start": "nodemon src/server/index.js",
     "build-rr": "webpack --mode=development --watch --config src/client/components/widgets/ratings-reviews/webpack.config.js",
-    "pre-commit-msg": "echo 'Pre-commit checks"
+    "pre-commit-msg": "echo 'Pre-commit checks'"
   },
   "precommit": [
     "pre-commit-msg",

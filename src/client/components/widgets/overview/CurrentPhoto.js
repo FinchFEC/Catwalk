@@ -2,7 +2,7 @@ import React from "react";
 import "../../../assets/scss/overview.scss";
 
 const CurrentPhoto = () => {
-  return <div className="current-photo"></div>;
+  return <div className="current-photo" />;
 };
 
 export default CurrentPhoto;
