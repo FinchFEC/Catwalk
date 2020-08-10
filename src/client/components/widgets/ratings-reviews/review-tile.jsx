@@ -29,7 +29,7 @@ class ReviewTile extends React.Component {
         {this.props.imgs.length > 1 && (
           <ReviewTileImgContainer imgs={this.props.imgs} />
         )}
-        {this.props.recommend && (
+        {this.props.recommend === 1 && (
           <div>
             <FontAwesomeIcon icon={['fas', 'check']} />
             &nbsp;I recommend this product

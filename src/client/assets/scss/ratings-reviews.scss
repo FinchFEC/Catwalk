@@ -19,7 +19,7 @@
   flex-direction: row;
 }
 
-.review-tile-header {
+.review-summary-heading {
   color: black;
   font: {
     weight: bold;
@@ -61,8 +61,21 @@
 
 .img-modal {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.img-modal-exit-btn {
+  display: span;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.img-modal-inner {
+  position: relative;
+  display: inline-block;
 }
