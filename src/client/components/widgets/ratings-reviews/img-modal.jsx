@@ -8,7 +8,7 @@ class ImgModal extends React.Component {
     return (
       <div className='img-modal'>
         <img src={this.props.src} alt={this.props.id} className='modal-img' />
-        <div className='img-modal-exit-btn'>
+        <div className='img-modal-exit-btn' onClick={this.props.onClick}>
           <FontAwesomeIcon icon={['far', 'times-circle']} />
         </div>
       </div>

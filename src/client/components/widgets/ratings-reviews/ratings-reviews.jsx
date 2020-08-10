@@ -6,7 +6,7 @@ import '../../../assets/scss/ratings-reviews.scss';
 class RatingsReviews extends React.Component {
   constructor(props) {
     super(props);
-    this.props.getReviewsByProduct(3);
+    this.props.getReviewsByProduct(4);
   }
 
   render() {

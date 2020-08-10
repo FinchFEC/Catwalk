@@ -18,3 +18,51 @@
   display: flex;
   flex-direction: row;
 }
+
+.review-tile-header {
+  color: black;
+  font: {
+    weight: bold;
+    size: 16px;
+  }
+}
+
+.review-tile-username-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.review-tile-text {
+  .button {
+    width: 100%;
+    border: 1px solid black {
+      radius: 5px;
+    }
+    background: {
+      color: skyblue;
+    }
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.review-tile-img-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.review-tile-img {
+  width: 100px;
+  height: 100px;
+}
+
+.img-modal {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}

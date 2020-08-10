@@ -15,7 +15,7 @@ class ReviewTile extends React.Component {
       <div className='review-tile'>
         <div className='review-tile-header'>
           <StaticStars rating={this.props.rating} />
-          <ReviewTileUsername username='' verified />
+          <ReviewTileUsername username={this.props.username} verified />
           <div className='review-tile-date'>
             {this.props.date.getMonth()}
             &nbsp;
@@ -57,4 +57,5 @@ ReviewTile.propTypes = {
   recommend: PropTypes.number.isRequired,
   response: PropTypes.string,
   rating: PropTypes.number.isRequired,
+  username: PropTypes.string.isRequired,
 };

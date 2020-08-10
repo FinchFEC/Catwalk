@@ -22,6 +22,7 @@ class ReviewTilesContainer extends React.Component {
               recommend={review.recommend}
               response={review.response}
               rating={review.rating}
+              username={review.reviewer_name}
             />
           );
         })}
