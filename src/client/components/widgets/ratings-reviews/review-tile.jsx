@@ -13,24 +13,31 @@ class ReviewTile extends React.Component {
   render() {
     return (
       <div className='review-tile'>
-        <StaticStars rating={1.5} />
-        <ReviewTileUsername username='' verified />
-        <ReviewTileSummary reviewSummary={this.props.summary} />
-        <div className='review-tile-date'>
-          {this.props.date.month}
-          {this.props.date.date}
-          ,&nbsp;
-          {this.props.date.year}
+        <div className='review-tile-header'>
+          <StaticStars rating={this.props.rating} />
+          <ReviewTileUsername username={this.props.username} verified />
+          <div className='review-tile-date'>
+            {this.props.date.getMonth()}
+            &nbsp;
+            {this.props.date.getDate()}
+            ,&nbsp;
+            {this.props.date.getFullYear()}
+          </div>
         </div>
+        <ReviewTileSummary reviewSummary={this.props.summary} />
         <ReviewTileTextBody text={this.props.body} />
-        {this.props.imgs && <ReviewTileImgContainer imgs={this.props.imgs} />}
-        {this.props.recommend && (
+        {this.props.imgs.length > 1 && (
+          <ReviewTileImgContainer imgs={this.props.imgs} />
+        )}
+        {this.props.recommend === 1 && (
           <div>
             <FontAwesomeIcon icon={['fas', 'check']} />
             &nbsp;I recommend this product
           </div>
         )}
-        {this.props.response && <ReviewTileResponse />}
+        {this.props.response && (
+          <ReviewTileResponse response={this.props.response} />
+        )}
       </div>
     );
   }
@@ -38,11 +45,17 @@ class ReviewTile extends React.Component {
 
 export default ReviewTile;
 
+ReviewTile.defaultProps = {
+  response: '',
+};
+
 ReviewTile.propTypes = {
   date: PropTypes.instanceOf(Date).isRequired,
   summary: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   imgs: PropTypes.array.isRequired,
-  recommend: PropTypes.bool.isRequired,
-  response: PropTypes.string.isRequired,
+  recommend: PropTypes.number.isRequired,
+  response: PropTypes.string,
+  rating: PropTypes.number.isRequired,
+  username: PropTypes.string.isRequired,
 };
