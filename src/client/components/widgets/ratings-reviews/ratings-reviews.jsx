@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import AddReviewModal from './add-review-modal';
+import ReviewTilesContainer from './review-tiles-container';
+import '../../../assets/scss/ratings-reviews.scss';
 
 class RatingsReviews extends React.Component {
   constructor(props) {
@@ -17,6 +20,7 @@ class RatingsReviews extends React.Component {
     this.setState({
       addReview: true,
     });
+    this.props.getReviewsByProduct(4);
   }
 
   render() {
@@ -28,6 +32,13 @@ class RatingsReviews extends React.Component {
         {this.state.addReview && this.props.reviewCharacteristics && (
           <AddReviewModal characteristics={this.props.reviewCharacteristics} />
         )}
+        <div className='ratings-reviews'>
+          {this.props.reviews.length > 1 && (
+            <ReviewTilesContainer reviews={this.props.reviews} />
+          )}
+          {this.props.reviews &&
+            console.log('this.props.reviews', this.props.reviews)}
+        </div>
       </div>
     );
   }
@@ -40,4 +51,6 @@ RatingsReviews.propTypes = {
   reviewCharacteristics: PropTypes.object.isRequired,
   reviewRatings: PropTypes.object.isRequired,
   reviewRecommended: PropTypes.object.isRequired,
+  getReviewsByProduct: PropTypes.func.isRequired,
+  reviews: PropTypes.array.isRequired,
 };

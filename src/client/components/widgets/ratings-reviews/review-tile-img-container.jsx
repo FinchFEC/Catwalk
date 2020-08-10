@@ -7,9 +7,10 @@ class ReviewTileImgContainer extends Component {
     super(props);
     this.state = {
       selectedImgUrl: '',
-      selectedImgId: null,
+      selectedImgId: '',
     };
     this.handleSelectImg = this.handleSelectImg.bind(this);
+    this.handleCloseModal = this.handleCloseModal.bind(this);
   }
 
   handleSelectImg(img) {
@@ -19,20 +20,35 @@ class ReviewTileImgContainer extends Component {
     });
   }
 
+  handleCloseModal() {
+    this.setState({
+      selectedImgUrl: '',
+      selectedImgId: '',
+    });
+  }
+
   render() {
     return (
       <div className='review-tile-img-container'>
         {this.props.imgs.map((img) => {
           return (
-            <div className='review-tile-img' key={i}>
-              <img src='#' alt={img.id} onClick={this.handleSelectImg} />
+            <div key={img.id}>
+              <img
+                src={img.url}
+                alt={img.id}
+                onClick={() => this.handleSelectImg(img)}
+                className='review-tile-img'
+              />
             </div>
           );
         })}
-        <ImgModal
-          src={this.state.selectedImgUrl}
-          id={this.state.selectedImgId}
-        />
+        {this.state.selectedImgUrl && (
+          <ImgModal
+            src={this.state.selectedImgUrl}
+            id={this.state.selectedImgId}
+            onClick={this.handleCloseModal}
+          />
+        )}
       </div>
     );
   }

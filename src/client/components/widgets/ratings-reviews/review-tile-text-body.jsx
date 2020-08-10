@@ -20,15 +20,18 @@ class ReviewTileTextBody extends React.Component {
     const text = this.props.text;
     const textLength = text.length;
     return (
-      <div>
+      <div className='review-tile-text'>
         {textLength <= 250 && (
           <div className='review-tile-text-body'>{text}</div>
         )}
         {textLength > 250 && !this.state.showMore && (
           <div>
-            <div className='review-tile-text-body'>{text.slice(0, 250)}</div>
+            <div className='review-tile-text-body'>
+              {text.slice(0, 250)}
+              ...
+            </div>
             <div
-              className='show-more-button'
+              className='show-more-button button'
               onClick={this.handleShowMoreClick}
             >
               Show More
@@ -38,7 +41,10 @@ class ReviewTileTextBody extends React.Component {
         {textLength > 250 && this.state.showMore && (
           <div>
             <div className='review-tile-text-body'>{text}</div>
-            <div className='hide-button' onClick={this.handleShowMoreClick}>
+            <div
+              className='hide-button button'
+              onClick={this.handleShowMoreClick}
+            >
               Hide
             </div>
           </div>
