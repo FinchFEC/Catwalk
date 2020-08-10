@@ -1,0 +1,20 @@
+.ratings-reviews {
+  font: {
+    family: arial;
+  }
+}
+
+.review-tile-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.review-tile {
+  width: 100%;
+}
+
+.review-tile-header {
+  display: flex;
+  flex-direction: row;
+}
