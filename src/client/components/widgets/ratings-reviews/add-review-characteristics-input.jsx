@@ -5,26 +5,31 @@ class AddReviewCharacteristicsInput extends React.Component {
   render() {
     return (
       <>
-        {Object.keys(this.props.characteristics).map((characteristic) => {
-          return (
-            <React.Fragment key={characteristic}>
-              {characteristic}
-              {[...new Array(5)].map((ele, i) => {
-                return (
-                  <label htmlFor={`${characteristic}`} key={i}>
-                    <input
-                      type='radio'
-                      id={`${characteristic.toLowerCase()}-${i + 1}`}
-                      name={`${characteristic.toLowerCase()}`}
-                    />
-                    {i + 1}
-                  </label>
-                );
-              })}
-              <br />
-            </React.Fragment>
-          );
-        })}
+        {Object.entries(this.props.characteristics).map(
+          (characteristicArray) => {
+            console.log('characteristicArray:', characteristicArray);
+            return (
+              <React.Fragment key={characteristicArray[0]}>
+                {characteristicArray[0]}
+                {[...new Array(5)].map((ele, i) => {
+                  return (
+                    <label htmlFor={`${characteristicArray[0]}-i`} key={i}>
+                      <input
+                        type='radio'
+                        id={`${characteristicArray[0]}-i`}
+                        name={characteristicArray[1]['id']}
+                        value={i + 1}
+                        onChange={this.props.onChange}
+                      />
+                      {i + 1}
+                    </label>
+                  );
+                })}
+                <br />
+              </React.Fragment>
+            );
+          }
+        )}
       </>
     );
   }
@@ -32,6 +37,7 @@ class AddReviewCharacteristicsInput extends React.Component {
 
 AddReviewCharacteristicsInput.propTypes = {
   characteristics: PropTypes.object.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default AddReviewCharacteristicsInput;

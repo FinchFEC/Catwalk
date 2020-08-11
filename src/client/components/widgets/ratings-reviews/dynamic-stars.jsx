@@ -1,5 +1,6 @@
 import React from 'react';
 import Star from './star';
+import PropTypes from 'prop-types';
 
 class DynamicStars extends React.Component {
   constructor(props) {
@@ -11,9 +12,14 @@ class DynamicStars extends React.Component {
   }
 
   handleStarClick(index) {
-    this.setState({
-      rating: index + 1,
-    });
+    this.setState(
+      {
+        rating: index + 1,
+      },
+      () => {
+        this.props.onClick(this.state.rating);
+      }
+    );
   }
 
   render() {
@@ -47,5 +53,9 @@ class DynamicStars extends React.Component {
     );
   }
 }
+
+DynamicStars.propTypes = {
+  onClick: PropTypes.func.isRequired,
+};
 
 export default DynamicStars;
