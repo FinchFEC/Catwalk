@@ -2,7 +2,7 @@ import React from "react";
 
 const RelatedItem = ({item}) => (
   <div id={`box-${item.number}`}>
-    <img src={item.image} alt="" />
+    <img src={item.image} alt="" width="128px" />
     <p>
       CATEGORY:
       {item.type}

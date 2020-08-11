@@ -2,7 +2,7 @@ import React from "react";
 
 const OutfitItem = ({item}) => (
   <div id={`box-${item.number}`}>
-    <img src={item.image} alt="" />
+    <img src={item.image} alt="" width="128px" />
     <h3>{item.name}</h3>
     <p>
       This item is type
