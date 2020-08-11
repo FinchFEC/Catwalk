@@ -7,7 +7,6 @@ class AddReviewCharacteristicsInput extends React.Component {
       <>
         {Object.entries(this.props.characteristics).map(
           (characteristicArray) => {
-            console.log('characteristicArray:', characteristicArray);
             return (
               <React.Fragment key={characteristicArray[0]}>
                 {characteristicArray[0]}

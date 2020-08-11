@@ -33,7 +33,6 @@ class AddReviewModal extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state);
   }
 
   handleCharacteristicInputChange(e) {
