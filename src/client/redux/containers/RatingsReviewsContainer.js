@@ -1,23 +1,18 @@
 import { connect } from 'react-redux';
 import RatingsReviews from '../../components/widgets/ratings-reviews/ratings-reviews.jsx';
-import getReviewMetadataThunk from '../action-creators/getReviewMetadataThunk';
+import getReviewsByProductThunk from '../action-creators/getReviewsByProductThunk';
 
-function mapStateToProps({
-  reviewCharacteristics,
-  reviewRatings,
-  reviewRecommended,
-}) {
+function mapStateToProps(state) {
   return {
-    reviewCharacteristics,
-    reviewRatings,
-    reviewRecommended,
+    reviews: state.reviews,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    getReviewMetadata(productId) {
-      dispatch(getReviewMetadataThunk(productId));
+    getReviewsByProduct(productId) {
+      console.log(productId);
+      dispatch(getReviewsByProductThunk(productId));
     },
   };
 }
