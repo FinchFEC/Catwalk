@@ -14,12 +14,11 @@ describe('Product Page', () => {
    * *********************************************************************
    * *********************************************************************
    */
-
+  //childProcess.spawnSync('node', ['src/server/index.js']);
   let browser;
   let page;
 
   beforeAll(async () => {
-    childProcess.fork('src/server/index.js');
     browser = await puppeteer.launch({
       headless: true,
     });
@@ -43,9 +42,11 @@ describe('Product Page', () => {
     await page.close();
   });
 
-  afterAll(async () => {
-    childProcess.kill('SIGTERM');
-    await browser.close();
+  afterAll(() => {
+    //childProcess.spawn('killall', ['']);
+    setTimeout(() => {
+      browser.close();
+    }, 2000);
   });
 
   test('should have correct page title', async () => {
