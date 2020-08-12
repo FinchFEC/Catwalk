@@ -5,7 +5,6 @@ const childProcess = require('child_process');
 /* ******************* END TO END TESTS ******************* */
 
 describe('Product Page', () => {
-  // childProcess.spawnSync('node src/client/server/index.js');
   /**
    * *********************************************************************
    * *********************************************************************
@@ -20,6 +19,7 @@ describe('Product Page', () => {
   let page;
 
   beforeAll(async () => {
+    childProcess.fork('src/server/index.js');
     browser = await puppeteer.launch({
       headless: true,
     });
@@ -44,8 +44,8 @@ describe('Product Page', () => {
   });
 
   afterAll(async () => {
+    childProcess.kill('SIGTERM');
     await browser.close();
-    //childProcess.kill('SIGINT');
   });
 
   test('should have correct page title', async () => {
