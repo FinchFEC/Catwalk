@@ -5,7 +5,7 @@ const childProcess = require('child_process');
 /* ******************* END TO END TESTS ******************* */
 
 describe('Product Page', () => {
-  childProcess.spawn('npm start');
+  // childProcess.spawnSync('node src/client/server/index.js');
   /**
    * *********************************************************************
    * *********************************************************************
@@ -21,13 +21,13 @@ describe('Product Page', () => {
 
   beforeAll(async () => {
     browser = await puppeteer.launch({
-      headless: false,
+      headless: true,
     });
   });
 
   beforeEach(async () => {
     page = await browser.newPage();
-    await page.goto('localhost:3000');
+    await page.goto('http://127.0.0.1:3000');
 
     // ERRORS THAT ARE LOGGED IN THE BROWSER ARE LOGGED HERE AS WELL. THIS IS TO DETERMINE WHETHER ERRORS EXIST.
     // ERRORS ARE NOT THROWN IF THEY EXIST BECAUSE THAT WOULD END THE TEST PREMATURELY
@@ -37,10 +37,6 @@ describe('Product Page', () => {
         console.log('console msg:', msg.text());
       }
     });
-    /* IMPORTANT: FOR SOME REASON, HEADLESS MUST BE FALSE IF THE URL IS NOT DEPLOYED.
-    OTHERWISE YOU'LL GET AN ERROR CONNECTING TO THE URL. IF YOU WANT HEADLESS TO BE TRUE,
-    THE URL MUST BE DEPLOYED. */
-    // await page.goto('https://google.com');
   });
 
   afterEach(async () => {
@@ -49,11 +45,12 @@ describe('Product Page', () => {
 
   afterAll(async () => {
     await browser.close();
-    childProcess.kill('SIGINT');
+    //childProcess.kill('SIGINT');
   });
 
   test('should have correct page title', async () => {
-    expect(page.title()).resolves.toBe('FEC-Project');
+    const pageTitle = await page.title();
+    expect(pageTitle).toBe('FEC-Project');
   });
 
   test('should render the review-tile-container', async () => {
