@@ -1,9 +1,11 @@
 const puppeteer = require('puppeteer');
 const path = require('path');
+const childProcess = require('child_process');
 
 /* ******************* END TO END TESTS ******************* */
 
 describe('Product Page', () => {
+  childProcess.spawn('npm start');
   /**
    * *********************************************************************
    * *********************************************************************
@@ -47,6 +49,7 @@ describe('Product Page', () => {
 
   afterAll(async () => {
     await browser.close();
+    childProcess.kill('SIGINT');
   });
 
   test('should have correct page title', async () => {
