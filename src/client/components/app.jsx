@@ -11,7 +11,8 @@ class App extends React.Component {
         <h1>Hello</h1>
         <header>
           <p className="announcement">
-            SITE-WIDE ANNOUNCEMENT MESSAGE! &mdash; SALE / DISCOUNT OFFER
+            <em>SITE-WIDE ANNOUNCEMENT MESSAGE!</em> &mdash; SALE / DISCOUNT{" "}
+            <strong>OFFER</strong>
             &mdash; <a href="">NEW PRODUCT HIGHLIGHT</a>{" "}
           </p>
         </header>
