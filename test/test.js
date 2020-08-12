@@ -58,7 +58,7 @@ describe('Product Page', () => {
   test('should render the review-tile-container', async () => {
     await page.waitForSelector('.review-tile-container', {
       visible: true,
-      timeout: 500,
+      timeout: 1000,
     });
   });
 
@@ -66,7 +66,7 @@ describe('Product Page', () => {
     await page
       .waitForSelector('.test-element', {
         visible: true,
-        timeout: 500,
+        timeout: 1000,
       })
       .catch((err) => {
         expect(err).toBeTruthy();
