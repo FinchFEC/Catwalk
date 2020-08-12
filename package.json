@@ -18,6 +18,7 @@
   },
   "precommit": [
     "pre-commit-msg",
+    "test",
     "lint"
   ],
   "dependencies": {

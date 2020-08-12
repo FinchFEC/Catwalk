@@ -1,7 +1,5 @@
 language: node_js
 node_js:
   - stable
-dist: trusty
 script:
-  - npm test
   - npm run build-prod

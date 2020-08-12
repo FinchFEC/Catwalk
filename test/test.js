@@ -15,7 +15,7 @@ describe('Product Page', () => {
    * *********************************************************************
    */
   // childProcess.spawnSync('node', ['src/server/index.js']);
-  childProcess.fork('src/server/index.js');
+  // childProcess.fork('src/server/index.js');
   let browser;
   let page;
 
@@ -44,7 +44,7 @@ describe('Product Page', () => {
   });
 
   afterAll(() => {
-    childProcess.spawn('killall', ['']);
+    // childProcess.spawn('killall', ['']);
     setTimeout(() => {
       browser.close();
     }, 2000);
