@@ -1,6 +1,10 @@
 language: node_js
 node_js:
-  - node
+  - stable
+addons:
+  chrome: stable
+before_install:
+  - google-chrome-stable --headless
 script:
   - npm test
   - npm run build-prod
