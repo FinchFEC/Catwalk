@@ -58,7 +58,7 @@ describe('Product Page', () => {
   test('should render the review-tile-container', async () => {
     await page.waitForSelector('.review-tile-container', {
       visible: true,
-      timeout: 1000,
+      timeout: 5000,
     });
   });
 
@@ -82,7 +82,7 @@ describe('Product Page', () => {
     await page.click('.review-tile-img');
     await page.waitForSelector('.img-modal', {
       visible: true,
-      timeout: 500,
+      timeout: 5000,
     });
     await page.screenshot({
       path: path.join(__dirname, '/screenshots/img-modal.png'),
