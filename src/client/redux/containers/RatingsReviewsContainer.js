@@ -15,7 +15,6 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     getReviewsByProduct(productId) {
-      console.log(productId);
       dispatch(getReviewsByProductThunk(productId));
     },
     getReviewMetadata(productId) {

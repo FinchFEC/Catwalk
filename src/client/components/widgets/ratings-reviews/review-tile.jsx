@@ -10,18 +10,40 @@ import ReviewTileResponse from './review-tile-response';
 import '../../../assets/icons';
 
 class ReviewTile extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      months: [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
+      ],
+    };
+  }
+
   render() {
     return (
       <div className='review-tile'>
         <div className='review-tile-header'>
           <StaticStars rating={this.props.rating} />
-          <ReviewTileUsername username={this.props.username} verified />
-          <div className='review-tile-date'>
-            {this.props.date.getMonth()}
-            &nbsp;
-            {this.props.date.getDate()}
-            ,&nbsp;
-            {this.props.date.getFullYear()}
+          <div className='review-tile-metadata'>
+            <ReviewTileUsername username={this.props.username} verified />
+            <span className='review-tile-date'>
+              {this.state.months[this.props.date.getMonth()]}
+              &nbsp;
+              {this.props.date.getDate()}
+              ,&nbsp;
+              {this.props.date.getFullYear()}
+            </span>
           </div>
         </div>
         <ReviewTileSummary reviewSummary={this.props.summary} />
@@ -30,7 +52,7 @@ class ReviewTile extends React.Component {
           <ReviewTileImgContainer imgs={this.props.imgs} />
         )}
         {this.props.recommend === 1 && (
-          <div>
+          <div className='review-recommend'>
             <FontAwesomeIcon icon={['fas', 'check']} />
             &nbsp;I recommend this product
           </div>

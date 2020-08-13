@@ -1,7 +1,6 @@
 import apiHelpers from '../../../apiHelpers';
 
 function getReviewsByProductThunk(productId) {
-  console.log(productId);
   return (dispatch) => {
     return apiHelpers
       .getReviewsByProduct(productId)

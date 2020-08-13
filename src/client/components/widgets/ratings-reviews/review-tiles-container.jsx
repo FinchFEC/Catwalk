@@ -3,11 +3,6 @@ import PropTypes from 'prop-types';
 import ReviewTile from './review-tile';
 
 class ReviewTilesContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    console.log('this.props.reviews in ReviewTileContainer:', props.reviews);
-  }
-
   render() {
     return (
       <div className='review-tile-container'>
