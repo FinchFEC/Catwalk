@@ -12,10 +12,10 @@ class AddReviewCharacteristicsInput extends React.Component {
                 {characteristicArray[0]}
                 {[...new Array(5)].map((ele, i) => {
                   return (
-                    <label htmlFor={`${characteristicArray[0]}-i`} key={i}>
+                    <label htmlFor={`${characteristicArray[0]}-${i}`} key={i}>
                       <input
                         type='radio'
-                        id={`${characteristicArray[0]}-i`}
+                        id={`${characteristicArray[0]}-${i}`}
                         name={characteristicArray[1]['id']}
                         value={i + 1}
                         onChange={this.props.onChange}

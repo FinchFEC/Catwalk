@@ -18,9 +18,15 @@ class ReviewTilesContainer extends React.Component {
               response={review.response}
               rating={review.rating}
               username={review.reviewer_name}
+              handleSelectImg={this.props.handleSelectImg}
             />
           );
         })}
+        {!this.props.noMoreReviews && (
+          <div onClick={this.props.onClick} className='show-more-reviews-btn'>
+            SHOW MORE REVIEWS{' '}
+          </div>
+        )}
       </div>
     );
   }
@@ -28,6 +34,9 @@ class ReviewTilesContainer extends React.Component {
 
 ReviewTilesContainer.propTypes = {
   reviews: PropTypes.array.isRequired,
+  handleSelectImg: PropTypes.func.isRequired,
+  noMoreReviews: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default ReviewTilesContainer;

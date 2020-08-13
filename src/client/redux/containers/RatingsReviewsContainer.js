@@ -9,16 +9,23 @@ function mapStateToProps(state) {
     reviewCharacteristics: state.reviewCharacteristics,
     reviewRatings: state.reviewRatings,
     reviewRecommended: state.reviewRecommended,
+    noMoreReviews: state.noMoreReviews,
+    productId: state.productId,
+    sort: state.sort,
+    page: state.page,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    getReviewsByProduct(productId) {
-      dispatch(getReviewsByProductThunk(productId));
+    getReviewsByProduct() {
+      dispatch(getReviewsByProductThunk());
     },
-    getReviewMetadata(productId) {
-      dispatch(getReviewMetadataThunk(productId));
+    getReviewMetadata() {
+      dispatch(getReviewMetadataThunk());
+    },
+    changeSort(sort) {
+      dispatch({ type: 'CHANGE_SORT', data: sort });
     },
   };
 }

@@ -85,7 +85,7 @@ class AddReviewModal extends React.Component {
         onClick={this.props.onClick}
       >
         <div className='review-modal-content'>
-          <DynamicStars onClick={this.handleStarClick} />
+          Rating <DynamicStars onClick={this.handleStarClick} />
           <form action='' method='post' onSubmit={this.handleSubmit}>
             Do you recommend this product?
             <label htmlFor='recommendYes'>

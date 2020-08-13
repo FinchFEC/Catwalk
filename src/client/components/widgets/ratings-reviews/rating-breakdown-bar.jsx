@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 class RatingBreakdownBar extends React.Component {
   render() {
-    console.log('percent:', this.props.percent);
     return (
       <div className='rating-breakdown-bar'>
         <span
@@ -31,7 +30,7 @@ class RatingBreakdownBar extends React.Component {
               height: '12px',
               position: 'absolute',
               display: 'inline-block',
-              backgroundColor: 'gray',
+              backgroundColor: 'rgba(20,20,20,0.2)',
             }}
           />
           <span

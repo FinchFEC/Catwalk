@@ -49,7 +49,10 @@ class ReviewTile extends React.Component {
         <ReviewTileSummary reviewSummary={this.props.summary} />
         <ReviewTileTextBody text={this.props.body} />
         {this.props.imgs.length > 1 && (
-          <ReviewTileImgContainer imgs={this.props.imgs} />
+          <ReviewTileImgContainer
+            imgs={this.props.imgs}
+            onClick={this.props.handleSelectImg}
+          />
         )}
         {this.props.recommend === 1 && (
           <div className='review-recommend'>
@@ -80,4 +83,5 @@ ReviewTile.propTypes = {
   response: PropTypes.string,
   rating: PropTypes.number.isRequired,
   username: PropTypes.string.isRequired,
+  handleSelectImg: PropTypes.func.isRequired,
 };

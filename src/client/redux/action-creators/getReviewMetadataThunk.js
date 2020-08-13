@@ -1,8 +1,8 @@
 import getReviewMetadata from '../../../apiHelpers/getReviewMetadata';
 
-export default function getReviewMetadataThunk(productId) {
-  return (dispatch) => {
-    getReviewMetadata(productId).then((data) => {
+export default function getReviewMetadataThunk() {
+  return (dispatch, getState) => {
+    getReviewMetadata(getState().productId).then((data) => {
       dispatch({ type: 'GET_REVIEW_RATINGS', ratings: data.data.ratings });
       dispatch({
         type: 'GET_REVIEW_RECOMMENDED',

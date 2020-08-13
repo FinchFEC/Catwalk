@@ -114,37 +114,52 @@ $formFontSize: 14px;
   cursor: pointer;
 }
 
+.show-more-reviews-btn {
+  margin: {
+    top: 25px;
+    bottom: 25px;
+  }
+  font: {
+    size: 20px;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  padding: 15px;
+  border: 1px solid black;
+}
+
 .img-modal {
   position: fixed;
+  left: 0;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1;
-  left: 0;
-  top: 0;
   height: 100vh;
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.85);
 }
 
+.img-modal-content {
+  margin: 25%;
+  height: 100%;
+  width: 100%;
+}
+
 .img-modal-exit-btn {
+  font: {
+    size: $formFontSize;
+  }
   display: span;
   position: absolute;
   right: 10px;
   top: 10px;
   color: white;
   cursor: pointer;
-}
-
-.img-modal-inner {
-  padding: 10px;
-  font: {
-    size: $formFontSize;
-  }
-  background: {
-    color: white;
-  }
-  margin: 25%;
 }
 
 .add-review-btn {
@@ -185,5 +200,9 @@ $modalBgColor: skyblue;
   background: {
     color: white;
   }
-  margin: 25%;
+  margin: 15%;
+  > .stars-container {
+    cursor: pointer;
+    display: inline;
+  }
 }
