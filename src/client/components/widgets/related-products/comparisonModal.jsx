@@ -1,7 +1,9 @@
 import React from "react";
+import PropTypes from 'prop-types';
+
 
 const ComparisonModal = () => (
-  <div>
+  <div className="modal">
     <h2>COMPARISON MODAL</h2>
     <div id="modal">
       <div id="modal-1">
@@ -34,5 +36,8 @@ const ComparisonModal = () => (
     </div>
   </div>
 );
+
+ComparisonModal.propTypes = {
+};
 
 export default ComparisonModal;
