@@ -8,7 +8,7 @@ import store from './redux/store';
 const mountNode = document.getElementById('app');
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <App name='Jane' />
   </Provider>,
   mountNode
 );
