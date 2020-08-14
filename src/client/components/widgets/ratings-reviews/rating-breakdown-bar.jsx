@@ -40,7 +40,7 @@ class RatingBreakdownBar extends React.Component {
               height: '12px',
               position: 'absolute',
               display: 'inline-block',
-              backgroundColor: 'green',
+              backgroundColor: '#8eda14',
             }}
           />
         </span>

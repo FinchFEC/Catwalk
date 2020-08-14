@@ -8,7 +8,7 @@ class AddReviewCharacteristicsInput extends React.Component {
         {Object.entries(this.props.characteristics).map(
           (characteristicArray) => {
             return (
-              <React.Fragment key={characteristicArray[0]}>
+              <div className='modal-input' key={characteristicArray[0]}>
                 {characteristicArray[0]}
                 {[...new Array(5)].map((ele, i) => {
                   return (
@@ -25,7 +25,7 @@ class AddReviewCharacteristicsInput extends React.Component {
                   );
                 })}
                 <br />
-              </React.Fragment>
+              </div>
             );
           }
         )}

@@ -38,7 +38,7 @@ class AddReviewImageContainer extends React.Component {
 
   render() {
     return (
-      <>
+      <div className='modal-input'>
         <label htmlFor='image-input'>
           <input
             type='file'
@@ -64,7 +64,7 @@ class AddReviewImageContainer extends React.Component {
             })}
           </div>
         )}
-      </>
+      </div>
     );
   }
 }

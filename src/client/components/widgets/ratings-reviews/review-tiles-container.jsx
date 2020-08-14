@@ -6,6 +6,23 @@ class ReviewTilesContainer extends React.Component {
   render() {
     return (
       <div className='review-tile-container'>
+        <form>
+          <select
+            value={this.props.sort}
+            name='sort'
+            onChange={(e) => {
+              this.props.onChange(e.target.value);
+            }}
+          >
+            {['relevant', 'newest', 'helpful'].map((sort) => {
+              return (
+                <option value={sort} key={sort}>
+                  {sort}
+                </option>
+              );
+            })}
+          </select>
+        </form>
         {this.props.reviews.map((review) => {
           return (
             <ReviewTile
@@ -24,7 +41,7 @@ class ReviewTilesContainer extends React.Component {
         })}
         {!this.props.noMoreReviews && (
           <div onClick={this.props.onClick} className='show-more-reviews-btn'>
-            SHOW MORE REVIEWS{' '}
+            SHOW MORE REVIEWS
           </div>
         )}
       </div>
@@ -37,6 +54,8 @@ ReviewTilesContainer.propTypes = {
   handleSelectImg: PropTypes.func.isRequired,
   noMoreReviews: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
+  sort: PropTypes.string.isRequired,
 };
 
 export default ReviewTilesContainer;

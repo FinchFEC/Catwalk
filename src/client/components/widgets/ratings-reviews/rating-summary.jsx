@@ -10,7 +10,10 @@ class RatingSummary extends React.Component {
       ratingsCount += arr[1];
       totalRating += arr[0] * arr[1];
     });
-    const avgRating = (totalRating / ratingsCount).toFixed(2);
+    let avgRating = (totalRating / ratingsCount).toFixed(2);
+    if (isNaN(avgRating)) {
+      avgRating = 0;
+    }
     // console.log('totalRating:', totalRating);
     // console.log('ratingsCount:', ratingsCount);
     // console.log('avgRating:', avgRating);

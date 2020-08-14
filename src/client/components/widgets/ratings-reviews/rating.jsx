@@ -17,10 +17,16 @@ class Rating extends React.Component {
   }
 }
 
+Rating.defaultProps = {
+  ratings: [],
+  recommended: {},
+  characteristics: {},
+};
+
 Rating.propTypes = {
-  ratings: PropTypes.object.isRequired,
-  recommended: PropTypes.object.isRequired,
-  characteristics: PropTypes.object.isRequired,
+  ratings: PropTypes.object,
+  recommended: PropTypes.object,
+  characteristics: PropTypes.object,
   filterClick: PropTypes.func.isRequired,
 };
 

@@ -45,7 +45,6 @@ class RatingsReviews extends React.Component {
     this.setState({
       addReview: true,
     });
-    this.props.getReviewsByProduct(4);
   }
 
   handleFilterClick(rating) {
@@ -75,14 +74,13 @@ class RatingsReviews extends React.Component {
   render() {
     return (
       <div className='ratings-reviews'>
-        {Object.getOwnPropertyNames(this.props.reviewRatings).length > 1 && (
-          <Rating
-            ratings={this.props.reviewRatings}
-            recommended={this.props.reviewRecommended}
-            characteristics={this.props.reviewCharacteristics}
-            filterClick={this.handleFilterClick}
-          />
-        )}
+        <Rating
+          ratings={this.props.reviewRatings}
+          recommended={this.props.reviewRecommended}
+          characteristics={this.props.reviewCharacteristics}
+          filterClick={this.handleFilterClick}
+        />
+
         <div className='right'>
           {this.props.reviews.length > 1 && (
             <ReviewTilesContainer
@@ -90,17 +88,17 @@ class RatingsReviews extends React.Component {
               handleSelectImg={this.handleSelectImg}
               noMoreReviews={this.props.noMoreReviews}
               onClick={this.props.getReviewsByProduct}
+              onChange={this.props.changeSort}
+              sort={this.props.sort}
             />
           )}
-          {Object.getOwnPropertyNames(this.props.reviewCharacteristics).length >
-            1 && (
-            <div
-              className='add-review-btn'
-              onClick={this.handleAddReviewBtnClick}
-            >
-              ADD A REVIEW +
-            </div>
-          )}
+          <div
+            className='add-review-btn'
+            onClick={this.handleAddReviewBtnClick}
+          >
+            ADD A REVIEW +
+          </div>
+
           {this.state.addReview && this.props.reviewCharacteristics && (
             <AddReviewModal
               ref={this.modalRef}
@@ -134,4 +132,5 @@ RatingsReviews.propTypes = {
   productId: PropTypes.number.isRequired,
   noMoreReviews: PropTypes.bool.isRequired,
   sort: PropTypes.string.isRequired,
+  changeSort: PropTypes.func.isRequired,
 };

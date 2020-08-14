@@ -26,6 +26,7 @@ function mapDispatchToProps(dispatch) {
     },
     changeSort(sort) {
       dispatch({ type: 'CHANGE_SORT', data: sort });
+      dispatch(getReviewsByProductThunk());
     },
   };
 }

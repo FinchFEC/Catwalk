@@ -87,28 +87,29 @@ class AddReviewModal extends React.Component {
         <div className='review-modal-content'>
           Rating <DynamicStars onClick={this.handleStarClick} />
           <form action='' method='post' onSubmit={this.handleSubmit}>
-            Do you recommend this product?
-            <label htmlFor='recommendYes'>
-              Yes
-              <input
-                id='recommendYes'
-                name='recommend'
-                type='radio'
-                value={1}
-                onChange={this.handleInputChange}
-              />
-            </label>
-            <label htmlFor='recommendNo'>
-              No
-              <input
-                id='recommendNo'
-                name='recommend'
-                type='radio'
-                value={0}
-                onChange={this.handleInputChange}
-              />
-            </label>
-            <br />
+            <div className='modal-input'>
+              Do you recommend this product?
+              <label htmlFor='recommendYes'>
+                Yes
+                <input
+                  id='recommendYes'
+                  name='recommend'
+                  type='radio'
+                  value={1}
+                  onChange={this.handleInputChange}
+                />
+              </label>
+              <label htmlFor='recommendNo'>
+                No
+                <input
+                  id='recommendNo'
+                  name='recommend'
+                  type='radio'
+                  value={0}
+                  onChange={this.handleInputChange}
+                />
+              </label>
+            </div>
             <AddReviewCharacteristicsInput
               characteristics={this.props.characteristics}
               onChange={this.handleCharacteristicInputChange}
@@ -122,38 +123,40 @@ class AddReviewModal extends React.Component {
                 onChange={this.handleInputChange}
               />
             </label>
-            <br />
-            Body
-            <label htmlFor='body'>
-              <input
-                id='body'
-                name='body'
-                value={this.state.body}
-                onChange={this.handleInputChange}
-              />
-            </label>
-            <br />
-            <label htmlFor='usernameInput'>
-              Username
-              <input
-                name='username'
-                id='usernameInput'
-                value={this.state.username}
-                onChange={this.handleInputChange}
-              />
-            </label>
-            <br />
-            <label htmlFor='emailInput'>
-              Email
-              <input
-                name='email'
-                type='email'
-                id='emailInput'
-                value={this.state.email}
-                onChange={this.handleInputChange}
-              />
-            </label>
-            <br />
+            <div className='modal-input'>
+              Body
+              <label htmlFor='body'>
+                <input
+                  id='body'
+                  name='body'
+                  value={this.state.body}
+                  onChange={this.handleInputChange}
+                />
+              </label>
+            </div>
+            <div className='modal-input'>
+              <label htmlFor='usernameInput'>
+                Username
+                <input
+                  name='username'
+                  id='usernameInput'
+                  value={this.state.username}
+                  onChange={this.handleInputChange}
+                />
+              </label>
+            </div>
+            <div className='modal-input'>
+              <label htmlFor='emailInput'>
+                Email
+                <input
+                  name='email'
+                  type='email'
+                  id='emailInput'
+                  value={this.state.email}
+                  onChange={this.handleInputChange}
+                />
+              </label>
+            </div>
             <AddReviewImageContainer />
             <input type='submit' value='Submit' />
           </form>
