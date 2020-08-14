@@ -2,7 +2,7 @@ import React from "react";
 
 const ComparisonModal = () => (
   <div>
-    <h1>COMPARISON MODAL</h1>
+    <h2>COMPARISON MODAL</h2>
     <div id="modal">
       <div id="modal-1">
         <h3>Product A</h3>

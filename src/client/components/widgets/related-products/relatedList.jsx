@@ -51,8 +51,7 @@ const relatedItems = [
 
 const RelatedList = () => (
   <div id="container-1">
-    <h1>RELATED PRODUCTS</h1>
-    <br />
+    <h2>RELATED PRODUCTS</h2>
     {relatedItems.map((item) => (
       <RelatedItem item={item} />
     ))}

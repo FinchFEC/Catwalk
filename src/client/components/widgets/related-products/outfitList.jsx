@@ -51,8 +51,7 @@ const selectedOutfit = [
 
 const OutfitList = () => (
   <div id="container-2">
-    <h1>YOUR OUTFIT</h1>
-    <br />
+    <h2>YOUR OUTFIT</h2>
     {selectedOutfit.map((item) => (
       <OutfitItem item={item} />
     ))}
