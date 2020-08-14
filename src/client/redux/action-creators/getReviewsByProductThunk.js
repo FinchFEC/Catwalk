@@ -1,15 +1,16 @@
 import apiHelpers from '../../../apiHelpers';
 
-function getReviewsByProductThunk(productId) {
-  console.log(productId);
-  return (dispatch) => {
+function getReviewsByProductThunk() {
+  return (dispatch, getState) => {
+    const { productId, page, sort } = getState();
     return apiHelpers
-      .getReviewsByProduct(productId)
+      .getReviewsByProduct(productId, page, sort)
       .then((data) => {
         dispatch({ type: 'GET_REVIEWS', data });
-      })
-      .catch((err) => {
-        console.log(err);
+        dispatch({ type: 'INCREASE_PAGE' });
+        if (data.length < 2) {
+          dispatch({ type: 'NO_MORE_REVIEWS' });
+        }
       });
   };
 }
