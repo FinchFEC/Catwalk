@@ -88,7 +88,7 @@ class RatingsReviews extends React.Component {
               handleSelectImg={this.handleSelectImg}
               noMoreReviews={this.props.noMoreReviews}
               onClick={this.props.getReviewsByProduct}
-              onChange={this.props.changeSort}
+              onChangeSort={this.props.changeSort}
               sort={this.props.sort}
             />
           )}

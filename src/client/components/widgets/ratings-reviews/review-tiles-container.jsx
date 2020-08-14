@@ -1,28 +1,46 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReviewTile from './review-tile';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '../../../assets/icons';
 
 class ReviewTilesContainer extends React.Component {
   render() {
     return (
       <div className='review-tile-container'>
-        <form>
-          <select
-            value={this.props.sort}
-            name='sort'
-            onChange={(e) => {
-              this.props.onChange(e.target.value);
-            }}
-          >
-            {['relevant', 'newest', 'helpful'].map((sort) => {
-              return (
-                <option value={sort} key={sort}>
-                  {sort}
-                </option>
-              );
-            })}
-          </select>
-        </form>
+        <div className='dropdown'>
+          <div className='dropdown-btn'>
+            SORT BY&nbsp;
+            <FontAwesomeIcon icon={['fas', 'caret-down']} />
+          </div>
+          <div className='dropdown-content'>
+            <div
+              className='option'
+              onClick={() => {
+                this.props.onChangeSort('relevant');
+              }}
+            >
+              Relevant
+            </div>
+            <div
+              className='option'
+              onClick={() => {
+                this.props.onChangeSort('newest');
+              }}
+            >
+              Newest
+            </div>
+            <div
+              className='option'
+              onClick={() => {
+                this.props.onChangeSort('helpful');
+              }}
+            >
+              Helpful
+            </div>
+          </div>
+        </div>
+
         {this.props.reviews.map((review) => {
           return (
             <ReviewTile
@@ -54,7 +72,7 @@ ReviewTilesContainer.propTypes = {
   handleSelectImg: PropTypes.func.isRequired,
   noMoreReviews: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
-  onChange: PropTypes.func.isRequired,
+  onChangeSort: PropTypes.func.isRequired,
   sort: PropTypes.string.isRequired,
 };
 

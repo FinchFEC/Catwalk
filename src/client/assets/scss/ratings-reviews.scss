@@ -1,5 +1,9 @@
 $formFontSize: 14px;
 
+* {
+  box-sizing: border-box;
+}
+
 .ratings-reviews {
   font: {
     family: helvetica;
@@ -41,6 +45,48 @@ $formFontSize: 14px;
 
 .review-tile-container {
   margin-bottom: 25px;
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+  min-width: 15%;
+  font-family: Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+.dropdown-btn {
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+  padding: 15px;
+  border: 1px solid black;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  z-index: 1;
+}
+
+.option {
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: rgba(241, 241, 241, 0.822);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 .review-tile {
@@ -156,9 +202,15 @@ $formFontSize: 14px;
 }
 
 .img-modal-content {
-  margin: 25%;
-  height: 100%;
-  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-img {
+  max-width: 100%;
+  height: auto;
 }
 
 .img-modal-exit-btn {
@@ -188,7 +240,7 @@ $formFontSize: 14px;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  width: 25%;
+  min-width: 25%;
   padding: 15px;
   border: 1px solid black {
 

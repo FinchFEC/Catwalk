@@ -8,13 +8,25 @@ import {
 } from '@fortawesome/free-regular-svg-icons';
 
 // solid icons
-import { faStar as fasStar, faCheck } from '@fortawesome/free-solid-svg-icons';
+import {
+  faStar as fasStar,
+  faCheck,
+  faCaretDown,
+} from '@fortawesome/free-solid-svg-icons';
 
 // brand icons
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 
 // add icons to library
-library.add(faStar, fasStar, faTimesCircle, faCheckCircle, faCheck, faFacebook);
+library.add(
+  faStar,
+  fasStar,
+  faTimesCircle,
+  faCheckCircle,
+  faCheck,
+  faFacebook,
+  faCaretDown
+);
 
 /* *************INSTRUCTIONS (https://www.npmjs.com/package/@fortawesome/react-fontawesome)************* */
 // 1. browse icons on https://fontawesome.com/
