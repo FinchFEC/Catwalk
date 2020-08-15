@@ -1,20 +1,85 @@
 $primary-color: #333;
 
 .overview-component {
-  height: 1000px;
-  width: 100%;
-  border: solid;
+  height: 800px;
+  width: auto;
+  position: relative;
   color: $primary-color;
-  font-size: 16px;
-
+  font-family: "adobe-clean", sans-serif;
+  font-size: 14px;
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: 8fr 21fr 13fr 8fr;
+  grid-template-rows: 3fr 1fr;
   background-color: #fff;
   color: #444;
 }
 .current-photo {
-  border: solid;
-  grid-column: 2 / span 3;
-  grid-row: 1 / span 3;
+  background-color: rgb(208, 201, 201);
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
+}
+.description {
+  grid-column: 2 / span 2;
+  grid-row: 2 / span 1;
+  display: grid;
+  grid-template-columns: 21fr 13fr;
+  margin-top: 20px;
+}
+.slogan {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+}
+.features {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
+  border-left: 2px solid #444;
+  height: 120px;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+#slogan {
+  margin-left: 100px;
+  font-size: 16px;
+  margin-top: 30px;
+}
+
+#description {
+  margin-left: 100px;
+}
+#features {
+  margin-left: 20px;
+}
+
+#left-arrow {
+  z-index: 1;
+  position: absolute;
+  font-size: 18px;
+  cursor: pointer;
+  top: 35%;
+  left: 25%;
+}
+#right-arrow {
+  z-index: 1;
+  position: absolute;
+  font-size: 18px;
+  cursor: pointer;
+  top: 35%;
+  left: 55%;
+}
+#expand {
+  z-index: 1;
+  position: absolute;
+  font-size: 18px;
+  cursor: pointer;
+  top: 4%;
+  left: 55%;
+}
+#arrow-down {
+  z-index: 1;
+  position: absolute;
+  font-size: 18px;
+  cursor: pointer;
+  top: 55%;
+  left: 19%;
 }
