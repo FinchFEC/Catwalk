@@ -7,11 +7,11 @@ class ImgModal extends React.Component {
   render() {
     return (
       <div className='img-modal'>
-        <div className='img-modal-inner'>
+        <div className='img-modal-content'>
           <img src={this.props.src} alt={this.props.id} className='modal-img' />
-          <div className='img-modal-exit-btn' onClick={this.props.onClick}>
-            <FontAwesomeIcon icon={['far', 'times-circle']} size='2x' />
-          </div>
+        </div>
+        <div className='img-modal-exit-btn' onClick={this.props.onClick}>
+          <FontAwesomeIcon icon={['far', 'times-circle']} size='2x' />
         </div>
       </div>
     );

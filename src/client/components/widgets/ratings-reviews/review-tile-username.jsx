@@ -8,12 +8,12 @@ class ReviewTileUsername extends React.Component {
     return (
       <div className='review-tile-username-container'>
         {this.props.verified && (
-          <div>
+          <span>
             <FontAwesomeIcon icon={['far', 'check-circle']} />
-            Verified User
-          </div>
+            Verified User&nbsp;
+          </span>
         )}
-        <div className='review-tile-username'>{this.props.username}</div>
+        <span className='review-tile-username'>{this.props.username}</span>
       </div>
     );
   }
