@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from 'prop-types';
+
 
 const OutfitItem = ({item}) => (
   <div id={`box-${item.number}`}>
@@ -9,9 +11,13 @@ const OutfitItem = ({item}) => (
       {" "}
       {item.type}
     </p>
-    <p>${item.price}</p>
+    <p>{item.price}</p>
     <p>{item.stars}</p>
   </div>
 );
+
+OutfitItem.propTypes = {
+  item: PropTypes.object.isRequired
+};
 
 export default OutfitItem;

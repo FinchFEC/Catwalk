@@ -13,7 +13,6 @@ class RelatedProducts extends React.Component {
   render() {
     return (
       <div>
-        {console.log('---relatedInfo', this.props.relatedInfo)}
         <RelatedList relatedInfo={this.props.relatedInfo} />
         <OutfitList />
       </div>

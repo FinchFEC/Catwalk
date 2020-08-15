@@ -4,7 +4,7 @@ import getRelatedProductsInfo from '../action-creators/getRelatedProductsInfo';
 
 function mapStateToProps(state) {
   return {
-    relatedProducts: state.relatedInfo
+    relatedInfo: state.relatedInfo
   }
 }
 
