@@ -1,7 +1,7 @@
 import React from 'react';
 import Overview from './widgets/overview/Overview.js';
 // import ProductListContainer from '../redux/containers/productListContainer.js';
-import RelatedProducts from './widgets/related-products/relatedMaster.jsx';
+import RelatedProductsContainer from '../redux/containers/relatedContainer.js';
 import RatingsReviewsContainer from '../redux/containers/RatingsReviewsContainer.js';
 
 class App extends React.Component {
@@ -9,7 +9,7 @@ class App extends React.Component {
     return (
       <div>
         <Overview />
-        <RelatedProducts />
+        <RelatedProductsContainer />
         <RatingsReviewsContainer />
       </div>
     );

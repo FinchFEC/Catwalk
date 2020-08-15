@@ -10,6 +10,8 @@ import noMoreReviews from './noMoreReviews';
 import sort from './sort';
 import page from './page';
 import productId from './productId';
+import relatedReducer from './relatedReducer';
+
 
 const rootReducer = combineReducers({
   productList,
@@ -21,6 +23,7 @@ const rootReducer = combineReducers({
   noMoreReviews,
   sort,
   page,
+  relatedInfo: relatedReducer
 });
 
 export default rootReducer;
