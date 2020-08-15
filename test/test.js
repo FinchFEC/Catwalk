@@ -21,7 +21,7 @@ describe('Product Page', () => {
 
   beforeAll(async () => {
     browser = await puppeteer.launch({
-      headless: true,
+      headless: false,
     });
   });
 
@@ -30,7 +30,7 @@ describe('Product Page', () => {
     await page.goto('http://127.0.0.1:3000');
 
     // ERRORS THAT ARE LOGGED IN THE BROWSER ARE LOGGED HERE AS WELL. THIS IS TO DETERMINE WHETHER ERRORS EXIST.
-    // ERRORS ARE NOT THROWN IF THEY EXIST BECAUSE THAT WOULD END THE TEST PREMATURELY
+    // ERRORS ARE NOT THROWN IF THEY EXIST BECAUSE THAT WOULD END THE ENTIRE TEST PREMATURELY
     page.on('console', (msg) => {
       if (msg.type() === 'error') {
         console.log('error in the page');

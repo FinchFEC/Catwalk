@@ -9,13 +9,14 @@ class AddReviewModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      rating: 0,
+      rating: null,
       recommend: null,
       summary: '',
       body: '',
       email: '',
       imgs: [],
       characteristics: {},
+      ratingText: ['Poor', 'Fair', 'Average', 'Good', 'Great'],
     };
     this.handleStarClick = this.handleStarClick.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -85,10 +86,12 @@ class AddReviewModal extends React.Component {
         onClick={this.props.onClick}
       >
         <div className='review-modal-content'>
-          Rating <DynamicStars onClick={this.handleStarClick} />
+          <div>Write your review about </div>
+          Rating* <DynamicStars onClick={this.handleStarClick} />
+          {this.state.rating && this.state.ratingText[this.state.rating - 1]}
           <form action='' method='post' onSubmit={this.handleSubmit}>
             <div className='modal-input'>
-              Do you recommend this product?
+              Do you recommend this product?*
               <label htmlFor='recommendYes'>
                 Yes
                 <input
@@ -97,6 +100,7 @@ class AddReviewModal extends React.Component {
                   type='radio'
                   value={1}
                   onChange={this.handleInputChange}
+                  required
                 />
               </label>
               <label htmlFor='recommendNo'>
@@ -121,39 +125,49 @@ class AddReviewModal extends React.Component {
                 name='summary'
                 value={this.state.summary}
                 onChange={this.handleInputChange}
+                maxLength='60'
               />
             </label>
             <div className='modal-input'>
-              Body
+              Body*
               <label htmlFor='body'>
                 <input
                   id='body'
                   name='body'
                   value={this.state.body}
                   onChange={this.handleInputChange}
+                  minLength='50'
+                  required
                 />
               </label>
+              <div>
+                Minimum characters left:{' '}
+                {this.state.body.length < 50 ? 50 - this.state.body.length : 0}
+              </div>
             </div>
             <div className='modal-input'>
               <label htmlFor='usernameInput'>
-                Username
+                Username*
                 <input
                   name='username'
                   id='usernameInput'
                   value={this.state.username}
                   onChange={this.handleInputChange}
+                  required
                 />
               </label>
             </div>
             <div className='modal-input'>
               <label htmlFor='emailInput'>
-                Email
+                Email*
                 <input
                   name='email'
                   type='email'
                   id='emailInput'
                   value={this.state.email}
                   onChange={this.handleInputChange}
+                  maxLength='60'
+                  required
                 />
               </label>
             </div>

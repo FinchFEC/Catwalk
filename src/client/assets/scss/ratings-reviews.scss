@@ -14,9 +14,18 @@ $formFontSize: 14px;
   }
   display: grid;
   grid-template-columns: 2fr 6fr;
-  column-gap: 10px;
+  column-gap: 30px;
   margin-bottom: 100px;
   margin-top: 50px;
+}
+
+.average-rating,
+.ratings-summary .stars-container {
+  display: inline-block;
+}
+
+.ratings-summary .stars-container {
+  float: right;
 }
 
 .star-container {
@@ -227,8 +236,8 @@ $formFontSize: 14px;
 
 .modal-input {
   margin: {
-    top: 5px;
-    bottom: 5px;
+    top: 15px;
+    bottom: 15px;
   }
 }
 
