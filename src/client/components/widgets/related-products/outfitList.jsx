@@ -1,5 +1,7 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import OutfitItem from './outfitItem.jsx';
+
 
 const selectedOutfit = [
   {
@@ -57,5 +59,8 @@ const OutfitList = () => (
     ))}
   </div>
 );
+
+OutfitList.propTypes = {
+};
 
 export default OutfitList;

@@ -1,28 +1,31 @@
 import React from "react";
+import PropTypes from "prop-types";
 import RelatedList from "./relatedList";
 import OutfitList from "./outfitList";
 import "../../../assets/scss/related.scss";
-import PropTypes from 'prop-types';
 
 class RelatedProducts extends React.Component {
   constructor(props) {
     super(props);
-    this.props.getRelatedProductIDs(4);
+    this.props.getRelatedProductsInfo(4);
   }
 
   render() {
     return (
       <div>
-        <RelatedList />
-        <br />
+        {console.log('---relatedInfo', this.props.relatedInfo)}
+        <RelatedList relatedInfo={this.props.relatedInfo} />
         <OutfitList />
-        <br />
       </div>
     );
   }
 }
 
+
+
 RelatedProducts.propTypes = {
+  relatedInfo: PropTypes.array.isRequired,
+  getRelatedProductsInfo: PropTypes.func.isRequired,
 };
 
 export default RelatedProducts;

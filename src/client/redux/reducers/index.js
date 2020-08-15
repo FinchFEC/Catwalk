@@ -8,7 +8,7 @@ import relatedReducer from './relatedReducer';
 const rootReducer = combineReducers({
   productList,
   reviews: reviewsReducer,
-  related: relatedReducer
+  relatedInfo: relatedReducer
 });
 
 export default rootReducer;

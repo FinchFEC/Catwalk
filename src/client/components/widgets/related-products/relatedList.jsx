@@ -1,6 +1,6 @@
 import React from "react";
-import RelatedItem from "./relatedItem.jsx";
 import PropTypes from "prop-types";
+import RelatedItem from "./relatedItem.jsx";
 import ComparisonModal from "./comparisonModal";
 
 const relatedItems = [
@@ -51,20 +51,25 @@ const relatedItems = [
   },
 ];
 
-const RelatedList = () => (
-  <div>
-    <div id="container-1">
-      <h2>RELATED PRODUCTS</h2>
-      {relatedItems.map((item) => (
-        <RelatedItem item={item} />
-      ))}
-    </div>
+const RelatedList = ({ relatedInfo }) => {
+  const relatedThings = relatedInfo || relatedItems;
+  return (
     <div>
-      <ComparisonModal />
+      <div id="container-1">
+        <h2>RELATED PRODUCTS</h2>
+        {relatedThings.map((item) => (
+          <RelatedItem item={item} />
+        ))}
+      </div>
+      <div>
+        <ComparisonModal />
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
-RelatedList.propTypes = {};
+RelatedList.propTypes = {
+  relatedInfo: PropTypes.array.isRequired,
+};
 
 export default RelatedList;

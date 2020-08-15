@@ -1,17 +1,17 @@
 import { connect } from 'react-redux';
 import RelatedProducts from '../../components/widgets/related-products/relatedMaster.jsx';
-import getRelatedProductIDs from '../action-creators/getRelatedProductIDs';
+import getRelatedProductsInfo from '../action-creators/getRelatedProductsInfo';
 
 function mapStateToProps(state) {
   return {
-    relatedProducts: state.relatedProducts
+    relatedProducts: state.relatedInfo
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    getRelatedProductIDs(productId) {
-      dispatch(getRelatedProductIDs(productId));
+    getRelatedProductsInfo(productId) {
+      dispatch(getRelatedProductsInfo(productId));
     },
   };
 }

@@ -1,9 +1,9 @@
 import getProducts from './getProducts';
 import getReviewsByProduct from './getReviewsByProduct';
-import getRelatedProductIDs from './getRelatedProductIDs.js';
+import getRelatedProductsInfo from './getRelatedProductsInfo.js';
 
 export default {
   getProducts,
   getReviewsByProduct,
-  getRelatedProductIDs
+  getRelatedProductsInfo
 };
