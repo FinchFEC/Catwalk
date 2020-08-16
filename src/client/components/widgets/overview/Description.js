@@ -5,21 +5,22 @@ import { GrCheckmark } from "react-icons/gr";
 const Description = () => {
   return (
     <div className="description">
-      <div className="slogan">
+      <div className="slogan-box">
         <div>
           <p id="slogan">
-            <strong>"slogan" "Blend in to your crowd"</strong>
+            <strong>Make yourself a morning person</strong>
           </p>
           <p id="description">
-            "description": "The So Fatigues will wake you up and fit you in.
-            This high energy camo will have you blending in to even the wildest
-            surroundings."
+            Whether you're a morning person or not. Whether you're gym bound or
+            not. Everyone looks good in joggers.
           </p>
         </div>
       </div>
-      <div className="features">
+      <div className="features-box">
         <p id="features">
-          <GrCheckmark /> "features" feature-value
+          <GrCheckmark /> Fabric: 100% Cotton
+          <br></br>
+          <GrCheckmark /> Cut: Skinny
         </p>
       </div>
     </div>
