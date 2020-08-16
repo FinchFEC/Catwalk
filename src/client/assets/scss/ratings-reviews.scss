@@ -1,4 +1,4 @@
-$formFontSize: 14px;
+$formFontSize: 16px;
 
 * {
   box-sizing: border-box;
@@ -128,12 +128,18 @@ $formFontSize: 14px;
 
 .review-summary-heading {
   font: {
-    size: 18px;
+    size: 16px;
     weight: 550;
   }
   margin: {
     top: 12px;
     bottom: 12px;
+  }
+}
+
+.review-tile-summary-wrap {
+  font: {
+    size: 13px;
   }
 }
 
@@ -174,6 +180,20 @@ $formFontSize: 14px;
 
 .review-tile-text-body + .button {
   cursor: pointer;
+}
+
+.review-tile-response {
+  background-color: #ebebeb;
+  padding: 0.9em;
+}
+
+.review-tile-response-header {
+  font: {
+    weight: bold;
+  }
+  margin: {
+    bottom: 10px;
+  }
 }
 
 .show-more-reviews-btn {
@@ -284,4 +304,16 @@ $modalBgColor: skyblue;
     cursor: pointer;
     display: inline;
   }
+}
+
+.helpful {
+  margin: {
+    top: 15px;
+    bottom: 15px;
+  }
+}
+
+.helpful-btn {
+  text-decoration: underline;
+  cursor: pointer;
 }

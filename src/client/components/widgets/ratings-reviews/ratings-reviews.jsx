@@ -10,7 +10,7 @@ import '../../../assets/scss/ratings-reviews.scss';
 class RatingsReviews extends React.Component {
   constructor(props) {
     super(props);
-    this.props.getReviewMetadata();
+    //this.props.getReviewMetadata();
     this.props.getReviewsByProduct();
     this.state = {
       addReview: false,

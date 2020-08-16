@@ -1,7 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 
 class Helpful extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   clickYes() {
     axios
       .put(`/reviews/helpful/:${this.props.reviewId}`)
@@ -15,21 +20,19 @@ class Helpful extends React.Component {
   render() {
     return (
       <div className='helpful'>
-        Was this review helpful?
-        <div className='helpful-yes'>
-          <span className='helpful-btn' onClick={this.clickYes}>
-            Yes
-          </span>
-          &nbsp;(
-          {this.props.helpful})
-        </div>
+        Was this review helpful?&nbsp;
+        <span className='helpful-btn' onClick={this.clickYes}>
+          Yes
+        </span>
+        &nbsp;(
+        {this.props.helpful})
       </div>
     );
   }
 }
 
 Helpful.propTypes = {
-  helpful: PropTypes.string.isRequired,
+  helpful: PropTypes.number.isRequired,
   reviewId: PropTypes.number.isRequired,
 };
 
