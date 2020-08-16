@@ -7,6 +7,7 @@ import StaticStars from './static-stars';
 import ReviewTileSummary from './review-tile-summary';
 import ReviewTileUsername from './review-tile-username';
 import ReviewTileResponse from './review-tile-response';
+import Helpful from './helpful';
 import '../../../assets/icons';
 
 class ReviewTile extends React.Component {
@@ -63,6 +64,7 @@ class ReviewTile extends React.Component {
         {this.props.response && (
           <ReviewTileResponse response={this.props.response} />
         )}
+        <Helpful helpful={this.props.helpful} reviewId={this.props.id} />
       </div>
     );
   }
@@ -84,4 +86,6 @@ ReviewTile.propTypes = {
   rating: PropTypes.number.isRequired,
   username: PropTypes.string.isRequired,
   handleSelectImg: PropTypes.func.isRequired,
+  id: PropTypes.number.isRequired,
+  helpful: PropTypes.number.isRequired,
 };

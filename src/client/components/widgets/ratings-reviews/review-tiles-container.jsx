@@ -45,6 +45,8 @@ class ReviewTilesContainer extends React.Component {
           return (
             <ReviewTile
               key={review.review_id}
+              id={review.review_id}
+              helpful={review.helpfulness}
               date={new Date(review.date)}
               summary={review.summary}
               body={review.body}

@@ -10,6 +10,7 @@ class RatingBreakdown extends React.Component {
     });
     return (
       <div className='rating-breakdown'>
+        <span className='rating-breakdown-header'>Rating Breakdown</span>
         {[...new Array(5)].map((ele, index) => {
           return (
             <RatingBreakdownBar
