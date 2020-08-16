@@ -19,7 +19,7 @@ class RatingBreakdownBar extends React.Component {
             position: 'relative',
             display: 'inline-block',
             height: '12px',
-            width: '80%',
+            width: '100%',
             marginLeft: '5px',
           }}
         >

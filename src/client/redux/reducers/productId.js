@@ -1,4 +1,4 @@
-function productId(state = 3, action) {
+function productId(state = 5, action) {
   switch (action.type) {
     case 'CHANGE_PRODUCT_ID':
       return action.data;
