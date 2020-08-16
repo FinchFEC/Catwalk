@@ -56,7 +56,7 @@ const RelatedList = ({ relatedInfo }) => {
   return (
     <div>
       <div id="container-1">
-        <h2>RELATED PRODUCTS</h2>
+        <h3>RELATED PRODUCTS</h3>
         {relatedThings.map((item) => (
           <RelatedItem item={item} />
         ))}

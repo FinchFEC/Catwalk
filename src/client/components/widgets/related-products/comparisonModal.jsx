@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const ComparisonModal = () => (
   <div className="modal">
-    <h2>COMPARISON MODAL</h2>
+    <h3>COMPARISON MODAL</h3>
     <div id="modal">
       <div id="modal-1">
         <h3>Product A</h3>

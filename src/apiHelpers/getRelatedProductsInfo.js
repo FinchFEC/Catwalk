@@ -9,14 +9,12 @@ function getRelatedProductsInfo(productId) {
         arrOfUrls.push(`http://18.224.200.47/products/${id}`);
       });
       return Promise.all(arrOfUrls.map((url) => axios.get(url)));
-      // const promiseArray = arrOfUrls.map((url) => axios.get(url));
-      // console.log('---promiseArray: ', promiseArray);
-      // axios.all(promiseArray);
     })
     .then((results) => {
       console.log('---results of axiosAll: ', results);
       return results;
     })
+    .catch((err) => console.error(err));
 }
 
 export default getRelatedProductsInfo;
