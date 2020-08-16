@@ -1,5 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 import RelatedItem from "./relatedItem.jsx";
+import ComparisonModal from "./comparisonModal";
 
 const relatedItems = [
   {
@@ -49,14 +51,25 @@ const relatedItems = [
   },
 ];
 
-const RelatedList = () => (
-  <div id="container-1">
-    <h1>RELATED PRODUCTS</h1>
-    <br />
-    {relatedItems.map((item) => (
-      <RelatedItem item={item} />
-    ))}
-  </div>
-);
+const RelatedList = ({ relatedInfo }) => {
+  const relatedThings = relatedInfo || relatedItems;
+  return (
+    <div>
+      <div id="container-1">
+        <h2>RELATED PRODUCTS</h2>
+        {relatedThings.map((item) => (
+          <RelatedItem item={item} />
+        ))}
+      </div>
+      <div>
+        <ComparisonModal />
+      </div>
+    </div>
+  );
+};
+
+RelatedList.propTypes = {
+  relatedInfo: PropTypes.array.isRequired,
+};
 
 export default RelatedList;
