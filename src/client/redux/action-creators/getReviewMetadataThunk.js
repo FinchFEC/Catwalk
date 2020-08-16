@@ -2,16 +2,34 @@ import getReviewMetadata from '../../../apiHelpers/getReviewMetadata';
 
 export default function getReviewMetadataThunk() {
   return (dispatch, getState) => {
-    getReviewMetadata(getState().productId).then((data) => {
-      dispatch({ type: 'GET_REVIEW_RATINGS', ratings: data.data.ratings });
-      dispatch({
-        type: 'GET_REVIEW_RECOMMENDED',
-        recommended: data.data.recommended,
-      });
-      dispatch({
-        type: 'GET_REVIEW_CHARACTERISTICS',
-        characteristics: data.data.characteristics,
-      });
+    dispatch({
+      type: 'GET_REVIEW_RATINGS',
+      ratings: {
+        2: 1,
+        3: 1,
+        4: 2,
+      },
+    });
+    dispatch({
+      type: 'GET_REVIEW_RECOMMENDED',
+      recommended: { 0: 2, 1: 2 },
+    });
+    dispatch({
+      type: 'GET_REVIEW_CHARACTERISTICS',
+      characteristics: {
+        Size: {
+          id: 14,
+          value: '4.0000',
+        },
+        Width: {
+          id: 15,
+          value: '3.5000',
+        },
+        Comfort: {
+          id: 16,
+          value: '4.0000',
+        },
+      },
     });
   };
 }

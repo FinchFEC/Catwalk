@@ -28,6 +28,16 @@ $formFontSize: 16px;
   float: right;
 }
 
+.rating-breakdown-header {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.breakdown-bar-rating {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .star-container {
   margin: {
     left: 1px;
@@ -152,8 +162,8 @@ $formFontSize: 16px;
 
 .review-recommend {
   margin: {
-    bottom: 10px;
-    top: 10px;
+    bottom: 12px;
+    top: 12px;
   }
 }
 

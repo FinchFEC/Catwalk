@@ -8,7 +8,7 @@ class RatingBreakdownBar extends React.Component {
         <span
           className='breakdown-bar-rating'
           onClick={() => this.props.onClick(this.props.rating)}
-          style={{ boxSizing: 'border-box', padding: '5px', width: '20%' }}
+          style={{ boxSizing: 'border-box', width: '20%' }}
         >
           {this.props.rating}
           &nbsp;Star
@@ -19,7 +19,7 @@ class RatingBreakdownBar extends React.Component {
             position: 'relative',
             display: 'inline-block',
             height: '12px',
-            width: '100%',
+            width: '80%',
             marginLeft: '5px',
           }}
         >

@@ -10,11 +10,11 @@ import '../../../assets/scss/ratings-reviews.scss';
 class RatingsReviews extends React.Component {
   constructor(props) {
     super(props);
-    //this.props.getReviewMetadata();
+    this.props.getReviewMetadata();
     this.props.getReviewsByProduct();
     this.state = {
       addReview: false,
-      filters: {},
+      filters: [],
       selectedImgUrl: '',
       selectedImgId: '',
     };
@@ -49,14 +49,15 @@ class RatingsReviews extends React.Component {
 
   handleFilterClick(rating) {
     this.setState((state) => {
-      if (state.filters.hasOwnProperty(rating)) {
-        const newFilters = { ...state.filters };
-        delete newFilters[rating];
+      const index = state.filters.indexOf(rating);
+      if (index >= 0) {
+        const newFilters = [...state.filters];
+        newFilters.splice(index, 1);
         return {
           filters: newFilters,
         };
       }
-      const newFilters = { ...state.filters, [rating]: true };
+      const newFilters = [...state.filters, rating];
       return {
         filters: newFilters,
       };
@@ -90,6 +91,7 @@ class RatingsReviews extends React.Component {
               onClick={this.props.getReviewsByProduct}
               onChangeSort={this.props.changeSort}
               sort={this.props.sort}
+              filters={this.state.filters}
             />
           )}
           <div
