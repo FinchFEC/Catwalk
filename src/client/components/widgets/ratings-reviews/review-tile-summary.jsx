@@ -12,7 +12,7 @@ class ReviewTileSummary extends React.Component {
         >
           {reviewSummaryLength <= 60
             ? this.props.reviewSummary
-            : `${this.props.reviewSummary.slice(0, 61)}'...'`}
+            : `${this.props.reviewSummary.slice(0, 61)}...`}
         </div>
         {reviewSummaryLength > 60 && (
           <div className='review-tile-summary-wrap'>

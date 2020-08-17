@@ -10,11 +10,12 @@ class RatingBreakdown extends React.Component {
     });
     return (
       <div className='rating-breakdown'>
+        <span className='rating-breakdown-header'>Rating Breakdown</span>
         {[...new Array(5)].map((ele, index) => {
           return (
             <RatingBreakdownBar
               key={index}
-              rating={index + 1}
+              rating={index + 1 + ' Star'}
               percent={
                 this.props.ratings[index + 1]
                   ? (this.props.ratings[index + 1] / ratingsCount) * 100

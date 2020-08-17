@@ -18,9 +18,13 @@ const Description = () => {
       </div>
       <div className="features-box">
         <p id="features">
-          <GrCheckmark /> Fabric: 100% Cotton
-          <br></br>
-          <GrCheckmark /> Cut: Skinny
+          <GrCheckmark />
+          {' '}
+          Fabric: 100% Cotton
+          <br />
+          <GrCheckmark />
+          {' '}
+          Cut: Skinny
         </p>
       </div>
     </div>

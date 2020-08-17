@@ -7,11 +7,12 @@ class RatingBreakdownBar extends React.Component {
       <div className='rating-breakdown-bar'>
         <span
           className='breakdown-bar-rating'
-          onClick={() => this.props.onClick(this.props.rating)}
-          style={{ boxSizing: 'border-box', padding: '5px', width: '20%' }}
+          onClick={() =>
+            this.props.onClick(parseInt(this.props.rating.slice(0, 1)))
+          }
+          style={{ boxSizing: 'border-box', width: '20%' }}
         >
           {this.props.rating}
-          &nbsp;Star
         </span>
         <span
           className='breakdown-bar'
@@ -19,7 +20,7 @@ class RatingBreakdownBar extends React.Component {
             position: 'relative',
             display: 'inline-block',
             height: '12px',
-            width: '100%',
+            width: '80%',
             marginLeft: '5px',
           }}
         >
@@ -49,8 +50,12 @@ class RatingBreakdownBar extends React.Component {
   }
 }
 
+RatingBreakdownBar.defaultProps = {
+  onClick: () => {},
+};
+
 RatingBreakdownBar.propTypes = {
-  rating: PropTypes.number.isRequired,
+  rating: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   percent: PropTypes.number.isRequired,
   onClick: PropTypes.func,
 };

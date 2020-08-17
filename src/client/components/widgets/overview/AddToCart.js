@@ -1,28 +1,28 @@
-import React from "react";
-import "../../../assets/scss/overview.scss";
+import React from 'react';
+import '../../../assets/scss/overview.scss';
 //import { IoIosArrowDown } from "react-icons/io";
-import { AiOutlinePlus, AiOutlineStar } from "react-icons/ai";
+import { AiOutlinePlus, AiOutlineStar } from 'react-icons/ai';
 
 const AddToCart = () => {
   return (
-    <div className="add-to-cart">
-      <div className="select-size">
-        <select className="select-size-box">
-          <option value="0">SELECT SIZE</option>
+    <div className='add-to-cart'>
+      <div className='select-size'>
+        <select className='select-size-box'>
+          <option value='0'>SELECT SIZE</option>
         </select>
-        <select className="quantity-box">
-          <option value="0">1</option>
+        <select className='quantity-box'>
+          <option value='0'>1</option>
         </select>
       </div>
 
-      <div className="add-to-bag">
-        <button className="add-to-bag-box">
+      <div className='add-to-bag'>
+        <button className='add-to-bag-box'>
           ADD TO BAG
-          <span id="add-icon">
+          <span id='add-icon'>
             <AiOutlinePlus />
           </span>
         </button>
-        <button className="add-to-favorites">
+        <button className='add-to-favorites'>
           <AiOutlineStar />
         </button>
       </div>

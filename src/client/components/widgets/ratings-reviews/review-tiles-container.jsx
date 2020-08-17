@@ -6,6 +6,16 @@ import '../../../assets/icons';
 
 class ReviewTilesContainer extends React.Component {
   render() {
+    let reviews = this.props.reviews;
+    if (this.props.filters.length > 0) {
+      reviews = reviews.filter((review) => {
+        if (this.props.filters.includes(review.rating)) {
+          return true;
+        }
+        return false;
+      });
+    }
+
     return (
       <div className='review-tile-container'>
         <div className='dropdown'>
@@ -41,10 +51,12 @@ class ReviewTilesContainer extends React.Component {
           </div>
         </div>
 
-        {this.props.reviews.map((review) => {
+        {reviews.map((review) => {
           return (
             <ReviewTile
               key={review.review_id}
+              id={review.review_id}
+              helpful={review.helpfulness}
               date={new Date(review.date)}
               summary={review.summary}
               body={review.body}
@@ -74,6 +86,7 @@ ReviewTilesContainer.propTypes = {
   onClick: PropTypes.func.isRequired,
   onChangeSort: PropTypes.func.isRequired,
   sort: PropTypes.string.isRequired,
+  filters: PropTypes.array.isRequired,
 };
 
 export default ReviewTilesContainer;

@@ -14,6 +14,7 @@ class AddReviewModal extends React.Component {
       summary: '',
       body: '',
       email: '',
+      username: '',
       imgs: [],
       characteristics: {},
       ratingText: ['Poor', 'Fair', 'Average', 'Good', 'Great'],
