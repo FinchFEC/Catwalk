@@ -10,7 +10,7 @@ const defaultState = [
   },
 ];
 
-function relatedReducer(state = defaultState, action) {
+function relatedInfo(state = defaultState, action) {
   switch (action.type) {
     case "GET_RELATED_INFO":
       return action.data;
@@ -19,4 +19,4 @@ function relatedReducer(state = defaultState, action) {
   }
 }
 
-export default relatedReducer;
+export default relatedInfo;

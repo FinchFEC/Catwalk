@@ -1,7 +1,6 @@
 $primary-color: #333;
 
 .overview-component {
-  width: 100%;
   position: relative;
   color: $primary-color;
   font-family: "adobe-clean", sans-serif;
@@ -70,6 +69,10 @@ $primary-color: #333;
       height: 73%;
       width: 50%;
       margin: auto;
+      background-image: url("https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80");
+      background-repeat: no-repeat;
+      background-size: 100px;
+      background-position: center;
     }
     #photo-2 {
       background-color: white;
@@ -79,6 +82,10 @@ $primary-color: #333;
       height: 73%;
       width: 50%;
       margin: auto;
+      background-image: url("https://images.unsplash.com/photo-1492447105260-2e947425b5cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80");
+      background-repeat: no-repeat;
+      background-size: 100px;
+      background-position: center;
     }
     #photo-3 {
       background-color: white;
@@ -88,6 +95,10 @@ $primary-color: #333;
       height: 73%;
       width: 50%;
       margin: auto;
+      background-image: url("https://images.unsplash.com/photo-1548133464-29abc661eb5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80");
+      background-repeat: no-repeat;
+      background-size: 100px;
+      background-position: center;
     }
     #photo-4 {
       border: solid 1px;
@@ -97,6 +108,10 @@ $primary-color: #333;
       height: 73%;
       width: 50%;
       margin: auto;
+      background-image: url("https://images.unsplash.com/photo-1554921148-83d8ceda2095?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80");
+      background-repeat: no-repeat;
+      background-size: 100px;
+      background-position: center;
     }
     #photo-5 {
       background-color: white;
@@ -107,6 +122,10 @@ $primary-color: #333;
       width: 50%;
       margin: auto;
       left: 19%;
+      background-image: url("https://images.unsplash.com/photo-1559304022-afbf28f53c4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80");
+      background-repeat: no-repeat;
+      background-size: 100px;
+      background-position: center;
     }
     #arrow-down {
       z-index: 1;
@@ -201,17 +220,44 @@ $primary-color: #333;
     grid-template-rows: repeat(2, 1fr);
     .select-size {
       grid-row: 1 / span 1;
-      .select-size-box select {
+      .select-size-box {
         position: relative;
         border: solid 2px;
         width: 50%;
         height: 60px;
+        font-weight: bold;
       }
-      .quantity select {
+      .quantity-box {
+        margin-left: 15px;
+        position: relative;
         border: solid 2px;
+        width: 30%;
+        height: 60px;
+        font-weight: bold;
       }
-      #arrow {
-        float: right;
+    }
+    .add-to-bag {
+      grid-row: 2 / span 1;
+      margin-top: 20px;
+      .add-to-bag-box {
+        position: relative;
+        border: solid 2px;
+        width: 60%;
+        height: 60px;
+        font-weight: bold;
+        text-align: left;
+        #add-icon {
+          float: right;
+          font-weight: bold;
+        }
+      }
+      .add-to-favorites {
+        margin-left: 15px;
+        position: relative;
+        border: solid 2px;
+        width: 20%;
+        height: 60px;
+        font-weight: bold;
       }
     }
   }
