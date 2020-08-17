@@ -74,7 +74,7 @@ class AddReviewCharacteristicsInput extends React.Component {
             return (
               <div className='modal-input' key={characteristicArray[0]}>
                 <div>
-                  {characteristicArray[0]}*
+                  {characteristicArray[0]}*&nbsp;
                   {this.state[characteristicArray[0]] &&
                     this.state[`${characteristicArray[0]}Text`][
                       this.state[characteristicArray[0]] - 1

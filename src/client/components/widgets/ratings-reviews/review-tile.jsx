@@ -13,7 +13,6 @@ import '../../../assets/icons';
 class ReviewTile extends React.Component {
   constructor(props) {
     super(props);
-    console.log('reviewId:', props.id);
     this.state = {
       months: [
         'January',

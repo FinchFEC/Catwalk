@@ -5,15 +5,19 @@ import axios from 'axios';
 class Helpful extends React.Component {
   constructor(props) {
     super(props);
+    this.clickYes = this.clickYes.bind(this);
   }
 
   clickYes() {
     axios
       .put(`/reviews/helpful/:${this.props.reviewId}`)
-      .catch((err) => console.log(err))
       .then((data) => {
         console.log('marked helpful');
         console.log('data from markHelpful:', data);
+      })
+      .catch((err) => {
+        console.log('error send helpful put call');
+        console.log(err);
       });
   }
 

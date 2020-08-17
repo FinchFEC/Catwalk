@@ -52,7 +52,6 @@ class ReviewTilesContainer extends React.Component {
         </div>
 
         {reviews.map((review) => {
-          console.log(review.rating);
           return (
             <ReviewTile
               key={review.review_id}
