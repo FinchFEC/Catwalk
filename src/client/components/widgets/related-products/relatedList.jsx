@@ -1,68 +1,40 @@
 import React from "react";
 import PropTypes from "prop-types";
 import RelatedItem from "./relatedItem.jsx";
-import ComparisonModal from "./comparisonModal";
 
 const relatedItems = [
   {
-    number: 1,
-    price: 25,
-    stars: "***",
-    name: "Hat 1",
-    type: "Hat",
-    image:
-      "https://images.unsplash.com/photo-1514327605112-b887c0e61c0a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
+    data: { results: [{ photos: [{ url: "" }] }] },
   },
   {
-    number: 2,
-    price: 25,
-    stars: "***",
-    name: "Hat 2",
-    type: "Hat",
-    image:
-      "https://images.unsplash.com/photo-1521369909029-2afed882baee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+    data: { results: [{ photos: [{ url: "" }] }] },
   },
   {
-    number: 3,
-    price: 25,
-    stars: "***",
-    name: "Hat 3",
-    type: "Hat",
-    image:
-      "https://images.unsplash.com/photo-1556306535-0f09a537f0a3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+    data: { results: [{ photos: [{ url: "" }] }] },
   },
   {
-    number: 4,
-    price: 25,
-    stars: "***",
-    name: "Hat 4",
-    type: "Hat",
-    image:
-      "https://images.unsplash.com/photo-1517423568366-8b83523034fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+    data: { results: [{ photos: [{ url: "" }] }] },
   },
   {
-    number: 5,
-    price: 25,
-    stars: "***",
-    name: "Hat 5",
-    type: "Hat",
-    image:
-      "https://images.unsplash.com/photo-1517941823-815bea90d291?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+    data: { results: [{ photos: [{ url: "" }] }] },
   },
 ];
 
-const RelatedList = ({ relatedInfo }) => {
-  const relatedThings = relatedInfo || relatedItems;
+const RelatedList = ({ relatedInfo, relatedImages }) => {
+  const arrOfItemsAndImages = [];
+  for (let i = 0; i < relatedInfo.length; i++) {
+    arrOfItemsAndImages.push({
+      info: relatedInfo[i],
+      image: relatedImages[i] || relatedItems[i],
+    });
+  }
   return (
     <div>
       <div id="container-1">
         <h3>RELATED PRODUCTS</h3>
-        {relatedThings.map((item) => (
+        {arrOfItemsAndImages.map((item) => (
           <RelatedItem item={item} />
         ))}
-      </div>
-      <div>
-        <ComparisonModal />
       </div>
     </div>
   );
@@ -70,6 +42,7 @@ const RelatedList = ({ relatedInfo }) => {
 
 RelatedList.propTypes = {
   relatedInfo: PropTypes.array.isRequired,
+  relatedImages: PropTypes.array.isRequired,
 };
 
 export default RelatedList;

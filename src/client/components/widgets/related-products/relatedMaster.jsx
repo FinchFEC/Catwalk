@@ -8,12 +8,13 @@ class RelatedProducts extends React.Component {
   constructor(props) {
     super(props);
     this.props.getRelatedProductsInfo(4);
+    this.props.getAllRelatedImages(4);
   }
-
+  
   render() {
     return (
       <div>
-        <RelatedList relatedInfo={this.props.relatedInfo} />
+        <RelatedList relatedInfo={this.props.relatedInfo} relatedImages={this.props.relatedImages} />
         <OutfitList />
       </div>
     );
@@ -24,7 +25,9 @@ class RelatedProducts extends React.Component {
 
 RelatedProducts.propTypes = {
   relatedInfo: PropTypes.array.isRequired,
+  relatedImages: PropTypes.array.isRequired,
   getRelatedProductsInfo: PropTypes.func.isRequired,
+  getAllRelatedImages: PropTypes.func.isRequired,
 };
 
 export default RelatedProducts;

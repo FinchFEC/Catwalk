@@ -1,11 +1,11 @@
 import getProducts from './getProducts';
 import getReviewsByProduct from './getReviewsByProduct';
 import getRelatedProductsInfo from './getRelatedProductsInfo.js';
-import getDefaultImage from './getDefaultImage';
+import getAllRelatedImages from './getAllRelatedImages';
 
 export default {
   getProducts,
   getReviewsByProduct,
   getRelatedProductsInfo,
-  getDefaultImage
+  getAllRelatedImages
 };
