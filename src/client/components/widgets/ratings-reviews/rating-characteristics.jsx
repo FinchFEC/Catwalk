@@ -9,9 +9,10 @@ class RatingCharacteristics extends React.Component {
         {Object.entries(this.props.characteristics).map((ele, i) => {
           return (
             <div className='ratings-characteristics-header' key={i}>
+              <div>{ele[0]}</div>
               <RatingBreakdownBar
-                rating={ele[0]}
-                percent={((ele[1].value / 5) * 100).toFixed(2)}
+                rating=''
+                percent={parseInt(((ele[1].value / 5) * 100).toFixed(2))}
               />
             </div>
           );

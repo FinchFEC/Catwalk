@@ -7,7 +7,9 @@ class RatingBreakdownBar extends React.Component {
       <div className='rating-breakdown-bar'>
         <span
           className='breakdown-bar-rating'
-          onClick={() => this.props.onClick(this.props.rating)}
+          onClick={() =>
+            this.props.onClick(parseInt(this.props.rating.slice(0, 1)))
+          }
           style={{ boxSizing: 'border-box', width: '20%' }}
         >
           {this.props.rating}

@@ -12,7 +12,7 @@ const AddToCart = () => {
             <option value="0">SELECT SIZE</option>
           </select>
         </div>
-        <div className="quantity"></div>
+        <div className="quantity" />
       </div>
       <div className="add-to-bag">
         <div className="add-to-bag-box">
