@@ -1,10 +1,10 @@
 import { connect } from "react-redux";
-import ComparisonModal from "../../components/widgets/related-products/comparisonModal.jsx";
-import toggleComparison from "../action-creators/toggleComparison";
+import ComparisonModal from "../../../components/widgets/related-products/comparisonModal.jsx";
+import toggleComparison from "../../action-creators/relatedActions/toggleComparison";
 
 function mapStateToProps(state) {
   return {
-    comparison: state.comparison,
+    showComparison: state.comparison,
   };
 }
 

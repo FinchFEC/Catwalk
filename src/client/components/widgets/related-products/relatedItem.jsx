@@ -1,14 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
-import ComparisonModalContainer from "../../../redux/containers/comparisonModalContainer";
+// import ComparisonModalContainer from "../../../redux/containers/relatedContainers/comparisonModalContainer";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const RelatedItem = ({ item }) => {
+const RelatedItem = ({ item, toggleComparison }) => {
+  const itemUrl = item.image.data.results[0].photos[0].url;
   return (
     <div id={`box-${item.info.data.id}`}>
-      <ComparisonModalContainer />
+      <FontAwesomeIcon icon={['far', 'star']} onClick={toggleComparison} />
+      <button onClick={() => toggleComparison()} type="button">Compare</button>
       <img
-        src={item.image.data.results[0].photos[0].url}
-        alt=""
+        src={itemUrl}
+        alt={item.image.data.results[0].photos[0].thumbnail_url}
         width="128px"
       />
       <p>{item.info.data.category}</p>
@@ -21,6 +24,7 @@ const RelatedItem = ({ item }) => {
 
 RelatedItem.propTypes = {
   item: PropTypes.object.isRequired,
+  toggleComparison: PropTypes.func.isRequired
 };
 
 export default RelatedItem;

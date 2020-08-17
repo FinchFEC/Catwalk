@@ -10,9 +10,9 @@ import noMoreReviews from './noMoreReviews';
 import sort from './sort';
 import page from './page';
 import productId from './productId';
-import relatedInfo from './relatedInfoReducer';
-import relatedImages from './relatedImagesReducer';
-import showComparison from './comparisonReducer';
+import relatedInfo from './relatedReducers/relatedInfoReducer';
+import relatedImages from './relatedReducers/relatedImagesReducer';
+import comparison from './relatedReducers/comparisonReducer';
 
 
 const rootReducer = combineReducers({
@@ -27,7 +27,7 @@ const rootReducer = combineReducers({
   page,
   relatedInfo,
   relatedImages,
-  showComparison
+  showComparison: comparison
 });
 
 export default rootReducer;
