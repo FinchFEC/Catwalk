@@ -87,12 +87,12 @@ class AddReviewModal extends React.Component {
         onClick={this.props.onClick}
       >
         <div className='review-modal-content'>
-          <div>Write your review about </div>
+          <h3 className='review-modal-header'>Write your review about </h3>
           Rating* <DynamicStars onClick={this.handleStarClick} />
           {this.state.rating && this.state.ratingText[this.state.rating - 1]}
           <form action='' method='post' onSubmit={this.handleSubmit}>
             <div className='modal-input'>
-              Do you recommend this product?*
+              Do you recommend this product?*&nbsp;
               <label htmlFor='recommendYes'>
                 Yes
                 <input
@@ -119,18 +119,22 @@ class AddReviewModal extends React.Component {
               characteristics={this.props.characteristics}
               onChange={this.handleCharacteristicInputChange}
             />
-            Summary
-            <label htmlFor='summary'>
-              <input
-                id='summary'
-                name='summary'
-                value={this.state.summary}
-                onChange={this.handleInputChange}
-                maxLength='60'
-              />
-            </label>
             <div className='modal-input'>
-              Body*
+              <div>Summary</div>
+              <label htmlFor='summary'>
+                <input
+                  id='summary'
+                  name='summary'
+                  value={this.state.summary}
+                  onChange={this.handleInputChange}
+                  maxLength='60'
+                  className='add-review-modal-text-input'
+                  placeholder='Summary'
+                />
+              </label>
+            </div>
+            <div className='modal-input'>
+              <div>Body*</div>
               <label htmlFor='body'>
                 <input
                   id='body'
@@ -138,7 +142,9 @@ class AddReviewModal extends React.Component {
                   value={this.state.body}
                   onChange={this.handleInputChange}
                   minLength='50'
+                  className='add-review-modal-text-input'
                   required
+                  placeholder='Review Body'
                 />
               </label>
               <div>
@@ -148,19 +154,21 @@ class AddReviewModal extends React.Component {
             </div>
             <div className='modal-input'>
               <label htmlFor='usernameInput'>
-                Username*
+                <div>Username*</div>
                 <input
                   name='username'
                   id='usernameInput'
                   value={this.state.username}
                   onChange={this.handleInputChange}
+                  className='add-review-modal-text-input'
                   required
+                  placeholder='Username'
                 />
               </label>
             </div>
             <div className='modal-input'>
               <label htmlFor='emailInput'>
-                Email*
+                <div>Email*</div>
                 <input
                   name='email'
                   type='email'
@@ -168,7 +176,9 @@ class AddReviewModal extends React.Component {
                   value={this.state.email}
                   onChange={this.handleInputChange}
                   maxLength='60'
+                  className='add-review-modal-text-input'
                   required
+                  placeholder='Email'
                 />
               </label>
             </div>

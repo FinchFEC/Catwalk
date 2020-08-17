@@ -11,7 +11,7 @@ class Helpful extends React.Component {
 
   clickYes() {
     axios
-      .put(`/reviews/helpful/:${this.props.reviewId}`)
+      .put(`http://18.224.37.110/reviews/helpful/:${this.props.reviewId}`)
       .then((data) => {
         console.log('marked helpful');
         console.log('data from clickYes:', data);
