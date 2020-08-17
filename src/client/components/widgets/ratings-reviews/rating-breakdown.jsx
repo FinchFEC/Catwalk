@@ -15,7 +15,7 @@ class RatingBreakdown extends React.Component {
           return (
             <RatingBreakdownBar
               key={index}
-              rating={index + 1}
+              rating={index + 1 + ' Star'}
               percent={
                 this.props.ratings[index + 1]
                   ? (this.props.ratings[index + 1] / ratingsCount) * 100

@@ -11,7 +11,6 @@ class RatingBreakdownBar extends React.Component {
           style={{ boxSizing: 'border-box', width: '20%' }}
         >
           {this.props.rating}
-          &nbsp;Star
         </span>
         <span
           className='breakdown-bar'
@@ -49,8 +48,12 @@ class RatingBreakdownBar extends React.Component {
   }
 }
 
+RatingBreakdownBar.defaultProps = {
+  onClick: () => {},
+};
+
 RatingBreakdownBar.propTypes = {
-  rating: PropTypes.number.isRequired,
+  rating: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   percent: PropTypes.number.isRequired,
   onClick: PropTypes.func,
 };
