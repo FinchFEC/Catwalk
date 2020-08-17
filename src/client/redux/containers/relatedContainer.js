@@ -1,17 +1,22 @@
-import { connect } from 'react-redux';
-import RelatedProducts from '../../components/widgets/related-products/relatedMaster.jsx';
+import { connect } from "react-redux";
+import RelatedProducts from "../../components/widgets/related-products/relatedMaster.jsx";
 import getRelatedProductsInfo from '../action-creators/getRelatedProductsInfo';
+import getAllRelatedImages from '../action-creators/getAllRelatedImages';
 
 function mapStateToProps(state) {
   return {
-    relatedInfo: state.relatedInfo
-  }
+    relatedInfo: state.relatedInfo,
+    relatedImages: state.relatedImages
+  };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    getRelatedProductsInfo(productId) {
-      dispatch(getRelatedProductsInfo(productId));
+    getRelatedProductsInfo(prodId) {
+      dispatch(getRelatedProductsInfo(prodId));
+    },
+    getAllRelatedImages(prodId) {
+      dispatch(getAllRelatedImages(prodId));
     },
   };
 }
