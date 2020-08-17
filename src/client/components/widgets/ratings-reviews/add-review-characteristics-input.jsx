@@ -13,19 +13,9 @@ class AddReviewCharacteristicsInput extends React.Component {
       Fit: null,
       SizeText: [
         'A size too small',
-        <>
-          <sup>1</sup>
-          &frasl;
-          <sub>2</sub>
-          &nbsp;a size too small
-        </>,
+        '1/2 a size too small',
         'Perfect',
-        <>
-          <sup>1</sup>
-          &frasl;
-          <sub>2</sub>
-          &nbsp;a size too big
-        </>,
+        '1/2 a size too big',
         'A size too wide',
       ],
       WidthText: [
@@ -73,13 +63,7 @@ class AddReviewCharacteristicsInput extends React.Component {
           (characteristicArray) => {
             return (
               <div className='modal-input' key={characteristicArray[0]}>
-                <div>
-                  {characteristicArray[0]}*&nbsp;
-                  {this.state[characteristicArray[0]] &&
-                    this.state[`${characteristicArray[0]}Text`][
-                      this.state[characteristicArray[0]] - 1
-                    ]}
-                </div>
+                <div>{characteristicArray[0]}*&nbsp;</div>
                 {[...new Array(5)].map((ele, i) => {
                   return (
                     <label htmlFor={`${characteristicArray[0]}-${i}`} key={i}>
@@ -94,7 +78,7 @@ class AddReviewCharacteristicsInput extends React.Component {
                         }}
                         required
                       />
-                      {i + 1}
+                      {this.state[`${characteristicArray[0]}Text`][i]}
                     </label>
                   );
                 })}

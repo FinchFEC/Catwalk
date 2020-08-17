@@ -328,7 +328,17 @@ $modalBgColor: skyblue;
   }
 }
 
-.helpful-btn {
-  text-decoration: underline;
+.helpful-btn,
+.review-report {
   cursor: pointer;
+}
+
+.helpful-btn {
+  padding-right: 10px;
+}
+
+.review-report {
+  text-decoration: underline;
+  padding-left: 10px;
+  border-left: 1px solid black;
 }
