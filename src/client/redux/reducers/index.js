@@ -13,7 +13,7 @@ import productId from './productId';
 import relatedInfo from './relatedReducers/relatedInfoReducer';
 import relatedImages from './relatedReducers/relatedImagesReducer';
 import comparison from './relatedReducers/comparisonReducer';
-
+import currentInfo from './currentInfoReducer';
 
 const rootReducer = combineReducers({
   productList,
@@ -27,7 +27,8 @@ const rootReducer = combineReducers({
   page,
   relatedInfo,
   relatedImages,
-  showComparison: comparison
+  showComparison: comparison,
+  currentInfo
 });
 
 export default rootReducer;

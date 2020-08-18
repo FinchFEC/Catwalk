@@ -43,7 +43,6 @@ const RelatedList = ({
       image: relatedImages[i] || relatedItems[i],
     });
   }
-  console.log('----comparison', showComparison);
   return (
     <div>
       <div id="container-1">
@@ -51,7 +50,7 @@ const RelatedList = ({
           <RelatedItem item={item} toggleComparison={toggleComparison} />
         ))}
       </div>
-      {showComparison && <ComparisonModal />}
+      {showComparison && <ComparisonModal toggleComparison={toggleComparison} relatedInfo={relatedInfo} />}
     </div>
   );
 };

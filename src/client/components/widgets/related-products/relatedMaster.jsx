@@ -7,12 +7,12 @@ import "../../../assets/scss/related.scss";
 class RelatedMaster extends React.Component {
   constructor(props) {
     super(props);
+    props.getCurrentProductInfo(props.productId);
     props.getRelatedProductsInfo(props.productId);
     props.getAllRelatedImages(props.productId);
   }
   
   render() {
-    console.log('--props.showComparison', this.props.showComparison);
     return (
       <div>
         <h3>RELATED PRODUCTS</h3>
@@ -21,6 +21,7 @@ class RelatedMaster extends React.Component {
           relatedImages={this.props.relatedImages}
           toggleComparison={this.props.toggleComparison}
           showComparison={this.props.showComparison}
+          currentInfo={this.props.currentInfo}
         />
         <h3>YOUR OUTFIT</h3>
         <OutfitList />
@@ -37,6 +38,8 @@ RelatedMaster.propTypes = {
   relatedInfo: PropTypes.array.isRequired,
   relatedImages: PropTypes.array.isRequired,
   productId: PropTypes.number.isRequired,
+  getCurrentProductInfo: PropTypes.func.isRequired,
+  currentInfo: PropTypes.object.isRequired
 };
 
 export default RelatedMaster;
