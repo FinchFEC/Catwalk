@@ -55,8 +55,8 @@ describe('Product Page', () => {
     expect(pageTitle).toBe('FEC-Project');
   });
 
-  test('should render the review-tile-container', async () => {
-    await page.waitForSelector('.review-tile-container', {
+  test('should render the review-tiles-container', async () => {
+    await page.waitForSelector('.review-tiles-container', {
       visible: true,
       timeout: 5000,
     });

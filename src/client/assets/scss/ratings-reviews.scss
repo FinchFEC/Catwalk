@@ -14,7 +14,7 @@ $formFontSize: 14px;
   }
   display: grid;
   grid-template-columns: 2fr 6fr;
-  column-gap: 15px;
+  column-gap: 25px;
   margin-bottom: 100px;
   margin-top: 50px;
 }
@@ -26,6 +26,10 @@ $formFontSize: 14px;
 
 .ratings-summary .stars-container {
   float: right;
+}
+
+.rating-breakdown .rating-breakdown-bar {
+  margin-bottom: 8px;
 }
 
 .rating-breakdown-header {
@@ -53,23 +57,26 @@ $formFontSize: 14px;
 }
 
 .rating-breakdown-bar {
-  margin: {
-    bottom: 10px;
-  }
+  position: relative;
 }
 
 .rating-breakdown {
   margin-top: 10px;
 }
 
-.review-tile-container {
+.breakdown-bar {
+  min-width: 80%;
+}
+
+.review-tiles-container {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 25px;
 }
 
 .dropdown {
   display: inline-block;
   position: relative;
-  min-width: 15%;
   font-family: Helvetica, sans-serif;
   font-size: 20px;
 }
@@ -154,6 +161,7 @@ $formFontSize: 14px;
 }
 
 .review-tile-text-body {
+  max-width: 100%;
   margin: {
     top: 12px;
     bottom: 12px;
@@ -302,21 +310,6 @@ $formFontSize: 14px;
   grid-template-columns: repeat(5, 1fr);
 }
 
-// .add-review-btn {
-//   font: {
-//     size: 20px;
-//   }
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   cursor: pointer;
-//   min-width: 25%;
-//   padding: 15px;
-//   border: 1px solid black {
-
-//   }
-// }
-
 .add-review-btn {
   text-align: center;
   font: {
@@ -405,6 +398,10 @@ $modalBgColor: skyblue;
 .rating-characteristics .breakdown-bar-rating {
   text-decoration: none;
   cursor: default;
+}
+
+.rating-characteristics .breakdown-bar {
+  width: 100%;
 }
 
 .radio-group {
