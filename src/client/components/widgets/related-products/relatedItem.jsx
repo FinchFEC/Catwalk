@@ -7,16 +7,13 @@ const RelatedItem = ({ item, toggleComparison, changeCompared }) => {
   const itemUrl = item.image.data.results[0].photos[0].url;
   return (
     <div id={`box-${item.info.data.id}`}>
-      <FontAwesomeIcon icon={["far", "star"]} onClick={toggleComparison} />
-      <button
+      <FontAwesomeIcon
         onClick={() => {
           toggleComparison();
           changeCompared(item.info);
         }}
-        type="button"
-      >
-        Compare
-      </button>
+        icon={["far", "star"]}
+      />
       <img
         src={itemUrl}
         alt={item.image.data.results[0].photos[0].thumbnail_url}

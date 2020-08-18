@@ -13,7 +13,7 @@ const ComparisonModal = ({
         X
       </button>
       <div id="modal">
-        <h3>Comparing</h3>
+        <h4>Comparing</h4>
         <div id="modal-1">
           <h3>{currentInfo.name}</h3>
           <ul>

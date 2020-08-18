@@ -1,3 +1,7 @@
+// * {
+//   box-sizing: border-box;
+// }
+
 #container-1 {
   display: flex;
   align-items: flex-end;
@@ -20,6 +24,12 @@
   width: fit-content;
   padding: 10px;
   border: 2px black solid;
+  align-items: flex-end;
+  h4 {
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-bottom: auto;
+  }
   h3 {
     border: 2px black solid;
     padding-left: 40px;
@@ -31,7 +41,6 @@
   }
 }
 
-.modal {
-  display: unset;
+.head_related {
+  margin-left: 200px;
 }
-
