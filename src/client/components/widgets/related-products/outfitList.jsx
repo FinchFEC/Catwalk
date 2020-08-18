@@ -53,7 +53,6 @@ const selectedOutfit = [
 
 const OutfitList = () => (
   <div id="container-2">
-    <h3>YOUR OUTFIT</h3>
     {selectedOutfit.map((item) => (
       <OutfitItem item={item} />
     ))}

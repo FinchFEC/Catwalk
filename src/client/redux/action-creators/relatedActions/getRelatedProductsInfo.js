@@ -1,4 +1,4 @@
-import apiHelpers from '../../../apiHelpers';
+import apiHelpers from '../../../../apiHelpers';
 
 function getRelatedProductsInfo(productId) {
   return (dispatch) => {
