@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import RelatedItem from "./relatedItem.jsx";
 import ComparisonModal from "./comparisonModal";
@@ -35,7 +35,9 @@ const RelatedList = ({
   relatedImages,
   showComparison,
   toggleComparison,
+  currentInfo,
 }) => {
+  const [compared, setCompared] = useState(relatedImages[0]);
   const arrOfItemsAndImages = [];
   for (let i = 0; i < relatedInfo.length; i++) {
     arrOfItemsAndImages.push({
@@ -47,10 +49,17 @@ const RelatedList = ({
     <div>
       <div id="container-1">
         {arrOfItemsAndImages.map((item) => (
-          <RelatedItem item={item} toggleComparison={toggleComparison} />
+          <RelatedItem item={item} toggleComparison={toggleComparison} changeCompared={obj => setCompared(obj)} />
         ))}
       </div>
-      {showComparison && <ComparisonModal toggleComparison={toggleComparison} relatedInfo={relatedInfo} />}
+      {showComparison && (
+        <ComparisonModal
+          currentInfo={currentInfo}
+          toggleComparison={toggleComparison}
+          relatedInfo={relatedInfo}
+          compared={compared}
+        />
+      )}
     </div>
   );
 };
@@ -60,6 +69,7 @@ RelatedList.propTypes = {
   relatedImages: PropTypes.array.isRequired,
   showComparison: PropTypes.bool.isRequired,
   toggleComparison: PropTypes.func.isRequired,
+  currentInfo: PropTypes.object.isRequired,
 };
 
 export default RelatedList;
