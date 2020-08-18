@@ -5,6 +5,8 @@ function reviewsBuffer(state = [], action) {
     case 'CHANGE_SORT':
     case 'CHANGE_PRODUCT_ID':
       return [];
+    case 'GET_REVIEW_BY_SORT':
+      return [...action.data];
     default:
       return state;
   }

@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import RatingsReviews from '../../components/widgets/ratings-reviews/ratings-reviews.jsx';
 import getReviewsByProductThunk from '../action-creators/getReviewsByProductThunk';
 import getReviewMetadataThunk from '../action-creators/getReviewMetadataThunk';
+import getReviewByProductBySortThunk from '../action-creators/getReviewsByProductBySortThunk';
 
 function mapStateToProps(state) {
   return {
@@ -26,7 +27,7 @@ function mapDispatchToProps(dispatch) {
     },
     changeSort(sort) {
       dispatch({ type: 'CHANGE_SORT', data: sort });
-      dispatch(getReviewsByProductThunk());
+      dispatch(getReviewByProductBySortThunk());
     },
   };
 }

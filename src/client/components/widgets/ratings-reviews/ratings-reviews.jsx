@@ -82,6 +82,7 @@ class RatingsReviews extends React.Component {
           recommended={this.props.reviewRecommended}
           characteristics={this.props.reviewCharacteristics}
           filterClick={this.handleFilterClick}
+          filters={this.state.filters}
         />
 
         <div className='right'>

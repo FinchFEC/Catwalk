@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 import DynamicStars from './dynamic-stars';
 import AddReviewCharacteristicsInput from './add-review-characteristics-input';
 import AddReviewImageContainer from './add-review-image-container';
-import axios from 'axios';
 
 class AddReviewModal extends React.Component {
   constructor(props) {
@@ -18,6 +18,8 @@ class AddReviewModal extends React.Component {
       images: [],
       characteristics: {},
       ratingText: ['Poor', 'Fair', 'Average', 'Good', 'Great'],
+      error: false,
+      success: false,
     };
     this.handleStarClick = this.handleStarClick.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -54,10 +56,18 @@ class AddReviewModal extends React.Component {
       .then((data) => {
         console.log('successfully posted new review');
         console.log(data);
+        this.setState({
+          success: true,
+          error: false,
+        });
       })
       .catch((err) => {
         console.log('error posting new review');
         console.log(err);
+        this.setState({
+          error: true,
+          success: false,
+        });
       });
   }
 
@@ -221,6 +231,10 @@ class AddReviewModal extends React.Component {
             <input type='submit' value='Submit' />
           </form>
         </div>
+        {this.state.success && (
+          <div className='success'>Successfully Posted</div>
+        )}
+        {this.state.error && <div className='error'>Error Posting</div>}
       </div>
     );
   }

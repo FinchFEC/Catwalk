@@ -370,6 +370,51 @@ $modalBgColor: skyblue;
   margin: 0px;
 }
 
+.error,
+.success {
+  animation: slide 2s ease-in-out 1;
+  position: fixed;
+  visibility: hidden;
+  display: block;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  padding: 25px;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  font-size: 20px;
+  padding: 5px;
+  -webkit-animation: slide 2s ease-in-out 1;
+}
+
+.error {
+  background-color: red;
+}
+
+.success {
+  background-color: lightgreen;
+}
+
+@keyframes slide {
+  0% {
+    top: 0;
+  }
+  25% {
+    top: 30px;
+    visibility: visible;
+  }
+  75% {
+    top: 30px;
+    visibility: visible;
+  }
+  100% {
+    top: 0;
+  }
+}
+
 .helpful {
   margin: {
     top: 15px;

@@ -45,9 +45,7 @@ describe('Product Page', () => {
 
   afterAll(() => {
     // childProcess.spawn('killall', ['']);
-    setTimeout(() => {
-      browser.close();
-    }, 2000);
+    browser.close();
   });
 
   test('should have correct page title', async () => {

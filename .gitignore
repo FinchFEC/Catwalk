@@ -6,11 +6,16 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
+.DS_Store
+
 # Travis.yml
 .travis.yml
 
 # Package-lock.json
 package-lock.json
+
+# Test
+/test/coverage/FEC-Project
 
 # Individual webpack-config
 src/client/components/widgets/ratings-reviews/webpack.config.js
