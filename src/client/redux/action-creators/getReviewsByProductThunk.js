@@ -11,6 +11,11 @@ function getReviewsByProductThunk() {
         if (data.length < 2) {
           dispatch({ type: 'NO_MORE_REVIEWS' });
         }
+        apiHelpers
+          .getReviewsByProduct(productId, page + 1, sort)
+          .then((data) => {
+            if (data.length < 2) dispatch({ type: 'NO_MORE_REVIEWS' });
+          });
       });
   };
 }

@@ -14,7 +14,7 @@ $formFontSize: 14px;
   }
   display: grid;
   grid-template-columns: 2fr 6fr;
-  column-gap: 30px;
+  column-gap: 15px;
   margin-bottom: 100px;
   margin-top: 50px;
 }
@@ -419,3 +419,11 @@ $modalBgColor: skyblue;
 .radio-group label {
   display: block;
 }
+
+// .breakdown-bar-overlay:after {
+//   content: '^';
+//   line-height: 20px;
+//   display: flex;
+//   justify-content: flex-end;
+//   align-items: flex-end;
+// }

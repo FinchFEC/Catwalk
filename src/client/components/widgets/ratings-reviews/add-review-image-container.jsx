@@ -31,9 +31,14 @@ class AddReviewImageContainer extends React.Component {
         })
       );
     }
-    Promise.all(imagesPromises).then((data) => {
-      this.setState({ images });
-    });
+    Promise.all(imagesPromises)
+      .then((data) => {
+        this.setState({ images });
+      })
+      .then(() => {
+        console.log('images:', images);
+        this.props.onChange(images);
+      });
   }
 
   render() {
@@ -68,5 +73,9 @@ class AddReviewImageContainer extends React.Component {
     );
   }
 }
+
+AddReviewImageContainer.propTypes = {
+  onChange: PropTypes.func.isRequired,
+};
 
 export default AddReviewImageContainer;

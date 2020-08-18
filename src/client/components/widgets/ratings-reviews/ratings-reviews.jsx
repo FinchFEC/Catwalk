@@ -73,8 +73,8 @@ class RatingsReviews extends React.Component {
   }
 
   render() {
-    console.log('reviews:', this.props.reviews);
-    console.log('sort:', this.props.sort);
+    // console.log('reviews:', this.props.reviews);
+    // console.log('sort:', this.props.sort);
     return (
       <div className='ratings-reviews'>
         <Rating
@@ -115,6 +115,7 @@ class RatingsReviews extends React.Component {
               ref={this.modalRef}
               characteristics={this.props.reviewCharacteristics}
               onClick={this.handleModalClick}
+              productId={this.props.productId}
             />
           )}
           {this.state.selectedImgUrl && (

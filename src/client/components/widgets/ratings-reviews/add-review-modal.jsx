@@ -15,7 +15,7 @@ class AddReviewModal extends React.Component {
       body: '',
       email: '',
       username: '',
-      imgs: [],
+      images: [],
       characteristics: {},
       ratingText: ['Poor', 'Fair', 'Average', 'Good', 'Great'],
     };
@@ -25,6 +25,7 @@ class AddReviewModal extends React.Component {
     this.handleCharacteristicInputChange = this.handleCharacteristicInputChange.bind(
       this
     );
+    this.handleAddImages = this.handleAddImages.bind(this);
   }
 
   handleStarClick(rating) {
@@ -35,6 +36,35 @@ class AddReviewModal extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    axios
+      .post('http://18.224.37.110/reviews', {
+        product_id: this.props.productId,
+        rating: this.state.rating,
+        summary: this.state.summary,
+        body: this.state.body,
+        recommend: this.state.recommend,
+        name: this.state.username,
+        email: this.state.email,
+        // photos: this.state.images,
+        photos: [
+          'https://cdna.lystit.com/photos/31fb-2015/06/13/burberry-nude-neutrals-horseferry-check-messenger-bag-beige-product-1-474614760-normal.jpeg',
+        ],
+        characteristics: this.state.characteristics,
+      })
+      .then((data) => {
+        console.log('successfully posted new review');
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log('error posting new review');
+        console.log(err);
+      });
+  }
+
+  handleAddImages(images) {
+    this.setState({
+      images,
+    });
   }
 
   handleCharacteristicInputChange(e) {
@@ -180,9 +210,14 @@ class AddReviewModal extends React.Component {
                   required
                   placeholder='Email'
                 />
+                <div>
+                  <small>
+                    For authentication reasons, you will not be emailed
+                  </small>
+                </div>
               </label>
             </div>
-            <AddReviewImageContainer />
+            <AddReviewImageContainer onChange={this.handleAddImages} />
             <input type='submit' value='Submit' />
           </form>
         </div>
@@ -196,10 +231,12 @@ export default React.forwardRef((props, ref) => (
     innerRef={ref}
     characteristics={props.characteristics}
     onClick={props.onClick}
+    productId={props.productId}
   />
 ));
 
 AddReviewModal.propTypes = {
+  productId: PropTypes.number.isRequired,
   characteristics: PropTypes.object.isRequired,
   innerRef: PropTypes.oneOfType([
     PropTypes.func,

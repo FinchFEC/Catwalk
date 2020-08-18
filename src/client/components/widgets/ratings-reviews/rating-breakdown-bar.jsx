@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../../../assets/icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class RatingBreakdownBar extends React.Component {
   render() {
@@ -44,6 +46,23 @@ class RatingBreakdownBar extends React.Component {
               backgroundColor: '#8eda14',
             }}
           />
+          {this.props.rating === '' && (
+            <span
+              style={{
+                width: `${parseInt(this.props.percent) + 4.4}%`,
+                height: '12px',
+                position: 'absolute',
+                bottom: '2px',
+
+                display: 'flex',
+                justifyContent: 'flex-end',
+                alignItems: 'center',
+                backgroundColor: 'transparent',
+              }}
+            >
+              <FontAwesomeIcon icon={['fas', 'caret-down']} size='2x' />
+            </span>
+          )}
         </span>
       </div>
     );
