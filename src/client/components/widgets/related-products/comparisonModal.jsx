@@ -1,13 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const ComparisonModal = () => {
+const ComparisonModal = ({ toggleComparison, relatedInfo }) => {
   return (
     <div className="modal">
       <h3>COMPARISON MODAL</h3>
-      <button type="button">
-        X
-      </button>
+      <button type="button" onClick={() => toggleComparison()}>X</button>
       <div id="modal">
         <div id="modal-1">
           <h3>Product A</h3>
@@ -21,10 +19,9 @@ const ComparisonModal = () => {
         <div id="category">
           <h3>Categories</h3>
           <ul>
-            <li>Category 1</li>
-            <li>Category 2</li>
-            <li>Category 3</li>
-            <li>Category 4</li>
+            {relatedInfo[0].data.features.map((feature) => (
+              <li>{feature.feature}</li>
+            ))}
           </ul>
         </div>
         <div id="modal-2">
@@ -42,6 +39,8 @@ const ComparisonModal = () => {
 };
 
 ComparisonModal.propTypes = {
+  toggleComparison: PropTypes.func.isRequired,
+  relatedInfo: PropTypes.array.isRequired
 };
 
 export default ComparisonModal;
