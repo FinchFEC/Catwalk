@@ -3,7 +3,7 @@ import "../../../assets/scss/overview.scss";
 import { FaArrowLeft, FaArrowRight, FaExpand } from "react-icons/fa";
 import PhotoCarousel from "./PhotoCarousel.js";
 
-const CurrentPhoto = () => {
+const CurrentPhoto = ({ changeView }) => {
   return (
     <div className="current-photo-container">
       <div id="current-photo">
@@ -17,7 +17,7 @@ const CurrentPhoto = () => {
         <FaArrowRight />
       </span>
       <span id="expand">
-        <FaExpand />
+        <FaExpand onClick={() => changeView("expanded")} />
       </span>
     </div>
   );

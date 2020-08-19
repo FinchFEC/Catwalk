@@ -4,22 +4,16 @@ import "../../../assets/scss/overview.scss";
 import { AiFillStar } from "react-icons/ai";
 import StyleSelector from "./StyleSelector.js";
 import AddToCart from "./AddToCart.js";
+import StaticStars from "../ratings-reviews/static-stars.jsx";
 
-const ProductInformation = () => {
+const ProductInformation = (props) => {
   return (
     <div className="product-information">
       <div className="information-holder">
         <div className="rating">
-          <AiFillStar /> 
-          {' '}
-          <AiFillStar /> 
-          {' '}
-          <AiFillStar /> 
-          {' '}
-          <AiFillStar />
-          {" "}
-          <AiFillStar /> 
-          {' '}
+          <div className="row">
+            <StaticStars rating={3} /> <a href="">Read all reviews</a>
+          </div>         
           <a href="">Read all reviews</a>
         </div>
         <div className="product-category">Pants</div>
