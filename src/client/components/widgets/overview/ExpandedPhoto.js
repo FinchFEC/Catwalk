@@ -4,7 +4,7 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { GrFormClose } from "react-icons/gr";
 import PhotoCarousel from "./PhotoCarousel.js";
 
-const ExpandedPhoto = ({ view }) => {
+const ExpandedPhoto = ({ changeView }) => {
   return (
     <div className="expanded-photo-container">
       <div id="current-photo">
@@ -18,7 +18,7 @@ const ExpandedPhoto = ({ view }) => {
         <FaArrowRight />
       </span>
       <span id="fold">
-        <GrFormClose onClick={() => state.view === "main"} />
+        <GrFormClose onClick={() => changeView("main")} />
       </span>
     </div>
   );

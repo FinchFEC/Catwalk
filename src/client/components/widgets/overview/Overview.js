@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import "../../../assets/scss/overview.scss";
 import CurrentPhoto from "./CurrentPhoto.js";
 import ExpandedPhoto from "./ExpandedPhoto.js";
@@ -14,12 +14,14 @@ const Overview = () => {
 
   return (
     <div className="overview-component">
-      {view === "expanded" ? (
-        <ExpandedPhoto />
+      {view === "main" ? (
+        <Fragment>
+          <CurrentPhoto changeView={changeView} />
+          <ProductInformation />
+        </Fragment>
       ) : (
-        <CurrentPhoto changeView={changeView} />
+        <ExpandedPhoto changeView={changeView} />
       )}
-      <ProductInformation />
       <Description />
     </div>
   );
