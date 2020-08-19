@@ -14,6 +14,7 @@ function mapStateToProps(state) {
     productId: state.productId,
     sort: state.sort,
     page: state.page,
+    productInfo: state.currentInfo,
   };
 }
 

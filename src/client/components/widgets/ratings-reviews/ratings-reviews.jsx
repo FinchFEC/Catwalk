@@ -75,6 +75,7 @@ class RatingsReviews extends React.Component {
   render() {
     // console.log('reviews:', this.props.reviews);
     // console.log('sort:', this.props.sort);
+    // console.log('this.props.productInfo:', this.props.productInfo);
     return (
       <div className='ratings-reviews' id='ratingsReviews'>
         <Rating
@@ -86,7 +87,7 @@ class RatingsReviews extends React.Component {
         />
 
         <div className='right'>
-          {this.props.reviews.length > 1 && (
+          {this.props.reviews.length >= 1 && (
             <ReviewTilesContainer
               reviews={this.props.reviews}
               handleSelectImg={this.handleSelectImg}
@@ -111,14 +112,17 @@ class RatingsReviews extends React.Component {
               ADD A REVIEW +
             </div>
           </div>
-          {this.state.addReview && this.props.reviewCharacteristics && (
-            <AddReviewModal
-              ref={this.modalRef}
-              characteristics={this.props.reviewCharacteristics}
-              onClick={this.handleModalClick}
-              productId={this.props.productId}
-            />
-          )}
+          {this.state.addReview &&
+            this.props.reviewCharacteristics &&
+            this.props.productInfo && (
+              <AddReviewModal
+                ref={this.modalRef}
+                characteristics={this.props.reviewCharacteristics}
+                onClick={this.handleModalClick}
+                productId={this.props.productId}
+                name={this.props.productInfo.name}
+              />
+            )}
           {this.state.selectedImgUrl && (
             <ImgModal
               src={this.state.selectedImgUrl}
@@ -145,4 +149,5 @@ RatingsReviews.propTypes = {
   noMoreReviews: PropTypes.bool.isRequired,
   sort: PropTypes.string.isRequired,
   changeSort: PropTypes.func.isRequired,
+  productInfo: PropTypes.object.isRequired,
 };

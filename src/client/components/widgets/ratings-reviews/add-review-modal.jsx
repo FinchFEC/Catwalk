@@ -127,7 +127,9 @@ class AddReviewModal extends React.Component {
         onClick={this.props.onClick}
       >
         <div className='review-modal-content'>
-          <h3 className='review-modal-header'>Write your review about </h3>
+          <h3 className='review-modal-header'>
+            Write your review about {this.props.name}
+          </h3>
           Rating* <DynamicStars onClick={this.handleStarClick} />
           {this.state.rating && this.state.ratingText[this.state.rating - 1]}
           <form action='' method='post' onSubmit={this.handleSubmit}>
@@ -246,6 +248,7 @@ export default React.forwardRef((props, ref) => (
     characteristics={props.characteristics}
     onClick={props.onClick}
     productId={props.productId}
+    name={props.name}
   />
 ));
 
@@ -257,4 +260,5 @@ AddReviewModal.propTypes = {
     PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
   ]).isRequired,
   onClick: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
 };
