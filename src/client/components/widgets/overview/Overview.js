@@ -4,6 +4,7 @@ import CurrentPhoto from "./CurrentPhoto.js";
 import ExpandedPhoto from "./ExpandedPhoto.js";
 import ProductInformation from "./ProductInformation.js";
 import Description from "./Description.js";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const Overview = () => {
   const changeView = (type) => {

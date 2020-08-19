@@ -18,7 +18,9 @@ class App extends React.Component {
         </header>
         <Overview />
         <RelatedMasterContainer />
-        <RatingsReviewsContainer />
+        <section id="reviews">
+          <RatingsReviewsContainer />
+        </section>
       </div>
     );
   }
