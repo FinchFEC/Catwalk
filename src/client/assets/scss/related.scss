@@ -1,15 +1,16 @@
 .container-1 {
   position: relative;
   display: flex;
-  align-items: flex-end;
-  width: 650px;
+  align-items: flex-start;
+  width: 875px;
   scroll-snap-type: x mandatory;
   overflow-x: scroll;
-  border: 2px black solid;
   .tile {
+    border: 2px black solid;
+    border-radius: 5px;
+    box-shadow: 10px 5px 5px grey;
     scroll-snap-align: start;
     width: 200px;
-    border: 2px black solid;
     padding: 10px;
     margin: 10px;
   }
@@ -26,13 +27,21 @@
   }
 }
 
-
 #container-2 {
+  position: relative;
   display: flex;
-  align-items: flex-end;
-  div {
+  align-items: flex-start;
+  width: 875px;
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  .tile {
     border: 2px black solid;
+    border-radius: 5px;
+    box-shadow: 10px 5px 5px grey;
+    scroll-snap-align: start;
+    width: 200px;
     padding: 10px;
+    margin: 10px;
   }
 }
 #modal {
@@ -41,6 +50,9 @@
   width: max-content;
   padding: 10px;
   align-items: flex-end;
+  background-color: rgba(235, 235, 235, 0.959);
+  border: 2px black solid;
+  border-radius: 25px;
   h4 {
     padding-left: 40px;
     padding-right: 40px;
@@ -58,13 +70,26 @@
 }
 
 .head_related {
-  margin-left: 200px;
+  margin-left: 15%;
 }
 
 .star_icon_alt {
+  position: absolute;
   color: black;
   font-size: 150%;
   :hover {
     color: red;
   }
+}
+
+#close {
+  position: absolute;
+  :hover {
+    color: red;
+  }
+}
+
+.modal {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

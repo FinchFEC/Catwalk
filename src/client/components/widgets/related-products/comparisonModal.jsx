@@ -30,8 +30,8 @@ const ComparisonModal = ({
       <button type="button" onClick={() => toggleComparison()}>
         X
       </button>
+      <h4>Comparing</h4>
       <div id="modal">
-        <h4>Comparing</h4>
         <div id="modal-1">
           <h3>{currentInfo.name}</h3>
           <ul>
