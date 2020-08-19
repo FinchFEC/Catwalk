@@ -45,9 +45,7 @@ describe('Product Page', () => {
 
   afterAll(() => {
     // childProcess.spawn('killall', ['']);
-    setTimeout(() => {
-      browser.close();
-    }, 2000);
+    browser.close();
   });
 
   test('should have correct page title', async () => {
@@ -55,8 +53,8 @@ describe('Product Page', () => {
     expect(pageTitle).toBe('FEC-Project');
   });
 
-  test('should render the review-tile-container', async () => {
-    await page.waitForSelector('.review-tile-container', {
+  test('should render the review-tiles-container', async () => {
+    await page.waitForSelector('.review-tiles-container', {
       visible: true,
       timeout: 5000,
     });

@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../../../assets/icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class RatingBreakdownBar extends React.Component {
   render() {
@@ -10,7 +12,7 @@ class RatingBreakdownBar extends React.Component {
           onClick={() =>
             this.props.onClick(parseInt(this.props.rating.slice(0, 1)))
           }
-          style={{ boxSizing: 'border-box', width: '20%' }}
+          style={{ boxSizing: 'border-box', minWidth: '20%' }}
         >
           {this.props.rating}
         </span>
@@ -20,12 +22,10 @@ class RatingBreakdownBar extends React.Component {
             position: 'relative',
             display: 'inline-block',
             height: '12px',
-            width: '80%',
-            marginLeft: '5px',
           }}
         >
           <span
-            className='breakdown-bar'
+            className='breakdown-bar-inner'
             style={{
               width: '100%',
               height: '12px',
@@ -44,6 +44,23 @@ class RatingBreakdownBar extends React.Component {
               backgroundColor: '#8eda14',
             }}
           />
+          {this.props.rating === '' && (
+            <span
+              style={{
+                width: `${parseInt(this.props.percent, 10)}%`,
+                height: '12px',
+                position: 'absolute',
+                bottom: '2px',
+                marginLeft: '10px',
+                display: 'flex',
+                justifyContent: 'flex-end',
+                alignItems: 'center',
+                backgroundColor: 'transparent',
+              }}
+            >
+              <FontAwesomeIcon icon={['fas', 'caret-down']} size='2x' />
+            </span>
+          )}
         </span>
       </div>
     );

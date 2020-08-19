@@ -64,25 +64,28 @@ class AddReviewCharacteristicsInput extends React.Component {
             return (
               <div className='modal-input' key={characteristicArray[0]}>
                 <div>{characteristicArray[0]}*&nbsp;</div>
-                {[...new Array(5)].map((ele, i) => {
-                  return (
-                    <label htmlFor={`${characteristicArray[0]}-${i}`} key={i}>
-                      <input
-                        type='radio'
-                        id={`${characteristicArray[0]}-${i}`}
-                        name={characteristicArray[1].id}
-                        value={i + 1}
-                        onChange={(e) => {
-                          this.setState({ [characteristicArray[0]]: i + 1 });
-                          this.props.onChange(e);
-                        }}
-                        required
-                      />
-                      {this.state[`${characteristicArray[0]}Text`][i]}
-                    </label>
-                  );
-                })}
-                <br />
+                <div className='modal-input-container'>
+                  {[...new Array(5)].map((ele, i) => {
+                    return (
+                      <div className='radio-group' key={i}>
+                        <input
+                          type='radio'
+                          id={`${characteristicArray[0]}-${i}`}
+                          name={characteristicArray[1].id}
+                          value={i + 1}
+                          onChange={(e) => {
+                            this.setState({ [characteristicArray[0]]: i + 1 });
+                            this.props.onChange(e);
+                          }}
+                          required
+                        />
+                        <label htmlFor={`${characteristicArray[0]}-${i}`}>
+                          {this.state[`${characteristicArray[0]}Text`][i]}
+                        </label>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             );
           }

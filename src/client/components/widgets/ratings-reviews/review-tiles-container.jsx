@@ -17,7 +17,7 @@ class ReviewTilesContainer extends React.Component {
     }
 
     return (
-      <div className='review-tile-container'>
+      <div className='review-tiles-container-outer'>
         <div className='dropdown'>
           <div className='dropdown-btn'>
             SORT BY&nbsp;
@@ -50,30 +50,26 @@ class ReviewTilesContainer extends React.Component {
             </div>
           </div>
         </div>
-
-        {reviews.map((review) => {
-          return (
-            <ReviewTile
-              key={review.review_id}
-              id={review.review_id}
-              helpful={review.helpfulness}
-              date={new Date(review.date)}
-              summary={review.summary}
-              body={review.body}
-              imgs={review.photos}
-              recommend={review.recommend}
-              response={review.response}
-              rating={review.rating}
-              username={review.reviewer_name}
-              handleSelectImg={this.props.handleSelectImg}
-            />
-          );
-        })}
-        {!this.props.noMoreReviews && (
-          <div onClick={this.props.onClick} className='show-more-reviews-btn'>
-            SHOW MORE REVIEWS
-          </div>
-        )}
+        <div className='review-tiles-container'>
+          {reviews.map((review) => {
+            return (
+              <ReviewTile
+                key={review.review_id}
+                id={review.review_id}
+                helpful={review.helpfulness}
+                date={new Date(review.date)}
+                summary={review.summary}
+                body={review.body}
+                imgs={review.photos}
+                recommend={review.recommend}
+                response={review.response}
+                rating={review.rating}
+                username={review.reviewer_name}
+                handleSelectImg={this.props.handleSelectImg}
+              />
+            );
+          })}
+        </div>
       </div>
     );
   }
@@ -82,8 +78,6 @@ class ReviewTilesContainer extends React.Component {
 ReviewTilesContainer.propTypes = {
   reviews: PropTypes.array.isRequired,
   handleSelectImg: PropTypes.func.isRequired,
-  noMoreReviews: PropTypes.bool.isRequired,
-  onClick: PropTypes.func.isRequired,
   onChangeSort: PropTypes.func.isRequired,
   sort: PropTypes.string.isRequired,
   filters: PropTypes.array.isRequired,

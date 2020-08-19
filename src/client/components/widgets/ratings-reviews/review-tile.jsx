@@ -49,7 +49,7 @@ class ReviewTile extends React.Component {
         </div>
         <ReviewTileSummary reviewSummary={this.props.summary} />
         <ReviewTileTextBody text={this.props.body} />
-        {this.props.imgs.length > 1 && (
+        {this.props.imgs.length >= 1 && (
           <ReviewTileImgContainer
             imgs={this.props.imgs}
             onClick={this.props.handleSelectImg}

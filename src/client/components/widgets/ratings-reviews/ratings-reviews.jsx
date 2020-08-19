@@ -82,6 +82,7 @@ class RatingsReviews extends React.Component {
           recommended={this.props.reviewRecommended}
           characteristics={this.props.reviewCharacteristics}
           filterClick={this.handleFilterClick}
+          filters={this.state.filters}
         />
 
         <div className='right'>
@@ -89,25 +90,33 @@ class RatingsReviews extends React.Component {
             <ReviewTilesContainer
               reviews={this.props.reviews}
               handleSelectImg={this.handleSelectImg}
-              noMoreReviews={this.props.noMoreReviews}
-              onClick={this.props.getReviewsByProduct}
               onChangeSort={this.props.changeSort}
               sort={this.props.sort}
               filters={this.state.filters}
             />
           )}
-          <div
-            className='add-review-btn'
-            onClick={this.handleAddReviewBtnClick}
-          >
-            ADD A REVIEW +
+          <div className='review-tiles-container-btns'>
+            {!this.props.noMoreReviews && (
+              <div
+                onClick={this.props.getReviewsByProduct}
+                className='show-more-reviews-btn'
+              >
+                SHOW MORE REVIEWS
+              </div>
+            )}
+            <div
+              className='add-review-btn'
+              onClick={this.handleAddReviewBtnClick}
+            >
+              ADD A REVIEW +
+            </div>
           </div>
-
           {this.state.addReview && this.props.reviewCharacteristics && (
             <AddReviewModal
               ref={this.modalRef}
               characteristics={this.props.reviewCharacteristics}
               onClick={this.handleModalClick}
+              productId={this.props.productId}
             />
           )}
           {this.state.selectedImgUrl && (
