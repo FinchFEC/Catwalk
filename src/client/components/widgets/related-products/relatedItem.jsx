@@ -13,16 +13,18 @@ const RelatedItem = ({ item, toggleComparison, changeCompared }) => {
           changeCompared(item.info);
         }}
         icon={["far", "star"]}
+        className="star_icon"
       />
       <img
         src={itemUrl}
         alt={item.image.data.results[0].photos[0].thumbnail_url}
-        width="128px"
+        width="150px"
+        height="150px"
       />
       <p>{item.info.data.category}</p>
       <h3>{item.info.data.name}</h3>
       <p>${item.info.data.default_price}</p>
-      <p>{item.info.data.slogan}</p>
+      <p>****</p>
     </div>
   );
 };

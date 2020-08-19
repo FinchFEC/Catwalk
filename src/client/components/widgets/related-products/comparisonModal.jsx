@@ -7,6 +7,14 @@ const ComparisonModal = ({
   currentInfo,
   compared,
 }) => {
+  const mergedInfoObj = {};
+  compared.data.features.forEach((feature) => {
+    mergedInfoObj[feature.feature] = feature.value;
+  });
+  currentInfo.features.forEach((feature) => {
+    mergedInfoObj[feature.feature] = feature.value;
+  });
+  const featuresArr = Object.keys(mergedInfoObj);
   return (
     <div className="modal">
       <button type="button" onClick={() => toggleComparison()}>
@@ -17,34 +25,28 @@ const ComparisonModal = ({
         <div id="modal-1">
           <h3>{currentInfo.name}</h3>
           <ul>
-            {compared.data.features.map(() => (
-              <li>N/A</li>
+            {currentInfo.features.length !== compared.data.features.length &&
+              compared.data.features.map(() => <li>X</li>)}
+            {currentInfo.features.map((feat) => (
+              <li>{feat.value}</li>
             ))}
-            {currentInfo.features.map((feature) => {
-              return <li>{feature.value}</li>;
-            })}
           </ul>
         </div>
         <div id="category">
           <ul>
-            {compared.data.features.map((feature) => (
-              <li>{feature.feature}</li>
-            ))}
-            {currentInfo.features.map((feature) => (
-              <li>{feature.feature}</li>
+            {featuresArr.map((key) => (
+              <li>{key}</li>
             ))}
           </ul>
         </div>
         <div id="modal-2">
           <h3>{compared.data.name}</h3>
           <ul>
-            {/* {console.log(compared)} */}
             {compared.data.features.map((feature) => (
               <li>{feature.value}</li>
             ))}
-            {currentInfo.features.map(() => (
-              <li>N/A</li>
-            ))}
+            {currentInfo.features.length !== compared.data.features.length &&
+              currentInfo.features.map(() => <li>X</li>)}
           </ul>
         </div>
       </div>
@@ -56,7 +58,7 @@ ComparisonModal.propTypes = {
   toggleComparison: PropTypes.func.isRequired,
   relatedInfo: PropTypes.array.isRequired,
   currentInfo: PropTypes.object.isRequired,
-  compared: PropTypes.object.isRequired
+  compared: PropTypes.object.isRequired,
 };
 
 export default ComparisonModal;
