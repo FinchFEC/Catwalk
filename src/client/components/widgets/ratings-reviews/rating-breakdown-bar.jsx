@@ -22,7 +22,6 @@ class RatingBreakdownBar extends React.Component {
             position: 'relative',
             display: 'inline-block',
             height: '12px',
-            marginLeft: '5px',
           }}
         >
           <span
@@ -48,11 +47,11 @@ class RatingBreakdownBar extends React.Component {
           {this.props.rating === '' && (
             <span
               style={{
-                width: `${parseInt(this.props.percent, 10) + 4.4}%`,
+                width: `${parseInt(this.props.percent, 10)}%`,
                 height: '12px',
                 position: 'absolute',
                 bottom: '2px',
-
+                marginLeft: '10px',
                 display: 'flex',
                 justifyContent: 'flex-end',
                 alignItems: 'center',

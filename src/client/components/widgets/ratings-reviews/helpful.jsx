@@ -10,6 +10,10 @@ class Helpful extends React.Component {
   }
 
   clickYes() {
+    if (localStorage.getItem(this.props.reviewId)) {
+      return;
+    }
+    localStorage.setItem(this.props.reviewId, 1);
     axios
       .put(`http://18.224.37.110/reviews/helpful/:${this.props.reviewId}`)
       .then((data) => {
