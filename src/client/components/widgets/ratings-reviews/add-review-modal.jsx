@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 import DynamicStars from './dynamic-stars';
 import AddReviewCharacteristicsInput from './add-review-characteristics-input';
 import AddReviewImageContainer from './add-review-image-container';
-import axios from 'axios';
 
 class AddReviewModal extends React.Component {
   constructor(props) {
@@ -14,9 +14,12 @@ class AddReviewModal extends React.Component {
       summary: '',
       body: '',
       email: '',
-      imgs: [],
+      username: '',
+      images: [],
       characteristics: {},
       ratingText: ['Poor', 'Fair', 'Average', 'Good', 'Great'],
+      error: false,
+      success: false,
     };
     this.handleStarClick = this.handleStarClick.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -24,6 +27,7 @@ class AddReviewModal extends React.Component {
     this.handleCharacteristicInputChange = this.handleCharacteristicInputChange.bind(
       this
     );
+    this.handleAddImages = this.handleAddImages.bind(this);
   }
 
   handleStarClick(rating) {
@@ -34,6 +38,43 @@ class AddReviewModal extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    axios
+      .post('http://18.224.37.110/reviews', {
+        product_id: this.props.productId,
+        rating: this.state.rating,
+        summary: this.state.summary,
+        body: this.state.body,
+        recommend: this.state.recommend,
+        name: this.state.username,
+        email: this.state.email,
+        // photos: this.state.images,
+        photos: [
+          'https://cdna.lystit.com/photos/31fb-2015/06/13/burberry-nude-neutrals-horseferry-check-messenger-bag-beige-product-1-474614760-normal.jpeg',
+        ],
+        characteristics: this.state.characteristics,
+      })
+      .then((data) => {
+        console.log('successfully posted new review');
+        console.log(data);
+        this.setState({
+          success: true,
+          error: false,
+        });
+      })
+      .catch((err) => {
+        console.log('error posting new review');
+        console.log(err);
+        this.setState({
+          error: true,
+          success: false,
+        });
+      });
+  }
+
+  handleAddImages(images) {
+    this.setState({
+      images,
+    });
   }
 
   handleCharacteristicInputChange(e) {
@@ -86,12 +127,12 @@ class AddReviewModal extends React.Component {
         onClick={this.props.onClick}
       >
         <div className='review-modal-content'>
-          <div>Write your review about </div>
+          <h3 className='review-modal-header'>Write your review about </h3>
           Rating* <DynamicStars onClick={this.handleStarClick} />
           {this.state.rating && this.state.ratingText[this.state.rating - 1]}
           <form action='' method='post' onSubmit={this.handleSubmit}>
             <div className='modal-input'>
-              Do you recommend this product?*
+              Do you recommend this product?*&nbsp;
               <label htmlFor='recommendYes'>
                 Yes
                 <input
@@ -118,18 +159,22 @@ class AddReviewModal extends React.Component {
               characteristics={this.props.characteristics}
               onChange={this.handleCharacteristicInputChange}
             />
-            Summary
-            <label htmlFor='summary'>
-              <input
-                id='summary'
-                name='summary'
-                value={this.state.summary}
-                onChange={this.handleInputChange}
-                maxLength='60'
-              />
-            </label>
             <div className='modal-input'>
-              Body*
+              <div>Summary</div>
+              <label htmlFor='summary'>
+                <input
+                  id='summary'
+                  name='summary'
+                  value={this.state.summary}
+                  onChange={this.handleInputChange}
+                  maxLength='60'
+                  className='add-review-modal-text-input'
+                  placeholder='Summary'
+                />
+              </label>
+            </div>
+            <div className='modal-input'>
+              <div>Body*</div>
               <label htmlFor='body'>
                 <input
                   id='body'
@@ -137,7 +182,9 @@ class AddReviewModal extends React.Component {
                   value={this.state.body}
                   onChange={this.handleInputChange}
                   minLength='50'
+                  className='add-review-modal-text-input'
                   required
+                  placeholder='Review Body'
                 />
               </label>
               <div>
@@ -147,19 +194,21 @@ class AddReviewModal extends React.Component {
             </div>
             <div className='modal-input'>
               <label htmlFor='usernameInput'>
-                Username*
+                <div>Username*</div>
                 <input
                   name='username'
                   id='usernameInput'
                   value={this.state.username}
                   onChange={this.handleInputChange}
+                  className='add-review-modal-text-input'
                   required
+                  placeholder='Username'
                 />
               </label>
             </div>
             <div className='modal-input'>
               <label htmlFor='emailInput'>
-                Email*
+                <div>Email*</div>
                 <input
                   name='email'
                   type='email'
@@ -167,14 +216,25 @@ class AddReviewModal extends React.Component {
                   value={this.state.email}
                   onChange={this.handleInputChange}
                   maxLength='60'
+                  className='add-review-modal-text-input'
                   required
+                  placeholder='Email'
                 />
+                <div>
+                  <small>
+                    For authentication reasons, you will not be emailed
+                  </small>
+                </div>
               </label>
             </div>
-            <AddReviewImageContainer />
+            <AddReviewImageContainer onChange={this.handleAddImages} />
             <input type='submit' value='Submit' />
           </form>
         </div>
+        {this.state.success && (
+          <div className='success'>Successfully Posted</div>
+        )}
+        {this.state.error && <div className='error'>Error Posting</div>}
       </div>
     );
   }
@@ -185,10 +245,12 @@ export default React.forwardRef((props, ref) => (
     innerRef={ref}
     characteristics={props.characteristics}
     onClick={props.onClick}
+    productId={props.productId}
   />
 ));
 
 AddReviewModal.propTypes = {
+  productId: PropTypes.number.isRequired,
   characteristics: PropTypes.object.isRequired,
   innerRef: PropTypes.oneOfType([
     PropTypes.func,

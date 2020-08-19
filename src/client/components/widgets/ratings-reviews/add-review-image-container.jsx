@@ -12,7 +12,7 @@ class AddReviewImageContainer extends React.Component {
   }
 
   handleImageInputChange(e) {
-    console.log(e.target.files);
+    // console.log(e.target.files);
     const images = [];
     const imagesPromises = [];
     for (const file of e.target.files) {
@@ -21,7 +21,7 @@ class AddReviewImageContainer extends React.Component {
           const fileReader = new FileReader();
           fileReader.onload = () => {
             images.push(fileReader.result);
-            console.log('fileReader.result', fileReader.result);
+            // console.log('fileReader.result', fileReader.result);
             resolve();
           };
           fileReader.onerror = () => {
@@ -31,9 +31,14 @@ class AddReviewImageContainer extends React.Component {
         })
       );
     }
-    Promise.all(imagesPromises).then((data) => {
-      this.setState({ images });
-    });
+    Promise.all(imagesPromises)
+      .then((data) => {
+        this.setState({ images });
+      })
+      .then(() => {
+        console.log('images:', images);
+        this.props.onChange(images);
+      });
   }
 
   render() {
@@ -51,7 +56,7 @@ class AddReviewImageContainer extends React.Component {
         {this.state.images.length > 0 && this.state.images.length <= 5 && (
           <div className='review-image-previews-container'>
             {this.state.images.map((image, i) => {
-              console.log('rendering img preview:', image);
+              // console.log('rendering img preview:', image);
               return (
                 <img
                   src={image}
@@ -68,5 +73,9 @@ class AddReviewImageContainer extends React.Component {
     );
   }
 }
+
+AddReviewImageContainer.propTypes = {
+  onChange: PropTypes.func.isRequired,
+};
 
 export default AddReviewImageContainer;

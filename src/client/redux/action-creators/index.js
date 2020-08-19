@@ -1,15 +1,16 @@
 // import individual action creators
 import getProductList from './getProductList.js';
-import getRelatedProductsInfo from './getRelatedProductsInfo.js';
-import getAllRelatedImages from './getAllRelatedImages.js';
-import toggleComparison from './toggleComparison';
-
+import getRelatedProductsInfo from './relatedActions/getRelatedProductsInfo.js';
+import getAllRelatedImages from './relatedActions/getAllRelatedImages.js';
+import toggleComparison from './relatedActions/toggleComparison';
+import getCurrentProductInfo from './getCurrentProductInfo';
 
 const actionCreators = {
   getProductList,
   getRelatedProductsInfo,
   getAllRelatedImages,
-  toggleComparison
+  toggleComparison,
+  getCurrentProductInfo
 };
 
 export default actionCreators;

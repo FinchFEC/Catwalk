@@ -5,8 +5,8 @@ class ReviewTileResponse extends React.Component {
   render() {
     return (
       <div className='review-tile-response'>
-        Response from seller
-        {this.props.response}
+        <div className='review-tile-response-header'>Response from seller:</div>
+        <div>{this.props.response}</div>
       </div>
     );
   }

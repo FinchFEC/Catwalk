@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-// import individual reducers here;
+// import individual reducers here:
 import productList from './productList.js';
 import reviewCharacteristics from './reviewCharacteristics';
 import reviewRatings from './reviewRatings';
@@ -10,10 +10,11 @@ import noMoreReviews from './noMoreReviews';
 import sort from './sort';
 import page from './page';
 import productId from './productId';
-import relatedInfo from './relatedInfoReducer';
-import relatedImages from './relatedImagesReducer';
-import showComparison from './comparisonReducer';
-
+import reviewsBuffer from './reviewsBuffer';
+import relatedInfo from './relatedReducers/relatedInfoReducer';
+import relatedImages from './relatedReducers/relatedImagesReducer';
+import comparison from './relatedReducers/comparisonReducer';
+import currentInfo from './currentInfoReducer';
 
 const rootReducer = combineReducers({
   productList,
@@ -21,13 +22,15 @@ const rootReducer = combineReducers({
   reviewCharacteristics,
   reviewRatings,
   reviewRecommended,
-  reviews,
+  reviews: reviewsBuffer,
+  reviewsBuffer: reviews,
   noMoreReviews,
   sort,
   page,
   relatedInfo,
   relatedImages,
-  showComparison
+  showComparison: comparison,
+  currentInfo,
 });
 
 export default rootReducer;

@@ -13,19 +13,9 @@ class AddReviewCharacteristicsInput extends React.Component {
       Fit: null,
       SizeText: [
         'A size too small',
-        <>
-          <sup>1</sup>
-          &frasl;
-          <sub>2</sub>
-          &nbsp;a size too small
-        </>,
+        '1/2 a size too small',
         'Perfect',
-        <>
-          <sup>1</sup>
-          &frasl;
-          <sub>2</sub>
-          &nbsp;a size too big
-        </>,
+        '1/2 a size too big',
         'A size too wide',
       ],
       WidthText: [
@@ -73,32 +63,29 @@ class AddReviewCharacteristicsInput extends React.Component {
           (characteristicArray) => {
             return (
               <div className='modal-input' key={characteristicArray[0]}>
-                <div>
-                  {characteristicArray[0]}*
-                  {this.state[characteristicArray[0]] &&
-                    this.state[`${characteristicArray[0]}Text`][
-                      this.state[characteristicArray[0]] - 1
-                    ]}
+                <div>{characteristicArray[0]}*&nbsp;</div>
+                <div className='modal-input-container'>
+                  {[...new Array(5)].map((ele, i) => {
+                    return (
+                      <div className='radio-group' key={i}>
+                        <input
+                          type='radio'
+                          id={`${characteristicArray[0]}-${i}`}
+                          name={characteristicArray[1].id}
+                          value={i + 1}
+                          onChange={(e) => {
+                            this.setState({ [characteristicArray[0]]: i + 1 });
+                            this.props.onChange(e);
+                          }}
+                          required
+                        />
+                        <label htmlFor={`${characteristicArray[0]}-${i}`}>
+                          {this.state[`${characteristicArray[0]}Text`][i]}
+                        </label>
+                      </div>
+                    );
+                  })}
                 </div>
-                {[...new Array(5)].map((ele, i) => {
-                  return (
-                    <label htmlFor={`${characteristicArray[0]}-${i}`} key={i}>
-                      <input
-                        type='radio'
-                        id={`${characteristicArray[0]}-${i}`}
-                        name={characteristicArray[1].id}
-                        value={i + 1}
-                        onChange={(e) => {
-                          this.setState({ [characteristicArray[0]]: i + 1 });
-                          this.props.onChange(e);
-                        }}
-                        required
-                      />
-                      {i + 1}
-                    </label>
-                  );
-                })}
-                <br />
               </div>
             );
           }

@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../../../assets/icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class RatingBreakdownBar extends React.Component {
   render() {
@@ -7,11 +9,12 @@ class RatingBreakdownBar extends React.Component {
       <div className='rating-breakdown-bar'>
         <span
           className='breakdown-bar-rating'
-          onClick={() => this.props.onClick(this.props.rating)}
-          style={{ boxSizing: 'border-box', padding: '5px', width: '20%' }}
+          onClick={() =>
+            this.props.onClick(parseInt(this.props.rating.slice(0, 1)))
+          }
+          style={{ boxSizing: 'border-box', minWidth: '20%' }}
         >
           {this.props.rating}
-          &nbsp;Star
         </span>
         <span
           className='breakdown-bar'
@@ -19,12 +22,11 @@ class RatingBreakdownBar extends React.Component {
             position: 'relative',
             display: 'inline-block',
             height: '12px',
-            width: '100%',
             marginLeft: '5px',
           }}
         >
           <span
-            className='breakdown-bar'
+            className='breakdown-bar-inner'
             style={{
               width: '100%',
               height: '12px',
@@ -43,14 +45,35 @@ class RatingBreakdownBar extends React.Component {
               backgroundColor: '#8eda14',
             }}
           />
+          {this.props.rating === '' && (
+            <span
+              style={{
+                width: `${parseInt(this.props.percent, 10) + 4.4}%`,
+                height: '12px',
+                position: 'absolute',
+                bottom: '2px',
+
+                display: 'flex',
+                justifyContent: 'flex-end',
+                alignItems: 'center',
+                backgroundColor: 'transparent',
+              }}
+            >
+              <FontAwesomeIcon icon={['fas', 'caret-down']} size='2x' />
+            </span>
+          )}
         </span>
       </div>
     );
   }
 }
 
+RatingBreakdownBar.defaultProps = {
+  onClick: () => {},
+};
+
 RatingBreakdownBar.propTypes = {
-  rating: PropTypes.number.isRequired,
+  rating: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   percent: PropTypes.number.isRequired,
   onClick: PropTypes.func,
 };

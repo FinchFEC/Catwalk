@@ -2,8 +2,8 @@ import axios from 'axios';
 
 export default function getReviewMetadata(productId) {
   return axios
-    .get(`http://18.224.200.47/reviews/${productId}/meta`)
+    .get(`http://18.224.37.110/reviews/meta?product_id=${productId}`)
     .catch((err) => {
-      console.log(err);
+      console.log('error getting review metadata');
     });
 }

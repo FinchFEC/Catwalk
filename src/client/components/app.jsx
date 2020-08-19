@@ -2,7 +2,7 @@ import React from "react";
 import Overview from "./widgets/overview/Overview.js";
 // import ProductListContainer from '../redux/containers/productListContainer.js';
 import "../assets/scss/styles.scss";
-import RelatedProductsContainer from "../redux/containers/relatedContainer.js";
+import RelatedMasterContainer from "../redux/containers/relatedContainers/relatedMasterContainer";
 import RatingsReviewsContainer from "../redux/containers/RatingsReviewsContainer.js";
 
 class App extends React.Component {
@@ -17,7 +17,7 @@ class App extends React.Component {
           </p>
         </header>
         <Overview />
-        <RelatedProductsContainer />
+        <RelatedMasterContainer />
         <RatingsReviewsContainer />
       </div>
     );
