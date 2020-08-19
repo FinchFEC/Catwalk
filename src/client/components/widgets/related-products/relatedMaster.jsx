@@ -4,30 +4,42 @@ import RelatedList from "./relatedList";
 import OutfitList from "./outfitList";
 import "../../../assets/scss/related.scss";
 
-class RelatedProducts extends React.Component {
+class RelatedMaster extends React.Component {
   constructor(props) {
     super(props);
-    this.props.getRelatedProductsInfo(4);
-    this.props.getAllRelatedImages(4);
+    props.getCurrentProductInfo(props.productId);
+    props.getRelatedProductsInfo(props.productId);
+    props.getAllRelatedImages(props.productId);
   }
   
   render() {
     return (
-      <div>
-        <RelatedList relatedInfo={this.props.relatedInfo} relatedImages={this.props.relatedImages} />
+      <div className="head_related">
+        <h3>RELATED PRODUCTS</h3>
+        <RelatedList
+          relatedInfo={this.props.relatedInfo}
+          relatedImages={this.props.relatedImages}
+          toggleComparison={this.props.toggleComparison}
+          showComparison={this.props.showComparison}
+          currentInfo={this.props.currentInfo}
+        />
+        <h3>YOUR OUTFIT</h3>
         <OutfitList />
       </div>
     );
   }
 }
 
-
-
-RelatedProducts.propTypes = {
-  relatedInfo: PropTypes.array.isRequired,
-  relatedImages: PropTypes.array.isRequired,
+RelatedMaster.propTypes = {
   getRelatedProductsInfo: PropTypes.func.isRequired,
   getAllRelatedImages: PropTypes.func.isRequired,
+  toggleComparison: PropTypes.func.isRequired,
+  showComparison: PropTypes.bool.isRequired,
+  relatedInfo: PropTypes.array.isRequired,
+  relatedImages: PropTypes.array.isRequired,
+  productId: PropTypes.number.isRequired,
+  getCurrentProductInfo: PropTypes.func.isRequired,
+  currentInfo: PropTypes.object.isRequired
 };
 
-export default RelatedProducts;
+export default RelatedMaster;

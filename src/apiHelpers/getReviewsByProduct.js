@@ -13,7 +13,7 @@ function getReviewsByProduct(productId, page, sort) {
       console.log('error getting product reviews');
     })
     .then((data) => {
-      console.log('data.data.results:', data.data.results);
+      // console.log('data.data.results:', data.data.results);
       return data.data.results;
     });
 }

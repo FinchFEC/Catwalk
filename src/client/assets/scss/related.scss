@@ -20,18 +20,27 @@
   width: fit-content;
   padding: 10px;
   border: 2px black solid;
+  align-items: flex-end;
+  h4 {
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-bottom: auto;
+  }
   h3 {
     border: 2px black solid;
     padding-left: 40px;
     padding-right: 40px;
   }
   ul {
-    border: 2px black dashed;
+    border: 2px black solid;
     padding: 40px;
   }
 }
 
-.modal {
-  display: unset;
+.head_related {
+  margin-left: 200px;
 }
 
+.star_icon {
+  position: absolute;
+}
