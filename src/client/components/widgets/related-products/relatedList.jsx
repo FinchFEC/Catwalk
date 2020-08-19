@@ -47,6 +47,7 @@ const RelatedList = ({
   }
   return (
     <div>
+      <button type="button">Left</button>
       <div id="container-1">
         {arrOfItemsAndImages.map((item) => (
           <RelatedItem item={item} toggleComparison={toggleComparison} changeCompared={obj => setCompared(obj)} />
@@ -60,6 +61,7 @@ const RelatedList = ({
           compared={compared}
         />
       )}
+      <button type="button">Right</button>
     </div>
   );
 };

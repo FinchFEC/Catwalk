@@ -1,9 +1,13 @@
 #container-1 {
   display: flex;
   align-items: flex-end;
+  width: 70%;
+  overflow-x: scroll;
+  border: 2px black solid;
   div {
     border: 2px black solid;
     padding: 10px;
+    margin: 5px;
   }
 }
 #container-2 {
@@ -17,9 +21,8 @@
 #modal {
   display: flex;
   clear: both;
-  width: fit-content;
+  width: max-content;
   padding: 10px;
-  border: 2px black solid;
   align-items: flex-end;
   h4 {
     padding-left: 40px;
@@ -42,5 +45,9 @@
 }
 
 .star_icon {
-  position: absolute;
+  color: black;
+  font-size: 150%;
+  :hover {
+    color: red;
+  }
 }
