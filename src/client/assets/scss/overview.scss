@@ -11,6 +11,7 @@ $primary-color: #333;
   background-color: #fff;
   color: #444;
 }
+
 .current-photo-container {
   background-color: lightgray;
   grid-column: 2 / span 1;
@@ -53,88 +54,131 @@ $primary-color: #333;
     top: 4%;
     left: 55%;
   }
+}
+.expanded-photo-container {
+  background-color: #d3d3d3;
+  grid-column: 2 / span 2;
+  grid-row: 1 / span 1;
+  display: grid;
+  grid-template-columns: 17% 83%;
 
-  .photo-carousel {
+  #current-photo {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    img {
+      max-height: 630px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  #left-arrow {
+    z-index: 1;
+    position: absolute;
+    font-size: 18px;
+    cursor: pointer;
+    top: 35%;
+    left: 28%;
+  }
+  #right-arrow {
+    z-index: 1;
+    position: absolute;
+    font-size: 18px;
+    cursor: pointer;
+    top: 35%;
+    left: 80%;
+  }
+  #fold {
+    z-index: 1;
+    position: absolute;
+    font-size: 24px;
+    cursor: pointer;
+    top: 4%;
+    left: 80%;
+  }
+}
+
+.photo-carousel {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+  display: grid;
+  grid-template-rows: repeat(7, 1fr);
+  margin-top: 20px;
+
+  #photo-1 {
+    background-color: white;
+    border: solid 1px;
     grid-column: 1 / span 1;
     grid-row: 1 / span 1;
-    display: grid;
-    grid-template-rows: repeat(7, 1fr);
-    margin-top: 20px;
-
-    #photo-1 {
-      background-color: white;
-      border: solid 1px;
-      grid-column: 1 / span 1;
-      grid-row: 1 / span 1;
-      height: 73%;
-      width: 50%;
-      margin: auto;
-      background-image: url("https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80");
-      background-repeat: no-repeat;
-      background-size: 100px;
-      background-position: center;
-    }
-    #photo-2 {
-      background-color: white;
-      border: solid 1px;
-      grid-column: 1 / span 1;
-      grid-row: 2 / span 1;
-      height: 73%;
-      width: 50%;
-      margin: auto;
-      background-image: url("https://images.unsplash.com/photo-1492447105260-2e947425b5cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80");
-      background-repeat: no-repeat;
-      background-size: 100px;
-      background-position: center;
-    }
-    #photo-3 {
-      background-color: white;
-      border: solid 1px;
-      grid-column: 1 / span 1;
-      grid-row: 3 / span 1;
-      height: 73%;
-      width: 50%;
-      margin: auto;
-      background-image: url("https://images.unsplash.com/photo-1548133464-29abc661eb5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80");
-      background-repeat: no-repeat;
-      background-size: 100px;
-      background-position: center;
-    }
-    #photo-4 {
-      border: solid 1px;
-      background-color: white;
-      grid-column: 1 / span 1;
-      grid-row: 4 / span 1;
-      height: 73%;
-      width: 50%;
-      margin: auto;
-      background-image: url("https://images.unsplash.com/photo-1554921148-83d8ceda2095?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80");
-      background-repeat: no-repeat;
-      background-size: 100px;
-      background-position: center;
-    }
-    #photo-5 {
-      background-color: white;
-      border: solid 1px;
-      grid-column: 1 / span 1;
-      grid-row: 5 / span 1;
-      height: 73%;
-      width: 50%;
-      margin: auto;
-      left: 19%;
-      background-image: url("https://images.unsplash.com/photo-1559304022-afbf28f53c4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80");
-      background-repeat: no-repeat;
-      background-size: 100px;
-      background-position: center;
-    }
-    #arrow-down {
-      z-index: 1;
-      position: absolute;
-      font-size: 18px;
-      cursor: pointer;
-      top: 55%;
-      left: 19%;
-    }
+    height: 73%;
+    width: 50%;
+    margin: auto;
+    background-image: url("https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80");
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: center;
+  }
+  #photo-2 {
+    background-color: white;
+    border: solid 1px;
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+    height: 73%;
+    width: 50%;
+    margin: auto;
+    background-image: url("https://images.unsplash.com/photo-1492447105260-2e947425b5cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80");
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: center;
+  }
+  #photo-3 {
+    background-color: white;
+    border: solid 1px;
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 1;
+    height: 73%;
+    width: 50%;
+    margin: auto;
+    background-image: url("https://images.unsplash.com/photo-1548133464-29abc661eb5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80");
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: center;
+  }
+  #photo-4 {
+    border: solid 1px;
+    background-color: white;
+    grid-column: 1 / span 1;
+    grid-row: 4 / span 1;
+    height: 73%;
+    width: 50%;
+    margin: auto;
+    background-image: url("https://images.unsplash.com/photo-1554921148-83d8ceda2095?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80");
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: center;
+  }
+  #photo-5 {
+    background-color: white;
+    border: solid 1px;
+    grid-column: 1 / span 1;
+    grid-row: 5 / span 1;
+    height: 73%;
+    width: 50%;
+    margin: auto;
+    left: 19%;
+    background-image: url("https://images.unsplash.com/photo-1559304022-afbf28f53c4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80");
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: center;
+  }
+  #arrow-down {
+    z-index: 1;
+    position: absolute;
+    font-size: 18px;
+    cursor: pointer;
+    top: 55%;
+    left: 19%;
   }
 }
 
