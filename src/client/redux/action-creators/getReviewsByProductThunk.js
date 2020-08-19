@@ -19,7 +19,7 @@ function getReviewsByProductThunk() {
             .getReviewsByProduct(productId, page + 1, sort)
             .then((data2) => {
               dispatch({ type: 'GET_REVIEWS', data: data2 });
-              if (data.length < 2) {
+              if (data2.length < 2) {
                 dispatch({ type: 'NO_MORE_REVIEWS' });
               }
             });
