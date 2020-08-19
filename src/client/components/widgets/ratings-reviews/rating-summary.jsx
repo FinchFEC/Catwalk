@@ -19,8 +19,17 @@ class RatingSummary extends React.Component {
     // console.log('avgRating:', avgRating);
     return (
       <div className='ratings-summary'>
-        <div className='average-rating'>{avgRating}</div>
-        <StaticStars rating={parseFloat(avgRating, 10)} />
+        <div
+          className='average-rating-stars'
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'space-between',
+          }}
+        >
+          <div className='average-rating'>{avgRating}</div>
+          <StaticStars rating={parseFloat(avgRating, 10)} />
+        </div>
         <div className='ratings-count'>
           based on&nbsp;
           {ratingsCount}

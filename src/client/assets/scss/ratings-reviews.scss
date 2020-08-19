@@ -30,6 +30,10 @@ $formFontSize: 14px;
 
 .rating-breakdown .rating-breakdown-bar {
   margin-bottom: 8px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  flex-wrap: wrap;
 }
 
 .rating-breakdown-header {
@@ -462,10 +466,35 @@ $modalBgColor: skyblue;
   display: block;
 }
 
-// .breakdown-bar-overlay:after {
-//   content: '^';
-//   line-height: 20px;
-//   display: flex;
-//   justify-content: flex-end;
-//   align-items: flex-end;
-// }
+@media screen and (max-width: 1137px) {
+  .rating-breakdown .breakdown-bar {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .review-tile-header {
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .review-tile-username-container {
+    text-align: left;
+    margin: 0 {
+      right: 10px;
+      top: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 766px) {
+  .review-tiles-container-btns {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: initial;
+    .show-more-reviews-btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}

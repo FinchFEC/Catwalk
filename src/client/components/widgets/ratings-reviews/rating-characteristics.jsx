@@ -20,7 +20,7 @@ class RatingCharacteristics extends React.Component {
       <div className='rating-characteristics'>
         {Object.entries(this.props.characteristics).map((ele, i) => {
           return (
-            <div style={{ marginBottom: '5px' }}>
+            <div style={{ marginBottom: '5px' }} key={i}>
               <div className='ratings-characteristics-header' key={i}>
                 <div>{ele[0]}</div>
               </div>

@@ -4,7 +4,7 @@ import RatingBreakdownBar from './rating-breakdown-bar';
 
 class RatingBreakdown extends React.Component {
   render() {
-    console.log('this.props.filters:', this.props.filters);
+    // console.log('this.props.filters:', this.props.filters);
     let ratingsCount = 0; // number of ratings
     Object.entries(this.props.ratings).forEach((arr) => {
       ratingsCount += arr[1];
