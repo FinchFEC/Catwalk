@@ -15,6 +15,16 @@ const ComparisonModal = ({
     mergedInfoObj[feature.feature] = feature.value;
   });
   const featuresArr = Object.keys(mergedInfoObj);
+  const offsetCurrent = featuresArr.length - currentInfo.features.length;
+  const offsetCurArr = [];
+  for (let i = 0; i < offsetCurrent; i++) {
+    offsetCurArr.push(" ");
+  }
+  const offsetCompared = featuresArr.length - compared.data.features.length;
+  const offsetCompArr = [];
+  for (let i = 0; i < offsetCompared; i++) {
+    offsetCompArr.push(" ");
+  }
   return (
     <div className="modal">
       <button type="button" onClick={() => toggleComparison()}>
@@ -25,8 +35,9 @@ const ComparisonModal = ({
         <div id="modal-1">
           <h3>{currentInfo.name}</h3>
           <ul>
-            {currentInfo.features.length !== compared.data.features.length &&
-              compared.data.features.map(() => <li>X</li>)}
+            {offsetCurArr.map((ele) => (
+              <li>{ele}</li>
+            ))}
             {currentInfo.features.map((feat) => (
               <li>{feat.value}</li>
             ))}
@@ -45,8 +56,9 @@ const ComparisonModal = ({
             {compared.data.features.map((feature) => (
               <li>{feature.value}</li>
             ))}
-            {currentInfo.features.length !== compared.data.features.length &&
-              currentInfo.features.map(() => <li>X</li>)}
+            {offsetCompArr.map((ele) => (
+              <li>{ele}</li>
+            ))}
           </ul>
         </div>
       </div>

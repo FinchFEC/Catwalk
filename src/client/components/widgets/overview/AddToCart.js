@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../../assets/scss/overview.scss';
-//import { IoIosArrowDown } from "react-icons/io";
+// import { IoIosArrowDown } from "react-icons/io";
 import { AiOutlinePlus, AiOutlineStar } from 'react-icons/ai';
 
 const AddToCart = () => {
