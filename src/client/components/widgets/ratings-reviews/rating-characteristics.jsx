@@ -35,9 +35,7 @@ class RatingCharacteristics extends React.Component {
                   fontSize: '10px',
                 }}
               >
-                <span style={{ marginLeft: '8px' }}>
-                  {this.state[ele[0]][0]}
-                </span>
+                <span>{this.state[ele[0]][0]}</span>
                 <span>{this.state[ele[0]][1]}</span>
               </div>
             </div>
