@@ -4,6 +4,7 @@ import getRelatedProductsInfo from './getRelatedProductsInfo.js';
 import getReviewMetadata from './getReviewMetadata';
 import getAllRelatedImages from './getAllRelatedImages';
 import getCurrentProductInfo from './getCurrentProductInfo';
+import getAllRelatedReviews from './getAllRelatedReviews';
 
 export default {
   getProducts,
@@ -11,5 +12,6 @@ export default {
   getRelatedProductsInfo,
   getReviewMetadata,
   getAllRelatedImages,
-  getCurrentProductInfo
+  getCurrentProductInfo,
+  getAllRelatedReviews
 };

@@ -1,7 +1,6 @@
 import { connect } from "react-redux";
 import RelatedMaster from "../../../components/widgets/related-products/relatedMaster.jsx";
 import actionCreators from "../../action-creators";
-import productId from "../../reducers/productId.js";
 
 function mapStateToProps(state) {
   return {
@@ -10,6 +9,7 @@ function mapStateToProps(state) {
     showComparison: state.showComparison,
     productId: state.productId,
     currentInfo: state.currentInfo,
+    relatedRatings: state.relatedRatings,
   };
 }
 
@@ -26,6 +26,9 @@ function mapDispatchToProps(dispatch) {
     },
     getCurrentProductInfo(prodId) {
       dispatch(actionCreators.getCurrentProductInfo(prodId));
+    },
+    getAllRelatedReviews(prodId) {
+      dispatch(actionCreators.getAllRelatedReviews(prodId));
     },
   };
 }

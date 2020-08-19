@@ -14,6 +14,7 @@ import relatedInfo from './relatedReducers/relatedInfoReducer';
 import relatedImages from './relatedReducers/relatedImagesReducer';
 import comparison from './relatedReducers/comparisonReducer';
 import currentInfo from './currentInfoReducer';
+import relatedRatings from './relatedReducers/relatedRatingsReducer';
 
 const rootReducer = combineReducers({
   productList,
@@ -28,7 +29,8 @@ const rootReducer = combineReducers({
   relatedInfo,
   relatedImages,
   showComparison: comparison,
-  currentInfo
+  currentInfo,
+  relatedRatings
 });
 
 export default rootReducer;

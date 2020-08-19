@@ -23,6 +23,7 @@
     "react/prefer-stateless-function": [0],
     "no-unused-vars": [1],
     "react/jsx-filename-extension": [1],
-    "no-prototype-builtins": [0]
+    "no-prototype-builtins": [0],
+    "no-else-return": [0]
   }
 }

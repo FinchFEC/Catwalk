@@ -1,15 +1,32 @@
-#container-1 {
+.container-1 {
+  position: relative;
   display: flex;
   align-items: flex-end;
-  width: 70%;
+  width: 650px;
+  scroll-snap-type: x mandatory;
   overflow-x: scroll;
   border: 2px black solid;
-  div {
+  .tile {
+    scroll-snap-align: start;
+    width: 200px;
     border: 2px black solid;
     padding: 10px;
-    margin: 5px;
+    margin: 10px;
   }
 }
+
+.tile .star-container {
+  scroll-snap-align: none;
+  width: auto;
+  border: none;
+  padding: auto;
+  margin: {
+    left: 1px;
+    right: 1px;
+  }
+}
+
+
 #container-2 {
   display: flex;
   align-items: flex-end;
@@ -44,7 +61,7 @@
   margin-left: 200px;
 }
 
-.star_icon {
+.star_icon_alt {
   color: black;
   font-size: 150%;
   :hover {
