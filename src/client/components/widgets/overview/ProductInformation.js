@@ -13,8 +13,7 @@ const ProductInformation = (props) => {
         <div className="rating">
           <div className="row">
             <StaticStars rating={3} /> <a href="">Read all reviews</a>
-          </div>         
-          <a href="">Read all reviews</a>
+          </div>
         </div>
         <div className="product-category">Pants</div>
         <div className="product-title">Morning Joggers </div>
