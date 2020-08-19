@@ -14,7 +14,7 @@ class RelatedMaster extends React.Component {
   
   render() {
     return (
-      <div>
+      <div className="head_related">
         <h3>RELATED PRODUCTS</h3>
         <RelatedList
           relatedInfo={this.props.relatedInfo}
