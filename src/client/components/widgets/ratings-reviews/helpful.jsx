@@ -44,9 +44,12 @@ class Helpful extends React.Component {
       <div className='helpful'>
         Was this review helpful?&nbsp;
         <span className='helpful-btn' onClick={this.clickYes}>
-          <u>Yes</u>&nbsp;({this.props.helpful})
+          <u tabIndex={0}>Yes</u>&nbsp;({this.props.helpful})
         </span>
-        <span className='review-report' onClick={this.clickReport}>
+        <span
+          style={{ marginRight: '10px', borderLeft: '1px solid black' }}
+        ></span>
+        <span tabIndex={0} className='review-report' onClick={this.clickReport}>
           Report
         </span>
       </div>

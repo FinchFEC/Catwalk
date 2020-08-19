@@ -76,7 +76,7 @@ class RatingsReviews extends React.Component {
     // console.log('reviews:', this.props.reviews);
     // console.log('sort:', this.props.sort);
     return (
-      <div className='ratings-reviews'>
+      <div className='ratings-reviews' id='ratingsReviews'>
         <Rating
           ratings={this.props.reviewRatings}
           recommended={this.props.reviewRecommended}
@@ -141,7 +141,6 @@ RatingsReviews.propTypes = {
   reviewRatings: PropTypes.object.isRequired,
   reviewRecommended: PropTypes.object.isRequired,
   reviews: PropTypes.array.isRequired,
-  page: PropTypes.number.isRequired,
   productId: PropTypes.number.isRequired,
   noMoreReviews: PropTypes.bool.isRequired,
   sort: PropTypes.string.isRequired,
