@@ -30,6 +30,9 @@ function mapDispatchToProps(dispatch) {
     getAllRelatedReviews(prodId) {
       dispatch(actionCreators.getAllRelatedReviews(prodId));
     },
+    navigateToProduct(prodId) {
+      dispatch(actionCreators.navigateToProduct(prodId));
+    }
   };
 }
 

@@ -3,32 +3,12 @@ import PropTypes from "prop-types";
 import RelatedItem from "./relatedItem.jsx";
 import ComparisonModal from "./comparisonModal";
 
-const relatedItems = [
-  {
+const relatedItems = [];
+for (let i = 0; i < 25; i++) {
+  relatedItems.push({
     data: { results: [{ photos: [{ url: "", thumbnail_url: "" }] }] },
-  },
-  {
-    data: { results: [{ photos: [{ url: "", thumbnail_url: "" }] }] },
-  },
-  {
-    data: { results: [{ photos: [{ url: "", thumbnail_url: "" }] }] },
-  },
-  {
-    data: { results: [{ photos: [{ url: "", thumbnail_url: "" }] }] },
-  },
-  {
-    data: { results: [{ photos: [{ url: "", thumbnail_url: "" }] }] },
-  },
-  {
-    data: { results: [{ photos: [{ url: "", thumbnail_url: "" }] }] },
-  },
-  {
-    data: { results: [{ photos: [{ url: "", thumbnail_url: "" }] }] },
-  },
-  {
-    data: { results: [{ photos: [{ url: "", thumbnail_url: "" }] }] },
-  },
-];
+  });
+}
 
 const RelatedList = ({
   relatedInfo,
@@ -36,7 +16,8 @@ const RelatedList = ({
   showComparison,
   toggleComparison,
   currentInfo,
-  ratings
+  ratings,
+  navigateToProduct,
 }) => {
   const [compared, setCompared] = useState(relatedImages[0]);
   const [scrollOffset, setScrollOffset] = useState(0);
@@ -45,7 +26,7 @@ const RelatedList = ({
     arrOfItemsAndImages.push({
       info: relatedInfo[i],
       image: relatedImages[i] || relatedItems[i],
-      rating: ratings[i] || {data: {results: ['','']}}
+      rating: ratings[i] || { data: { results: ["", ""] } },
     });
   }
   function scrollItems(e) {
@@ -79,6 +60,7 @@ const RelatedList = ({
             item={item}
             toggleComparison={toggleComparison}
             changeCompared={(obj) => setCompared(obj)}
+            navigateToProduct={navigateToProduct}
           />
         ))}
       </div>
@@ -108,7 +90,8 @@ RelatedList.propTypes = {
   showComparison: PropTypes.bool.isRequired,
   toggleComparison: PropTypes.func.isRequired,
   currentInfo: PropTypes.object.isRequired,
-  ratings: PropTypes.array.isRequired
+  ratings: PropTypes.array.isRequired,
+  navigateToProduct: PropTypes.func.isRequired,
 };
 
 export default RelatedList;
