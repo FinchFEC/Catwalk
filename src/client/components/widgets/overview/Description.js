@@ -3,8 +3,6 @@ import "../../../assets/scss/overview.scss";
 import { GrCheckmark } from "react-icons/gr";
 
 const Description = ({ currentInfo, features }) => {
-  console.log(features);
-
   return (
     <div className="description">
       <div className="slogan-box">

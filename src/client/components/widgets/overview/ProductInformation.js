@@ -5,7 +5,12 @@ import StyleSelector from "./StyleSelector.js";
 import AddToCart from "./AddToCart.js";
 import StaticStars from "../ratings-reviews/static-stars.jsx";
 
-const ProductInformation = ({ currentInfo, avgRating }) => {
+const ProductInformation = ({
+  currentInfo,
+  avgRating,
+  styles,
+  currentStyle,
+}) => {
   return (
     <div className="product-information">
       <div className="information-holder">
@@ -19,7 +24,7 @@ const ProductInformation = ({ currentInfo, avgRating }) => {
         <div className="product-title">{currentInfo.name}</div>
         <div className="product-price"> $40</div>
       </div>
-      <StyleSelector />
+      <StyleSelector styles={styles} currentStyle={currentStyle} />
       <AddToCart />
     </div>
   );

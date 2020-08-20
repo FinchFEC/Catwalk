@@ -1,5 +1,4 @@
 import React from "react";
-//import Overview from "./widgets/overview/Overview.js";
 import OverViewContainer from "../redux/containers/OverViewContainer.js";
 // import ProductListContainer from '../redux/containers/productListContainer.js';
 import "../assets/scss/styles.scss";
@@ -11,6 +10,9 @@ class App extends React.Component {
     return (
       <div>
         <header>
+          <div className="logo-placeholder">
+            <img src="https://i.imgur.com/6q2NVa7.png" />
+          </div>
           <p className="announcement">
             <em>SITE-WIDE ANNOUNCEMENT MESSAGE!</em> &mdash; SALE / DISCOUNT{" "}
             <strong>OFFER</strong>

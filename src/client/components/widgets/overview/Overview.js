@@ -6,22 +6,27 @@ import ProductInformation from "./ProductInformation.js";
 import Description from "./Description.js";
 
 const Overview = (props) => {
+  const styles = props.styles;
   //props.getStylesByProductId(props.productId);
   //console.log(props.currentInfo.features);
-  const [view, setView] = useState("main");
-  //const [defaultStyleIndex, setDefaultStyle] = useState(0);
-
   const changeView = (type) => {
     setView(type);
   };
 
-  // const getDefaultStyle = (props) => {
-  //   for (var i = 0; i < props.styles.results.length; i++) {
-  //     if (props.styles.results[i]["default?"] === 1) {
-  //       setDefaultStyle(i);
-  //     }
-  //   }
-  // };
+  const [view, setView] = useState("main");
+  const [currentStyle, changeCurrentStyle] = useState(props.styles[3]);
+
+  const findDefault = (styles) => {
+    for (var i = 0; i < styles.length; i++) {
+      if (styles[i]["default?"] === 1) {
+        changeCurrentStyle(props.styles[i]);
+      }
+    }
+  };
+
+  useEffect(() => {
+    findDefault(styles);
+  });
 
   return (
     <div className="overview-component">
@@ -31,6 +36,8 @@ const Overview = (props) => {
           <ProductInformation
             avgRating={props.avgRating}
             currentInfo={props.currentInfo}
+            styles={props.styles}
+            currentStyle={currentStyle}
           />
         </Fragment>
       ) : (
