@@ -5,6 +5,7 @@ import getAllRelatedImages from "./relatedActions/getAllRelatedImages.js";
 import toggleComparison from "./relatedActions/toggleComparison";
 import getCurrentProductInfo from "./getCurrentProductInfo";
 import getStylesByProductId from "./getStylesByProductId";
+import getAllRelatedReviews from "./relatedActions/getAllRelatedReviews";
 
 const actionCreators = {
   getProductList,
@@ -13,6 +14,7 @@ const actionCreators = {
   toggleComparison,
   getCurrentProductInfo,
   getStylesByProductId,
+  getAllRelatedReviews,
 };
 
 export default actionCreators;

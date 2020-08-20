@@ -6,6 +6,7 @@ import getAllRelatedImages from "./getAllRelatedImages";
 import getReviewByProductBySort from "./getReviewsByProductBySort";
 import getCurrentProductInfo from "./getCurrentProductInfo";
 import getStyles from "./getStyles";
+import getAllRelatedReviews from "./getAllRelatedReviews";
 
 export default {
   getProducts,
@@ -16,4 +17,5 @@ export default {
   getReviewByProductBySort,
   getCurrentProductInfo,
   getStyles,
+  getAllRelatedReviews,
 };

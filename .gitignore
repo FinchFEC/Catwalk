@@ -16,6 +16,7 @@ package-lock.json
 
 # Test
 /test/coverage/FEC-Project
+/test/screenshots
 
 # Individual webpack-config
 src/client/components/widgets/ratings-reviews/webpack.config.js
