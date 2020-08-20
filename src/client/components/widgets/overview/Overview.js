@@ -6,22 +6,22 @@ import ProductInformation from "./ProductInformation.js";
 import Description from "./Description.js";
 
 const Overview = (props) => {
-  props.getStylesByProductId(props.productId);
-
+  //props.getStylesByProductId(props.productId);
+  //console.log(props.currentInfo.features);
   const [view, setView] = useState("main");
-  const [defaultStyleIndex, setDefaultStyle] = useState(0);
+  //const [defaultStyleIndex, setDefaultStyle] = useState(0);
 
   const changeView = (type) => {
     setView(type);
   };
 
-  const getDefaultStyle = (props) => {
-    for (var i = 0; i < props.styles.results.length; i++) {
-      if (props.styles.results[i]["default?"] === 1) {
-        setDefaultStyle(i);
-      }
-    }
-  };
+  // const getDefaultStyle = (props) => {
+  //   for (var i = 0; i < props.styles.results.length; i++) {
+  //     if (props.styles.results[i]["default?"] === 1) {
+  //       setDefaultStyle(i);
+  //     }
+  //   }
+  // };
 
   return (
     <div className="overview-component">

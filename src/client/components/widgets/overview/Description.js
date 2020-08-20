@@ -3,6 +3,7 @@ import "../../../assets/scss/overview.scss";
 import { GrCheckmark } from "react-icons/gr";
 
 const Description = ({ currentInfo }) => {
+  console.log(currentInfo.features);
   return (
     <div className="description">
       <div className="slogan-box">
@@ -14,11 +15,7 @@ const Description = ({ currentInfo }) => {
         </div>
       </div>
       <div className="features-box">
-        <p id="features">
-          <GrCheckmark /> Fabric: 100% Cotton
-          <br />
-          <GrCheckmark /> Cut: Skinny
-        </p>
+        <p id="features"></p>
       </div>
     </div>
   );
