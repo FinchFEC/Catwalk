@@ -11,7 +11,6 @@ function mapStateToProps(state) {
     reviewCharacteristics: state.reviewCharacteristics,
     reviewRatings: state.reviewRatings,
     reviewRecommended: state.reviewRecommended,
-    noMoreReviews: state.noMoreReviews,
     productId: state.productId,
     sort: state.sort,
     page: state.page,

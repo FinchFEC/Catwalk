@@ -6,7 +6,6 @@ import reviewCharacteristics from './reviewCharacteristics';
 import reviewRatings from './reviewRatings';
 import reviewRecommended from './reviewRecommended';
 import reviews from './reviews';
-import noMoreReviews from './noMoreReviews';
 import sort from './sort';
 import page from './page';
 import productId from './productId';
@@ -24,7 +23,6 @@ const rootReducer = combineReducers({
   reviewRecommended,
   reviews: reviewsBuffer,
   reviewsBuffer: reviews,
-  noMoreReviews,
   sort,
   page,
   relatedInfo,

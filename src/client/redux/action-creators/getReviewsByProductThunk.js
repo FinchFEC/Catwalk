@@ -12,7 +12,6 @@ function getReviewsByProductThunk() {
           return apiHelpers
             .getReviewsByProduct(productId, page + 1, sort)
             .then((data2) => {
-              console.log('data2:', data2);
               dispatch({ type: 'GET_REVIEWS', data: data2 });
               dispatch({ type: 'INCREASE_PAGE' });
             });

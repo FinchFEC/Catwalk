@@ -146,7 +146,6 @@ RatingsReviews.propTypes = {
   reviewRecommended: PropTypes.object.isRequired,
   reviews: PropTypes.array.isRequired,
   productId: PropTypes.number.isRequired,
-  noMoreReviews: PropTypes.bool.isRequired,
   sort: PropTypes.string.isRequired,
   changeSort: PropTypes.func.isRequired,
   productInfo: PropTypes.object.isRequired,
