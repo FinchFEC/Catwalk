@@ -7,6 +7,9 @@ class Helpful extends React.Component {
     super(props);
     this.clickYes = this.clickYes.bind(this);
     this.clickReport = this.clickReport.bind(this);
+    this.state = {
+      helpful: props.helpful,
+    };
   }
 
   clickYes() {
@@ -15,10 +18,11 @@ class Helpful extends React.Component {
     }
     localStorage.setItem(this.props.reviewId, 1);
     axios
-      .put(`http://18.224.37.110/reviews/helpful/:${this.props.reviewId}`)
+      .put(`http://18.224.37.110/reviews/${this.props.reviewId}/helpful`)
       .then((data) => {
         console.log('marked helpful');
         console.log('data from clickYes:', data);
+        this.setState((state) => ({ helpful: state.helpful + 1 }));
       })
       .catch((err) => {
         console.log('error send helpful put call');
@@ -44,9 +48,12 @@ class Helpful extends React.Component {
       <div className='helpful'>
         Was this review helpful?&nbsp;
         <span className='helpful-btn' onClick={this.clickYes}>
-          <u>Yes</u>&nbsp;({this.props.helpful})
+          <u tabIndex={0}>Yes</u>&nbsp;({this.state.helpful})
         </span>
-        <span className='review-report' onClick={this.clickReport}>
+        <span
+          style={{ marginRight: '10px', borderLeft: '1px solid black' }}
+        ></span>
+        <span tabIndex={0} className='review-report' onClick={this.clickReport}>
           Report
         </span>
       </div>

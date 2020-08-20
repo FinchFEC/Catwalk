@@ -7,13 +7,14 @@ import getReviewByProductBySortThunk from '../action-creators/getReviewsByProduc
 function mapStateToProps(state) {
   return {
     reviews: state.reviews,
+    reviewsBuffer: state.reviewsBuffer,
     reviewCharacteristics: state.reviewCharacteristics,
     reviewRatings: state.reviewRatings,
     reviewRecommended: state.reviewRecommended,
-    noMoreReviews: state.noMoreReviews,
     productId: state.productId,
     sort: state.sort,
     page: state.page,
+    productInfo: state.currentInfo,
   };
 }
 

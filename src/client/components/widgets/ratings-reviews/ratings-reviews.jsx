@@ -6,6 +6,8 @@ import Rating from './rating';
 import ImgModal from './img-modal';
 import '../../../assets/scss/styles.scss';
 import '../../../assets/scss/ratings-reviews.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '../../../assets/icons';
 
 class RatingsReviews extends React.Component {
   constructor(props) {
@@ -75,8 +77,9 @@ class RatingsReviews extends React.Component {
   render() {
     // console.log('reviews:', this.props.reviews);
     // console.log('sort:', this.props.sort);
+    // console.log('this.props.productInfo:', this.props.productInfo);
     return (
-      <div className='ratings-reviews'>
+      <div className='ratings-reviews' id='ratingsReviews'>
         <Rating
           ratings={this.props.reviewRatings}
           recommended={this.props.reviewRecommended}
@@ -86,7 +89,7 @@ class RatingsReviews extends React.Component {
         />
 
         <div className='right'>
-          {this.props.reviews.length > 1 && (
+          {this.props.reviews.length >= 1 && (
             <ReviewTilesContainer
               reviews={this.props.reviews}
               handleSelectImg={this.handleSelectImg}
@@ -96,7 +99,7 @@ class RatingsReviews extends React.Component {
             />
           )}
           <div className='review-tiles-container-btns'>
-            {!this.props.noMoreReviews && (
+            {this.props.reviewsBuffer.length > 0 && (
               <div
                 onClick={this.props.getReviewsByProduct}
                 className='show-more-reviews-btn'
@@ -108,17 +111,20 @@ class RatingsReviews extends React.Component {
               className='add-review-btn'
               onClick={this.handleAddReviewBtnClick}
             >
-              ADD A REVIEW +
+              ADD A REVIEW <FontAwesomeIcon icon={['fas', 'plus']} />
             </div>
           </div>
-          {this.state.addReview && this.props.reviewCharacteristics && (
-            <AddReviewModal
-              ref={this.modalRef}
-              characteristics={this.props.reviewCharacteristics}
-              onClick={this.handleModalClick}
-              productId={this.props.productId}
-            />
-          )}
+          {this.state.addReview &&
+            this.props.reviewCharacteristics &&
+            this.props.productInfo && (
+              <AddReviewModal
+                ref={this.modalRef}
+                characteristics={this.props.reviewCharacteristics}
+                onClick={this.handleModalClick}
+                productId={this.props.productId}
+                name={this.props.productInfo.name}
+              />
+            )}
           {this.state.selectedImgUrl && (
             <ImgModal
               src={this.state.selectedImgUrl}
@@ -141,9 +147,9 @@ RatingsReviews.propTypes = {
   reviewRatings: PropTypes.object.isRequired,
   reviewRecommended: PropTypes.object.isRequired,
   reviews: PropTypes.array.isRequired,
-  page: PropTypes.number.isRequired,
   productId: PropTypes.number.isRequired,
-  noMoreReviews: PropTypes.bool.isRequired,
   sort: PropTypes.string.isRequired,
   changeSort: PropTypes.func.isRequired,
+  productInfo: PropTypes.object.isRequired,
+  reviewsBuffer: PropTypes.array.isRequired,
 };
