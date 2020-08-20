@@ -12,7 +12,16 @@ class RelatedMaster extends React.Component {
     props.getAllRelatedImages(props.productId);
     props.getAllRelatedReviews(props.productId);
   }
-  
+
+  componentDidUpdate(prevProps) {
+    if (this.props.productId !== prevProps.productId) {
+      this.props.getCurrentProductInfo(this.props.productId);
+      this.props.getRelatedProductsInfo(this.props.productId);
+      this.props.getAllRelatedImages(this.props.productId);
+      this.props.getAllRelatedReviews(this.props.productId);
+    }
+  }
+
   render() {
     return (
       <div className="head_related">
@@ -24,6 +33,7 @@ class RelatedMaster extends React.Component {
           showComparison={this.props.showComparison}
           currentInfo={this.props.currentInfo}
           ratings={this.props.relatedRatings}
+          navigateToProduct={this.props.navigateToProduct}
         />
         <h3>YOUR OUTFIT</h3>
         <OutfitList />
@@ -43,7 +53,8 @@ RelatedMaster.propTypes = {
   getCurrentProductInfo: PropTypes.func.isRequired,
   currentInfo: PropTypes.object.isRequired,
   getAllRelatedReviews: PropTypes.func.isRequired,
-  relatedRatings: PropTypes.array.isRequired
+  relatedRatings: PropTypes.array.isRequired,
+  navigateToProduct: PropTypes.func.isRequired,
 };
 
 export default RelatedMaster;

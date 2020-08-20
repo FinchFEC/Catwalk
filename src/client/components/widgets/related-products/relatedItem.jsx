@@ -4,7 +4,13 @@ import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import StaticStars from "../ratings-reviews/static-stars";
 
-const RelatedItem = ({ item, toggleComparison, changeCompared }) => {
+const RelatedItem = ({
+  item,
+  toggleComparison,
+  changeCompared,
+  navigateToProduct,
+}) => {
+  console.log("ITEM.IMAGE", item.image);
   const itemUrl = item.image.data.results[0].photos[0].url;
   let ratingsCount = 0; // number of ratings
   let totalRating = 0;
@@ -18,7 +24,11 @@ const RelatedItem = ({ item, toggleComparison, changeCompared }) => {
     avgRating = 0;
   }
   return (
-    <div className="tile" id={`box-${item.info.data.id}`}>
+    <div
+      onClick={() => navigateToProduct(item.info.data.id)}
+      className="tile"
+      id={`box-${item.info.data.id}`}
+    >
       <FontAwesomeIcon
         onClick={() => {
           toggleComparison();
@@ -45,6 +55,7 @@ RelatedItem.propTypes = {
   item: PropTypes.object.isRequired,
   toggleComparison: PropTypes.func.isRequired,
   changeCompared: PropTypes.func.isRequired,
+  navigateToProduct: PropTypes.func.isRequired,
 };
 
 export default RelatedItem;
