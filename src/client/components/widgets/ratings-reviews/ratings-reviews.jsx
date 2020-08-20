@@ -6,6 +6,8 @@ import Rating from './rating';
 import ImgModal from './img-modal';
 import '../../../assets/scss/styles.scss';
 import '../../../assets/scss/ratings-reviews.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '../../../assets/icons';
 
 class RatingsReviews extends React.Component {
   constructor(props) {
@@ -109,7 +111,7 @@ class RatingsReviews extends React.Component {
               className='add-review-btn'
               onClick={this.handleAddReviewBtnClick}
             >
-              ADD A REVIEW +
+              ADD A REVIEW <FontAwesomeIcon icon={['fas', 'plus']} />
             </div>
           </div>
           {this.state.addReview &&

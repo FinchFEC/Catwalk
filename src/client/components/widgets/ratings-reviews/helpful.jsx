@@ -7,6 +7,9 @@ class Helpful extends React.Component {
     super(props);
     this.clickYes = this.clickYes.bind(this);
     this.clickReport = this.clickReport.bind(this);
+    this.state = {
+      helpful: props.helpful,
+    };
   }
 
   clickYes() {
@@ -19,6 +22,7 @@ class Helpful extends React.Component {
       .then((data) => {
         console.log('marked helpful');
         console.log('data from clickYes:', data);
+        this.setState((state) => ({ helpful: state.helpful + 1 }));
       })
       .catch((err) => {
         console.log('error send helpful put call');
@@ -44,7 +48,7 @@ class Helpful extends React.Component {
       <div className='helpful'>
         Was this review helpful?&nbsp;
         <span className='helpful-btn' onClick={this.clickYes}>
-          <u tabIndex={0}>Yes</u>&nbsp;({this.props.helpful})
+          <u tabIndex={0}>Yes</u>&nbsp;({this.state.helpful})
         </span>
         <span
           style={{ marginRight: '10px', borderLeft: '1px solid black' }}
