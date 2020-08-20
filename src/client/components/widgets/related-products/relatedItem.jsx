@@ -10,7 +10,6 @@ const RelatedItem = ({
   changeCompared,
   navigateToProduct,
 }) => {
-  console.log("ITEM.IMAGE", item.image);
   const itemUrl = item.image.data.results[0].photos[0].url;
   let ratingsCount = 0; // number of ratings
   let totalRating = 0;
@@ -24,29 +23,31 @@ const RelatedItem = ({
     avgRating = 0;
   }
   return (
-    <div
-      onClick={() => navigateToProduct(item.info.data.id)}
-      className="tile"
-      id={`box-${item.info.data.id}`}
-    >
+    <div className="tile-parent">
       <FontAwesomeIcon
         onClick={() => {
           toggleComparison();
           changeCompared(item.info);
         }}
-        icon={["far", "star"]}
+        icon={["fas", "star"]}
         className="star_icon_alt"
       />
-      <img
-        src={itemUrl}
-        alt={item.image.data.results[0].photos[0].thumbnail_url}
-        width="170px"
-        height="240px"
-      />
-      <p>{item.info.data.category}</p>
-      <h3>{item.info.data.name}</h3>
-      <p>${item.info.data.default_price}</p>
-      {avgRating !== 0 && <StaticStars rating={avgRating} />}
+      <div
+        onClick={() => navigateToProduct(item.info.data.id)}
+        className="tile"
+        id={`box-${item.info.data.id}`}
+      >
+        <img
+          src={itemUrl}
+          alt={item.image.data.results[0].photos[0].thumbnail_url}
+          width="170px"
+          height="240px"
+        />
+        <p>{item.info.data.category}</p>
+        <h3>{item.info.data.name}</h3>
+        <p>${item.info.data.default_price}</p>
+        {avgRating !== 0 && <StaticStars rating={avgRating} />}
+      </div>
     </div>
   );
 };

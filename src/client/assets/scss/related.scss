@@ -73,9 +73,15 @@
   margin-left: 15%;
 }
 
+.tile-parent {
+  position: relative;
+}
+
 .star_icon_alt {
   position: absolute;
-  color: black;
+  top: 25px;
+  right: 30px;
+  color: white;
   font-size: 150%;
   :hover {
     color: red;
