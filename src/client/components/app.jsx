@@ -1,5 +1,6 @@
 import React from "react";
-import Overview from "./widgets/overview/Overview.js";
+//import Overview from "./widgets/overview/Overview.js";
+import OverViewContainer from "../redux/containers/OverViewContainer.js";
 // import ProductListContainer from '../redux/containers/productListContainer.js';
 import "../assets/scss/styles.scss";
 import RelatedMasterContainer from "../redux/containers/relatedContainers/relatedMasterContainer";
@@ -16,9 +17,11 @@ class App extends React.Component {
             &mdash; <a href="">NEW PRODUCT HIGHLIGHT</a>{" "}
           </p>
         </header>
-        <Overview />
+        <OverViewContainer />
         <RelatedMasterContainer />
-        <RatingsReviewsContainer />
+        <section id="reviews">
+          <RatingsReviewsContainer />
+        </section>
       </div>
     );
   }
