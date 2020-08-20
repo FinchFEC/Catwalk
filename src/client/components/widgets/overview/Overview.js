@@ -28,7 +28,10 @@ const Overview = (props) => {
       {view === "main" ? (
         <Fragment>
           <CurrentPhoto changeView={changeView} />
-          <ProductInformation currentInfo={props.currentInfo} />
+          <ProductInformation
+            avgRating={props.avgRating}
+            currentInfo={props.currentInfo}
+          />
         </Fragment>
       ) : (
         <ExpandedPhoto changeView={changeView} />

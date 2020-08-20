@@ -5,13 +5,14 @@ import StyleSelector from "./StyleSelector.js";
 import AddToCart from "./AddToCart.js";
 import StaticStars from "../ratings-reviews/static-stars.jsx";
 
-const ProductInformation = ({ currentInfo }) => {
+const ProductInformation = ({ currentInfo, avgRating }) => {
   return (
     <div className="product-information">
       <div className="information-holder">
         <div className="rating">
           <div className="row">
-            <StaticStars rating={3} /> <a href="#reviews">Read all reviews</a>
+            <StaticStars rating={avgRating} />{" "}
+            <a href="#reviews">Read all reviews</a>
           </div>
         </div>
         <div className="product-category">{currentInfo.category}</div>
