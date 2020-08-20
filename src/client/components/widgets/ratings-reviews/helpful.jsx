@@ -15,7 +15,7 @@ class Helpful extends React.Component {
     }
     localStorage.setItem(this.props.reviewId, 1);
     axios
-      .put(`http://18.224.37.110/reviews/helpful/:${this.props.reviewId}`)
+      .put(`http://18.224.37.110/reviews/${this.props.reviewId}/helpful`)
       .then((data) => {
         console.log('marked helpful');
         console.log('data from clickYes:', data);

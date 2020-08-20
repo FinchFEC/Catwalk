@@ -48,9 +48,7 @@ class AddReviewModal extends React.Component {
         name: this.state.username,
         email: this.state.email,
         // photos: this.state.images,
-        photos: [
-          'https://cdna.lystit.com/photos/31fb-2015/06/13/burberry-nude-neutrals-horseferry-check-messenger-bag-beige-product-1-474614760-normal.jpeg',
-        ],
+        photos: ['https://images.unsplash.com/photo-1560769629-975ec94e6a86'],
         characteristics: this.state.characteristics,
       })
       .then((data) => {

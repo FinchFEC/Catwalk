@@ -97,7 +97,7 @@ class RatingsReviews extends React.Component {
             />
           )}
           <div className='review-tiles-container-btns'>
-            {!this.props.noMoreReviews && (
+            {this.props.reviewsBuffer.length > 0 && (
               <div
                 onClick={this.props.getReviewsByProduct}
                 className='show-more-reviews-btn'
@@ -150,4 +150,5 @@ RatingsReviews.propTypes = {
   sort: PropTypes.string.isRequired,
   changeSort: PropTypes.func.isRequired,
   productInfo: PropTypes.object.isRequired,
+  reviewsBuffer: PropTypes.array.isRequired,
 };

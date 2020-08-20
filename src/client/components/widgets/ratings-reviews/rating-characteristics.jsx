@@ -26,7 +26,7 @@ class RatingCharacteristics extends React.Component {
               </div>
               <RatingBreakdownBar
                 rating=''
-                percent={parseInt(((ele[1].value / 5) * 100).toFixed(2), 10)}
+                percent={parseInt(((ele[1].value / 6) * 100).toFixed(2), 10)}
               />
               <div
                 style={{

@@ -7,6 +7,7 @@ import getReviewByProductBySortThunk from '../action-creators/getReviewsByProduc
 function mapStateToProps(state) {
   return {
     reviews: state.reviews,
+    reviewsBuffer: state.reviewsBuffer,
     reviewCharacteristics: state.reviewCharacteristics,
     reviewRatings: state.reviewRatings,
     reviewRecommended: state.reviewRecommended,
