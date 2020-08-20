@@ -12,6 +12,7 @@ import {
   faStar as fasStar,
   faCheck,
   faCaretDown,
+  faPlus,
 } from '@fortawesome/free-solid-svg-icons';
 
 // brand icons
@@ -25,7 +26,8 @@ library.add(
   faCheckCircle,
   faCheck,
   faFacebook,
-  faCaretDown
+  faCaretDown,
+  faPlus
 );
 
 /* *************INSTRUCTIONS (https://www.npmjs.com/package/@fortawesome/react-fontawesome)************* */

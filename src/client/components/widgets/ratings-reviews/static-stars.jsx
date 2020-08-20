@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Star from './star';
 
 const StaticStars = (props) => {
-  let rating = props.rating * 100;
+  let rating = isNaN(props.rating) ? 0 : props.rating * 100;
   return (
     <div className='stars-container'>
       {[...new Array(5)].map((star, index) => {

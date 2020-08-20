@@ -165,6 +165,7 @@ $formFontSize: 14px;
 }
 
 .review-tile-text-body {
+  word-break: break-all;
   max-width: 100%;
   margin: {
     top: 12px;
@@ -304,8 +305,8 @@ $formFontSize: 14px;
 
 .modal-input {
   margin: {
-    top: 2px;
-    bottom: 2px;
+    top: 5px;
+    bottom: 5px;
   }
 }
 
@@ -355,7 +356,7 @@ $modalBgColor: skyblue;
 }
 
 .review-modal-content {
-  padding: 10px;
+  padding: 35px;
   font: {
     size: $formFontSize;
   }
@@ -437,8 +438,6 @@ $modalBgColor: skyblue;
 
 .review-report {
   text-decoration: underline;
-  padding-left: 10px;
-  border-left: 1px solid black;
 }
 
 .rating-characteristics {

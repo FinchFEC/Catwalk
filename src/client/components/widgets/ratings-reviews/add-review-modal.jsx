@@ -48,9 +48,7 @@ class AddReviewModal extends React.Component {
         name: this.state.username,
         email: this.state.email,
         // photos: this.state.images,
-        photos: [
-          'https://cdna.lystit.com/photos/31fb-2015/06/13/burberry-nude-neutrals-horseferry-check-messenger-bag-beige-product-1-474614760-normal.jpeg',
-        ],
+        photos: ['https://images.unsplash.com/photo-1560769629-975ec94e6a86'],
         characteristics: this.state.characteristics,
       })
       .then((data) => {
@@ -127,7 +125,9 @@ class AddReviewModal extends React.Component {
         onClick={this.props.onClick}
       >
         <div className='review-modal-content'>
-          <h3 className='review-modal-header'>Write your review about </h3>
+          <h3 className='review-modal-header'>
+            Write your review about {this.props.name}
+          </h3>
           Rating* <DynamicStars onClick={this.handleStarClick} />
           {this.state.rating && this.state.ratingText[this.state.rating - 1]}
           <form action='' method='post' onSubmit={this.handleSubmit}>
@@ -246,6 +246,7 @@ export default React.forwardRef((props, ref) => (
     characteristics={props.characteristics}
     onClick={props.onClick}
     productId={props.productId}
+    name={props.name}
   />
 ));
 
@@ -257,4 +258,5 @@ AddReviewModal.propTypes = {
     PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
   ]).isRequired,
   onClick: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
 };
