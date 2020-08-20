@@ -36,7 +36,10 @@ const Overview = (props) => {
       ) : (
         <ExpandedPhoto changeView={changeView} />
       )}
-      <Description currentInfo={props.currentInfo} />
+      <Description
+        currentInfo={props.currentInfo}
+        features={props.currentInfo.features}
+      />
     </div>
   );
 };
