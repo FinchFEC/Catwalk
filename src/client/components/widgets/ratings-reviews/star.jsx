@@ -25,7 +25,7 @@ const Star = ({ onClick, index, rating }) => {
           overflow: 'hidden',
         }}
       >
-        <FontAwesomeIcon icon={['fas', 'star']} color='black' />
+        <FontAwesomeIcon icon={['fas', 'star']} color='#444' />
       </div>
     </div>
   );

@@ -22,6 +22,19 @@ $formFontSize: 14px;
 .average-rating,
 .ratings-summary .stars-container {
   display: inline-block;
+  color: #444;
+}
+
+.reset-filter {
+  margin-top: 10px;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  border: 1px solid black;
+}
+
+.reset-filter:hover {
+  background: #ccc;
 }
 
 .ratings-summary .stars-container {
@@ -76,6 +89,7 @@ $formFontSize: 14px;
   display: flex;
   flex-direction: column;
   margin-bottom: 25px;
+  color: #444;
 }
 
 .dropdown {
@@ -224,22 +238,6 @@ $formFontSize: 14px;
     bottom: 10px;
   }
 }
-
-// .show-more-reviews-btn {
-//   margin: {
-//     top: 25px;
-//     bottom: 25px;
-//   }
-//   font: {
-//     size: 20px;
-//   }
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   cursor: pointer;
-//   padding: 15px;
-//   border: 1px solid black;
-// }
 
 .show-more-reviews-btn {
   margin: {
@@ -471,7 +469,7 @@ $modalBgColor: skyblue;
   }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1000px) {
   .review-tile-header {
     display: grid;
     grid-template-columns: auto;
@@ -496,4 +494,11 @@ $modalBgColor: skyblue;
       text-align: center;
     }
   }
+}
+
+.show-more-button,
+.hide-button {
+  display: inline-block;
+  border-bottom: 1px solid black;
+  cursor: pointer;
 }
