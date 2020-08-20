@@ -28,6 +28,13 @@ class RatingsReviews extends React.Component {
     this.modalRef = React.createRef();
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.productId !== this.props.productId) {
+      this.props.getReviewMetadata();
+      this.props.getReviewsByProduct();
+    }
+  }
+
   handleSelectImg(img) {
     this.setState({
       selectedImgUrl: img.url,
