@@ -9,6 +9,7 @@ function mapStateToProps(state) {
     productId: state.productId,
     currentInfo: state.currentInfo,
     styles: state.styles,
+    avgRating: state.avgRating,
   };
 }
 
