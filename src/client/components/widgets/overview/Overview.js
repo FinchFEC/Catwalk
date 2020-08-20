@@ -4,15 +4,23 @@ import CurrentPhoto from "./CurrentPhoto.js";
 import ExpandedPhoto from "./ExpandedPhoto.js";
 import ProductInformation from "./ProductInformation.js";
 import Description from "./Description.js";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const Overview = (props) => {
   props.getStylesByProductId(props.productId);
 
   const [view, setView] = useState("main");
+  const [defaultStyleIndex, setDefaultStyle] = useState(0);
 
   const changeView = (type) => {
     setView(type);
+  };
+
+  const getDefaultStyle = (props) => {
+    for (var i = 0; i < props.styles.results.length; i++) {
+      if (props.styles.results[i]["default?"] === 1) {
+        setDefaultStyle(i);
+      }
+    }
   };
 
   return (
@@ -20,12 +28,12 @@ const Overview = (props) => {
       {view === "main" ? (
         <Fragment>
           <CurrentPhoto changeView={changeView} />
-          <ProductInformation props={props} />
+          <ProductInformation currentInfo={props.currentInfo} />
         </Fragment>
       ) : (
         <ExpandedPhoto changeView={changeView} />
       )}
-      <Description />
+      <Description currentInfo={props.currentInfo} />
     </div>
   );
 };
