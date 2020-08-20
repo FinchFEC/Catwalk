@@ -5,24 +5,38 @@ import ExpandedPhoto from "./ExpandedPhoto.js";
 import ProductInformation from "./ProductInformation.js";
 import Description from "./Description.js";
 
-const Overview = () => {
+const Overview = (props) => {
+  //props.getStylesByProductId(props.productId);
+  //console.log(props.currentInfo.features);
+  const [view, setView] = useState("main");
+  //const [defaultStyleIndex, setDefaultStyle] = useState(0);
+
   const changeView = (type) => {
     setView(type);
   };
 
-  const [view, setView] = useState("main");
+  // const getDefaultStyle = (props) => {
+  //   for (var i = 0; i < props.styles.results.length; i++) {
+  //     if (props.styles.results[i]["default?"] === 1) {
+  //       setDefaultStyle(i);
+  //     }
+  //   }
+  // };
 
   return (
     <div className="overview-component">
       {view === "main" ? (
         <Fragment>
           <CurrentPhoto changeView={changeView} />
-          <ProductInformation />
+          <ProductInformation
+            avgRating={props.avgRating}
+            currentInfo={props.currentInfo}
+          />
         </Fragment>
       ) : (
         <ExpandedPhoto changeView={changeView} />
       )}
-      <Description />
+      <Description currentInfo={props.currentInfo} />
     </div>
   );
 };

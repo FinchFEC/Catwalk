@@ -6,7 +6,6 @@ import reviewCharacteristics from './reviewCharacteristics';
 import reviewRatings from './reviewRatings';
 import reviewRecommended from './reviewRecommended';
 import reviews from './reviews';
-import noMoreReviews from './noMoreReviews';
 import sort from './sort';
 import page from './page';
 import productId from './productId';
@@ -15,9 +14,12 @@ import relatedInfo from './relatedReducers/relatedInfoReducer';
 import relatedImages from './relatedReducers/relatedImagesReducer';
 import comparison from './relatedReducers/comparisonReducer';
 import currentInfo from './currentInfoReducer';
+import styles from './stylesReducer';
 import relatedRatings from './relatedReducers/relatedRatingsReducer';
+import avgRating from './avgRating';
 
 const rootReducer = combineReducers({
+  avgRating,
   productList,
   productId,
   reviewCharacteristics,
@@ -25,14 +27,14 @@ const rootReducer = combineReducers({
   reviewRecommended,
   reviews: reviewsBuffer,
   reviewsBuffer: reviews,
-  noMoreReviews,
   sort,
   page,
   relatedInfo,
   relatedImages,
   showComparison: comparison,
   currentInfo,
-  relatedRatings
+  styles,
+  relatedRatings,
 });
 
 export default rootReducer;
