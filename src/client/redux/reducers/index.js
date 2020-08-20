@@ -16,8 +16,10 @@ import comparison from './relatedReducers/comparisonReducer';
 import currentInfo from './currentInfoReducer';
 import styles from './stylesReducer';
 import relatedRatings from './relatedReducers/relatedRatingsReducer';
+import avgRating from './avgRating';
 
 const rootReducer = combineReducers({
+  avgRating,
   productList,
   productId,
   reviewCharacteristics,
