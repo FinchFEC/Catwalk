@@ -7,9 +7,12 @@ const CurrentPhoto = ({ changeView, currentStyle }) => {
   return (
     <div className="current-photo-container">
       <div id="current-photo">
-        <img src={currentStyle.photos[0].url} />
+        <img
+          alt="photo_of_the_chosen_product"
+          src={currentStyle.photos[0].url}
+        />
       </div>
-      <PhotoCarousel />
+      <PhotoCarousel currentStyle={currentStyle} />
       <span id="left-arrow">
         <FaArrowLeft />
       </span>

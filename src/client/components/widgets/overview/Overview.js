@@ -12,14 +12,20 @@ const Overview = (props) => {
     setView(type);
   };
 
+  // const updateCurrenttyle = (id) => {
+  //   setMainPhoto(currentStyle.photos[0].url)
+  // }
+
+  //const changeMain = (url)
+
   const [view, setView] = useState("main");
   const [stylesState, setStyles] = useState([]);
-
+  const currentStyle = props.styles.results[0];
+  const [mainPhoto, setMainPhoto] = useState(currentStyle.photos[0].url);
   //const [currentStyle, changeCurrentStyle] = useState({});
 
   //console.log("styles from props: ", props.styles.results);
-  const currentStyle = props.styles.results[0];
-  console.log("CURRENT STYLE", currentStyle);
+  //console.log("current photo", currentStyle.photos[0].url);
   // const findDefault = (styles) => {
   //   for (var i = 0; i < styles.length; i++) {
   //     if (styles[i]["default?"] === 1) {
@@ -44,7 +50,7 @@ const Overview = (props) => {
           <ProductInformation
             avgRating={props.avgRating}
             currentInfo={props.currentInfo}
-            styles={stylesState}
+            styles={props.styles.results}
             currentStyle={currentStyle}
           />
         </Fragment>

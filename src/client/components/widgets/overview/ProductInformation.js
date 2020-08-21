@@ -38,7 +38,7 @@ const ProductInformation = ({
         </div>
       </div>
       <StyleSelector styles={styles} currentStyle={currentStyle} />
-      <AddToCart />
+      <AddToCart styles={styles} currentStyle={currentStyle} />
     </div>
   );
 };

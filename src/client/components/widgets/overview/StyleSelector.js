@@ -1,22 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../../assets/scss/overview.scss";
 import { GrFormCheckmark } from "react-icons/gr";
 
 const StyleSelector = ({ styles, currentStyle }) => {
-  //const [style, setStyle] = useState("");
-
+  console.log("style in styleseklector: ", styles);
   return (
     <div className="style-selector">
-      <div className="style-type">
-        <div className="row">STYLE ></div>
-      </div>
+      <div className="style-type">STYLE > {currentStyle.name}</div>
 
       <div className="selected-style-container">
-        <div className="style-icon">
-          <div className="checkmark">
-            <GrFormCheckmark />
-          </div>
-        </div>
+        {styles !== [] && styles != undefined
+          ? styles.map((style, index) => (
+              <div
+                className="style-icon"
+                style={{
+                  backgroundImage: `url(${style.photos[0].thumbnail_url})`,
+                }}
+              ></div>
+            ))
+          : null}
       </div>
     </div>
   );

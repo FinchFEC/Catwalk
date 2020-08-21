@@ -128,7 +128,7 @@ $primary-color: #333;
     height: 73%;
     width: 50%;
     margin: auto;
-    background-image: url("https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80");
+
     background-repeat: no-repeat;
     background-size: 100px;
     background-position: center;
@@ -141,7 +141,6 @@ $primary-color: #333;
     height: 73%;
     width: 50%;
     margin: auto;
-    background-image: url("https://images.unsplash.com/photo-1492447105260-2e947425b5cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80");
     background-repeat: no-repeat;
     background-size: 100px;
     background-position: center;
@@ -154,7 +153,6 @@ $primary-color: #333;
     height: 73%;
     width: 50%;
     margin: auto;
-    background-image: url("https://images.unsplash.com/photo-1548133464-29abc661eb5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80");
     background-repeat: no-repeat;
     background-size: 100px;
     background-position: center;
@@ -167,7 +165,6 @@ $primary-color: #333;
     height: 73%;
     width: 50%;
     margin: auto;
-    background-image: url("https://images.unsplash.com/photo-1554921148-83d8ceda2095?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80");
     background-repeat: no-repeat;
     background-size: 100px;
     background-position: center;
@@ -181,7 +178,6 @@ $primary-color: #333;
     width: 50%;
     margin: auto;
     left: 19%;
-    background-image: url("https://images.unsplash.com/photo-1559304022-afbf28f53c4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80");
     background-repeat: no-repeat;
     background-size: 100px;
     background-position: center;
@@ -191,7 +187,7 @@ $primary-color: #333;
     position: absolute;
     font-size: 18px;
     cursor: pointer;
-    top: 55%;
+    top: 58%;
     left: 19%;
   }
 }
@@ -255,7 +251,6 @@ $primary-color: #333;
       font-size: 15px;
     }
     .selected-style-container {
-      background-color: green;
       margin-left: 30px;
       grid-row: 2 / span 2;
       display: grid;

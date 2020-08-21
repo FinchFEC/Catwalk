@@ -8,9 +8,12 @@ const ExpandedPhoto = ({ changeView, currentStyle }) => {
   return (
     <div className="expanded-photo-container">
       <div id="current-photo2">
-        <img src={currentStyle.photos[0].url} />
+        <img
+          alt="enlarged_photo_of_the_chosen_product"
+          src={currentStyle.photos[0].url}
+        />
       </div>
-      <PhotoCarousel />
+      <PhotoCarousel currentStyle={currentStyle} />
       <span id="left-arrow">
         <FaArrowLeft />
       </span>
