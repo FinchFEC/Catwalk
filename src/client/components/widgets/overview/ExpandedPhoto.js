@@ -4,11 +4,11 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { GrFormClose } from "react-icons/gr";
 import PhotoCarousel from "./PhotoCarousel.js";
 
-const ExpandedPhoto = ({ changeView }) => {
+const ExpandedPhoto = ({ changeView, currentStyle }) => {
   return (
     <div className="expanded-photo-container">
-      <div id="current-photo">
-        <img src="https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"></img>
+      <div id="current-photo2">
+        <img src={currentStyle.photos[0].url} />
       </div>
       <PhotoCarousel />
       <span id="left-arrow">
@@ -25,3 +25,7 @@ const ExpandedPhoto = ({ changeView }) => {
 };
 
 export default ExpandedPhoto;
+
+//<img src={currentStyle.photos[0].url} />
+
+// <img src="https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" />

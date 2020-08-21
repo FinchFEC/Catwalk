@@ -2,8 +2,7 @@ import React from "react";
 import "../../../assets/scss/overview.scss";
 import { GrCheckmark } from "react-icons/gr";
 
-const Description = ({ currentInfo }) => {
-  console.log(currentInfo.features);
+const Description = ({ currentInfo, features }) => {
   return (
     <div className="description">
       <div className="slogan-box">
@@ -15,7 +14,19 @@ const Description = ({ currentInfo }) => {
         </div>
       </div>
       <div className="features-box">
-        <p id="features"></p>
+        <div id="features">
+          {features ? (
+            features.map((feature) => (
+              <div>
+                <GrCheckmark /> {feature.feature}: {feature.value}
+              </div>
+            ))
+          ) : (
+            <div>
+              <GrCheckmark /> No features
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

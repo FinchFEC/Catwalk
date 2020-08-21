@@ -6,7 +6,7 @@ const defaultState = {
   slogan: "Fake slogan 1.",
 };
 
-function currentInfo(state = defaultState, action) {
+function currentInfo(state = {}, action) {
   switch (action.type) {
     case "GET_CURRENT_INFO":
       return action.data;

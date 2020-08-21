@@ -1,4 +1,6 @@
-function styles(state = [], action) {
+import intialState from "./initialStyles.js";
+
+function styles(state = intialState, action) {
   switch (action.type) {
     case "GET_STYLES":
       return action.data;

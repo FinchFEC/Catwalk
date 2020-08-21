@@ -7,36 +7,54 @@ import Description from "./Description.js";
 
 const Overview = (props) => {
   //props.getStylesByProductId(props.productId);
-  //console.log(props.currentInfo.features);
-  const [view, setView] = useState("main");
-  //const [defaultStyleIndex, setDefaultStyle] = useState(0);
 
   const changeView = (type) => {
     setView(type);
   };
 
-  // const getDefaultStyle = (props) => {
-  //   for (var i = 0; i < props.styles.results.length; i++) {
-  //     if (props.styles.results[i]["default?"] === 1) {
-  //       setDefaultStyle(i);
+  const [view, setView] = useState("main");
+  const [stylesState, setStyles] = useState([]);
+
+  //const [currentStyle, changeCurrentStyle] = useState({});
+
+  //console.log("styles from props: ", props.styles.results);
+  const currentStyle = props.styles.results[0];
+  console.log("CURRENT STYLE", currentStyle);
+  // const findDefault = (styles) => {
+  //   for (var i = 0; i < styles.length; i++) {
+  //     if (styles[i]["default?"] === 1) {
+  //       changeCurrentStyle(stylesState[i]);
   //     }
   //   }
   // };
+
+  useEffect(() => {
+    setStyles((state) => props.getStylesByProductId(props.productId));
+  }, [props.productId]);
+
+  // useEffect(() => {
+  //   findDefault(stylesState);
+  // }, [props.productId]);
 
   return (
     <div className="overview-component">
       {view === "main" ? (
         <Fragment>
-          <CurrentPhoto changeView={changeView} />
+          <CurrentPhoto changeView={changeView} currentStyle={currentStyle} />
           <ProductInformation
             avgRating={props.avgRating}
             currentInfo={props.currentInfo}
+            styles={stylesState}
+            currentStyle={currentStyle}
           />
         </Fragment>
       ) : (
-        <ExpandedPhoto changeView={changeView} />
+        <ExpandedPhoto changeView={changeView} currentStyle={currentStyle} />
       )}
-      <Description currentInfo={props.currentInfo} />
+      <Description
+        currentInfo={props.currentInfo}
+        features={props.currentInfo.features}
+      />
     </div>
   );
 };

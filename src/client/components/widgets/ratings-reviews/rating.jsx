@@ -28,7 +28,7 @@ class Rating extends React.Component {
           filterClick={this.props.filterClick}
           filters={this.props.filters}
         />
-        Recommended by {percentRecommended}
+        Recommended by {percentRecommended.toFixed(0)}
         % of reviewers
         <RatingsCharacteristics characteristics={this.props.characteristics} />
       </div>

@@ -15,9 +15,6 @@ import {
   faPlus,
 } from '@fortawesome/free-solid-svg-icons';
 
-// brand icons
-import { faFacebook } from '@fortawesome/free-brands-svg-icons';
-
 // add icons to library
 library.add(
   faStar,
@@ -25,7 +22,6 @@ library.add(
   faTimesCircle,
   faCheckCircle,
   faCheck,
-  faFacebook,
   faCaretDown,
   faPlus
 );
