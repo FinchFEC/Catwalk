@@ -11,6 +11,7 @@ class RelatedMaster extends React.Component {
     props.getRelatedProductsInfo(props.productId);
     props.getAllRelatedImages(props.productId);
     props.getAllRelatedReviews(props.productId);
+    this.rerender = this.rerender.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -20,6 +21,10 @@ class RelatedMaster extends React.Component {
       this.props.getAllRelatedImages(this.props.productId);
       this.props.getAllRelatedReviews(this.props.productId);
     }
+  }
+
+  rerender() {
+    this.forceUpdate();
   }
 
   render() {
@@ -36,7 +41,11 @@ class RelatedMaster extends React.Component {
           navigateToProduct={this.props.navigateToProduct}
         />
         <h3>YOUR OUTFIT</h3>
-        <OutfitList />
+        <OutfitList
+          productId={this.props.productId}
+          currentInfo={this.props.currentInfo}
+          rerender={this.rerender}
+        />
       </div>
     );
   }
