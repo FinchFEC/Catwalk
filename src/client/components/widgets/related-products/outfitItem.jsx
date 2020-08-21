@@ -17,7 +17,7 @@ const OutfitItem = ({ stringifiedObj, rerender }) => {
         id="close"
         icon={["far", "times-circle"]}
       />
-      <img className="related-image" src="https://i.imgur.com/9i4bKQ6.png" alt="outfit item" width="170px" height="240px" />
+      <img className="related-image" src="https://i.imgur.com/9i4bKQ6.png" alt="outfit item" />
       <h3>{stdObj.name}</h3>
       <p>{stdObj.type}</p>
       <p>${stdObj.default_price}</p>

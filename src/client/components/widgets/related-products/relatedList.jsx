@@ -55,12 +55,13 @@ const RelatedList = ({
         {"<"}
       </button> */}
       <div className="container-1">
-        {arrOfItemsAndImages.map((item) => (
+        {arrOfItemsAndImages.map((item, i) => (
           <RelatedItem
             item={item}
             toggleComparison={toggleComparison}
             changeCompared={(obj) => setCompared(obj)}
             navigateToProduct={navigateToProduct}
+            key={i}
           />
         ))}
       </div>
