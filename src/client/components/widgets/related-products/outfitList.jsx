@@ -61,17 +61,19 @@ const OutfitList = ({ currentInfo, rerender, currentStyles }) => {
   }
   const arrOfOutfitInfos = [];
   for (let i = 0; i < localStorage.length; i++) {
-    arrOfOutfitInfos.push(localStorage.getItem(localStorage.key(i)));
+    if (Number(localStorage.key(i)) < 15) {
+      arrOfOutfitInfos.push(localStorage.getItem(localStorage.key(i)));
+    }
   }
   return (
     <div>
       {/* <button type="button">{"<"}</button> */}
       <div id="container-2">
-        <div className="tile" id="add-outfit-btn" onClick={addCurrentProductToLocal}>
+        <h4 className="tile" id="add-outfit-btn" onClick={addCurrentProductToLocal}>
           Add Current Item To Outfit
-        </div>
-        {arrOfOutfitInfos.map((stringifiedObj) => (
-          <OutfitItem stringifiedObj={stringifiedObj} rerender={rerender} />
+        </h4>
+        {arrOfOutfitInfos.map((stringifiedObj, i) => (
+          <OutfitItem stringifiedObj={stringifiedObj} rerender={rerender} key={i} />
         ))}
       </div>
       {/* <button type="button">{">"}</button> */}
