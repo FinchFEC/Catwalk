@@ -16,7 +16,7 @@ const Overview = (props) => {
   const [view, setView] = useState("main");
   const [stylesState, setStyles] = useState([]);
   const currentStyle = props.styles[0];
-  const [currentStyle, changeCurrentStyle] = useState({});
+  //const [currentStyle, changeCurrentStyle] = useState({});
 
   console.log("state: ", stylesState);
   // const findDefault = (styles) => {
@@ -31,9 +31,9 @@ const Overview = (props) => {
     setStyles(props.styles);
   }, [props.productId]);
 
-  useEffect(() => {
-    findDefault(stylesState);
-  }, [props.productId]);
+  // useEffect(() => {
+  //   findDefault(stylesState);
+  // }, [props.productId]);
 
   return (
     <div className="overview-component">
