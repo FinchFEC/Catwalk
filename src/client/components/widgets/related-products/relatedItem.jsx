@@ -4,7 +4,12 @@ import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import StaticStars from "../ratings-reviews/static-stars";
 
-const RelatedItem = ({ item, toggleComparison, changeCompared }) => {
+const RelatedItem = ({
+  item,
+  toggleComparison,
+  changeCompared,
+  navigateToProduct,
+}) => {
   const itemUrl = item.image.data.results[0].photos[0].url;
   let ratingsCount = 0; // number of ratings
   let totalRating = 0;
@@ -18,25 +23,31 @@ const RelatedItem = ({ item, toggleComparison, changeCompared }) => {
     avgRating = 0;
   }
   return (
-    <div className="tile" id={`box-${item.info.data.id}`}>
+    <div className="tile-parent">
       <FontAwesomeIcon
         onClick={() => {
           toggleComparison();
           changeCompared(item.info);
         }}
-        icon={["far", "star"]}
+        icon={["fas", "star"]}
         className="star_icon_alt"
       />
-      <img
-        src={itemUrl}
-        alt={item.image.data.results[0].photos[0].thumbnail_url}
-        width="170px"
-        height="240px"
-      />
-      <p>{item.info.data.category}</p>
-      <h3>{item.info.data.name}</h3>
-      <p>${item.info.data.default_price}</p>
-      {avgRating !== 0 && <StaticStars rating={avgRating} />}
+      <div
+        onClick={() => navigateToProduct(item.info.data.id)}
+        className="tile"
+        id={`box-${item.info.data.id}`}
+      >
+        <img
+          src={itemUrl}
+          alt={item.image.data.results[0].photos[0].thumbnail_url}
+          width="170px"
+          height="240px"
+        />
+        <p>{item.info.data.category}</p>
+        <h3>{item.info.data.name}</h3>
+        <p>${item.info.data.default_price}</p>
+        {avgRating !== 0 && <StaticStars rating={avgRating} />}
+      </div>
     </div>
   );
 };
@@ -45,6 +56,7 @@ RelatedItem.propTypes = {
   item: PropTypes.object.isRequired,
   toggleComparison: PropTypes.func.isRequired,
   changeCompared: PropTypes.func.isRequired,
+  navigateToProduct: PropTypes.func.isRequired,
 };
 
 export default RelatedItem;

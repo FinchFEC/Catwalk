@@ -22,5 +22,5 @@ const StaticStars = (props) => {
 export default StaticStars;
 
 StaticStars.propTypes = {
-  rating: PropTypes.number.isRequired,
+  rating: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 };
