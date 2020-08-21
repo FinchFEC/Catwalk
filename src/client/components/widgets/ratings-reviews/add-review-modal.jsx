@@ -50,7 +50,9 @@ class AddReviewModal extends React.Component {
         name: this.state.username,
         email: this.state.email,
         photos: this.state.images,
-        // photos: ['https://images.unsplash.com/photo-1560769629-975ec94e6a86'],
+        // photos: [
+        //   'https://www.llbean.net/firstspirit/media/image_library/2017/17_11_21_dps/men_s_1/MensDP_Desktop_Picto1.jpg',
+        // ],
         characteristics: this.state.characteristics,
       })
       .then((data) => {

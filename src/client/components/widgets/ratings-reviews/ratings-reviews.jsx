@@ -114,7 +114,6 @@ class RatingsReviews extends React.Component {
               reviews={this.props.reviews}
               handleSelectImg={this.handleSelectImg}
               onChangeSort={this.props.changeSort}
-              sort={this.props.sort}
               filters={this.state.filters}
             />
           )}
