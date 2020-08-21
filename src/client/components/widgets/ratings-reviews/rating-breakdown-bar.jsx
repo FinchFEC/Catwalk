@@ -59,7 +59,11 @@ class RatingBreakdownBar extends React.Component {
                 backgroundColor: 'transparent',
               }}
             >
-              <FontAwesomeIcon icon={['fas', 'caret-down']} size='2x' />
+              <FontAwesomeIcon
+                icon={['fas', 'caret-down']}
+                size='2x'
+                color='#444'
+              />
             </span>
           )}
         </span>

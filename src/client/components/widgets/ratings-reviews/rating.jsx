@@ -18,7 +18,11 @@ class Rating extends React.Component {
 
     return (
       <div className='ratings'>
+        <span style={{ fontSize: '20px' }}>Ratings & Reviews</span>
         <RatingSummary ratings={this.props.ratings} />
+        <div onClick={this.props.resetFilter} className='reset-filter'>
+          Reset Filters
+        </div>
         <RatingBreakdown
           ratings={this.props.ratings}
           filterClick={this.props.filterClick}
@@ -44,6 +48,7 @@ Rating.propTypes = {
   characteristics: PropTypes.object,
   filterClick: PropTypes.func.isRequired,
   filters: PropTypes.array.isRequired,
+  resetFilter: PropTypes.func.isRequired,
 };
 
 export default Rating;

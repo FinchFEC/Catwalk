@@ -25,6 +25,8 @@ class RatingsReviews extends React.Component {
     this.handleFilterClick = this.handleFilterClick.bind(this);
     this.handleSelectImg = this.handleSelectImg.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
+    this.handleResetFilter = this.handleResetFilter.bind(this);
+    this.handleCloseReviewModal = this.handleCloseReviewModal.bind(this);
     this.modalRef = React.createRef();
   }
 
@@ -49,11 +51,21 @@ class RatingsReviews extends React.Component {
     });
   }
 
+  handleCloseReviewModal() {
+    this.setState({
+      addReview: false,
+    });
+  }
+
   handleAddReviewBtnClick(e) {
     e.stopPropagation();
     this.setState({
       addReview: true,
     });
+  }
+
+  handleResetFilter() {
+    this.setState({ filters: [] });
   }
 
   handleFilterClick(rating) {
@@ -93,6 +105,7 @@ class RatingsReviews extends React.Component {
           characteristics={this.props.reviewCharacteristics}
           filterClick={this.handleFilterClick}
           filters={this.state.filters}
+          resetFilter={this.handleResetFilter}
         />
 
         <div className='right'>
@@ -130,6 +143,7 @@ class RatingsReviews extends React.Component {
                 onClick={this.handleModalClick}
                 productId={this.props.productId}
                 name={this.props.productInfo.name}
+                onClose={this.handleCloseReviewModal}
               />
             )}
           {this.state.selectedImgUrl && (
