@@ -18,6 +18,7 @@ class Rating extends React.Component {
 
     return (
       <div className='ratings'>
+        <span style={{ fontSize: '20px' }}>Ratings & Reviews</span>
         <RatingSummary ratings={this.props.ratings} />
         <div onClick={this.props.resetFilter} className='reset-filter'>
           Reset Filters

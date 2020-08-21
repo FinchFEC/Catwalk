@@ -229,6 +229,9 @@ class AddReviewModal extends React.Component {
             </div>
             <AddReviewImageContainer onChange={this.handleAddImages} />
             <input type='submit' value='Submit' />
+            <div className='close-review-modal' onClick={this.props.onClose}>
+              Cancel
+            </div>
           </form>
         </div>
         {this.state.success && (
@@ -247,6 +250,7 @@ export default React.forwardRef((props, ref) => (
     onClick={props.onClick}
     productId={props.productId}
     name={props.name}
+    onClose={props.onClose}
   />
 ));
 
@@ -259,4 +263,5 @@ AddReviewModal.propTypes = {
   ]).isRequired,
   onClick: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
