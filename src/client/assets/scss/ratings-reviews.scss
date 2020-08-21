@@ -25,6 +25,10 @@ $formFontSize: 14px;
   color: #444;
 }
 
+.ratings {
+  color: #444;
+}
+
 .reset-filter {
   margin-top: 10px;
   text-align: center;
@@ -267,8 +271,8 @@ $formFontSize: 14px;
   justify-content: center;
   align-items: center;
   z-index: 1;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.85);
 }
 
@@ -337,8 +341,8 @@ $modalBgColor: skyblue;
   z-index: 1;
   left: 0;
   top: 0;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.85);
 }
 
@@ -354,6 +358,7 @@ $modalBgColor: skyblue;
 }
 
 .review-modal-content {
+  position: relative;
   padding: 35px;
   font: {
     size: $formFontSize;
@@ -375,6 +380,7 @@ $modalBgColor: skyblue;
 
 .error,
 .success {
+  color: white;
   animation: slide 2s ease-in-out 1;
   position: fixed;
   visibility: hidden;
@@ -398,7 +404,7 @@ $modalBgColor: skyblue;
 }
 
 .success {
-  background-color: lightgreen;
+  background-color: rgb(56, 170, 56);
 }
 
 @keyframes slide {
@@ -407,6 +413,10 @@ $modalBgColor: skyblue;
   }
   25% {
     top: 30px;
+    visibility: visible;
+  }
+  50% {
+    top: 20px;
     visibility: visible;
   }
   75% {
@@ -463,42 +473,72 @@ $modalBgColor: skyblue;
   display: block;
 }
 
-@media screen and (max-width: 1137px) {
-  .rating-breakdown .breakdown-bar {
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .review-tile-header {
-    display: grid;
-    grid-template-columns: auto;
-  }
-  .review-tile-username-container {
-    text-align: left;
-    margin: 0 {
-      right: 10px;
-      top: 10px;
-    }
-  }
-}
-
-@media screen and (max-width: 766px) {
-  .review-tiles-container-btns {
-    width: 100%;
-    display: grid;
-    grid-template-columns: auto;
-    justify-content: initial;
-    .show-more-reviews-btn {
-      width: 100%;
-      text-align: center;
-    }
-  }
-}
-
 .show-more-button,
 .hide-button {
   display: inline-block;
   border-bottom: 1px solid black;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+  #reviews {
+    width: 1000px;
+  }
+  .img-modal-exit-btn {
+    font-size: 64px;
+  }
+  .review-modal-content {
+    height: 100%;
+    font-size: 32px;
+  }
+  .review-modal-header {
+    margin-bottom: 200px;
+  }
+  label[for='recommendYes'],
+  label[for='recommendNo'] {
+    padding: 20px;
+    margin-left: 20px;
+  }
+  #recommendYes,
+  #recommendNo {
+    margin-left: 17px;
+  }
+  input[type='radio'] {
+    transform: scale(3);
+  }
+  input[type='submit'],
+  input[type='file'] {
+    transform: scale(4);
+  }
+  .review-modal-content input[type='submit'] {
+    position: relative;
+    top: 70px;
+    left: 100px;
+  }
+  .review-modal-content input[type='file'] {
+    position: relative;
+    top: 10px;
+    left: 400px;
+  }
+}
+
+input[type='submit'] {
+  outline: none;
+  border: none;
+  color: white;
+  background: rgb(56, 170, 56);
+  padding: 5px;
+  cursor: pointer;
+}
+
+.close-review-modal {
+  text-align: center;
+  margin-left: 10px;
+  font: {
+    size: 13.33px;
+  }
+  display: inline-block;
+  cursor: pointer;
+  padding: 4px;
+  border: 1px solid black;
 }
