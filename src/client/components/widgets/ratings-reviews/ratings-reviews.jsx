@@ -26,6 +26,7 @@ class RatingsReviews extends React.Component {
     this.handleSelectImg = this.handleSelectImg.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleResetFilter = this.handleResetFilter.bind(this);
+    this.handleCloseReviewModal = this.handleCloseReviewModal.bind(this);
     this.modalRef = React.createRef();
   }
 
@@ -47,6 +48,12 @@ class RatingsReviews extends React.Component {
     this.setState({
       selectedImgUrl: '',
       selectedImgId: '',
+    });
+  }
+
+  handleCloseReviewModal() {
+    this.setState({
+      addReview: false,
     });
   }
 

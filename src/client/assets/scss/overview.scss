@@ -1,6 +1,7 @@
 $primary-color: #333;
 
 .overview-component {
+  height: 800px;
   position: relative;
   color: $primary-color;
   font-family: "adobe-clean", sans-serif;
@@ -13,23 +14,27 @@ $primary-color: #333;
 }
 
 .current-photo-container {
+  height: 590px;
   background-color: lightgray;
   grid-column: 2 / span 1;
   grid-row: 1 / span 1;
   display: grid;
   grid-template-columns: 17% 83%;
-
   #current-photo {
     grid-column: 2 / span 1;
     grid-row: 1 / span 1;
     img {
-      max-height: 630px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
+      padding-left: 1em;
+      padding-right: 8em;
+      padding-top: 5em;
+      padding-bottom: 3em;
+      max-height: 620px;
+      width: 100%;
+      object-fit: contain;
+      justify-content: center;
+      align-items: center;
     }
   }
-
   #left-arrow {
     z-index: 1;
     position: absolute;
@@ -63,14 +68,17 @@ $primary-color: #333;
   grid-template-columns: 17% 83%;
   overflow: hidden;
 
-  #current-photo {
+  #current-photo2 {
     grid-column: 2 / span 1;
     grid-row: 1 / span 1;
     img {
-      max-height: 630px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
+      max-height: 590px;
+      padding-left: 1em;
+      padding-right: 10em;
+      padding-bottom: 1em;
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
       cursor: zoom-in;
       transition: transform 0.5s ease;
     }
@@ -228,6 +236,9 @@ $primary-color: #333;
       margin-top: 15px;
       font-size: 15px;
     }
+    #sale {
+      color: darkred;
+    }
   }
   .style-selector {
     grid-row: 2 / span 1;
@@ -244,6 +255,7 @@ $primary-color: #333;
       font-size: 15px;
     }
     .selected-style-container {
+      background-color: green;
       margin-left: 30px;
       grid-row: 2 / span 2;
       display: grid;
@@ -252,7 +264,6 @@ $primary-color: #333;
         position: relative;
         background-size: cover;
         background-position: center;
-        background-color: lightgray;
         border: 1px solid #444;
         border-radius: 50%;
         height: 65px;

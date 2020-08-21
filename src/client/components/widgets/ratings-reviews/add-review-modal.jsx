@@ -232,6 +232,9 @@ class AddReviewModal extends React.Component {
             </div>
             <AddReviewImageContainer onChange={this.handleAddImages} />
             <input type='submit' value='Submit' />
+            <div className='close-review-modal' onClick={this.props.onClose}>
+              Cancel
+            </div>
           </form>
         </div>
         {this.state.success && (
