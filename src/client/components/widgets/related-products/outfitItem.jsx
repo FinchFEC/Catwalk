@@ -21,7 +21,7 @@ const OutfitItem = ({ stringifiedObj, rerender }) => {
       <h3>{stdObj.name}</h3>
       <p>{stdObj.type}</p>
       <p>${stdObj.default_price}</p>
-      <StaticStars rating={5} />
+      <StaticStars rating={3.5} />
     </div>
   );
 };

@@ -35,18 +35,18 @@ const ComparisonModal = ({
         <div id="modal-1">
           <h3>{currentInfo.name}</h3>
           <ul>
-            {offsetCurArr.map((ele) => (
-              <li>{ele}</li>
+            {offsetCurArr.map(() => (
+              <br />
             ))}
             {currentInfo.features.map((feat) => (
-              <li>{feat.value}</li>
+              <div>{feat.value}</div>
             ))}
           </ul>
         </div>
         <div id="category">
           <ul>
             {featuresArr.map((key) => (
-              <li>{key}</li>
+              <div>{key}</div>
             ))}
           </ul>
         </div>
@@ -54,10 +54,10 @@ const ComparisonModal = ({
           <h3>{compared.data.name}</h3>
           <ul>
             {compared.data.features.map((feature) => (
-              <li>{feature.value}</li>
+              <div>{feature.value}</div>
             ))}
-            {offsetCompArr.map((ele) => (
-              <li>{ele}</li>
+            {offsetCompArr.map(() => (
+              <br />
             ))}
           </ul>
         </div>
