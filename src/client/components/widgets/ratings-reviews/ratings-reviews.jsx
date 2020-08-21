@@ -20,8 +20,6 @@ class RatingsReviews extends React.Component {
       selectedImgUrl: '',
       selectedImgId: '',
     };
-    console.log('sort:', props.sort);
-    console.log('typeof sort:', typeof props.sort);
     this.handleAddReviewBtnClick = this.handleAddReviewBtnClick.bind(this);
     this.handleModalClick = this.handleModalClick.bind(this);
     this.handleFilterClick = this.handleFilterClick.bind(this);

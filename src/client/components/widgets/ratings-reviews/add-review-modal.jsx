@@ -49,8 +49,8 @@ class AddReviewModal extends React.Component {
         recommend: this.state.recommend,
         name: this.state.username,
         email: this.state.email,
-        // photos: this.state.images,
-        photos: ['https://images.unsplash.com/photo-1560769629-975ec94e6a86'],
+        photos: this.state.images,
+        // photos: ['https://images.unsplash.com/photo-1560769629-975ec94e6a86'],
         characteristics: this.state.characteristics,
       })
       .then((data) => {
