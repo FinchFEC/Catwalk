@@ -88,6 +88,47 @@ describe('Product Page', () => {
       fullpage: true,
     });
   });
+
+  test('should render add-review modal when the add a review button is clicked', async () => {
+    await page.setViewport({
+      width: 2560,
+      height: 1440,
+    });
+    await page.waitForSelector('.add-review-btn');
+    await page.click('.add-review-btn');
+    await page.waitForSelector('.add-review-modal', {
+      visible: true,
+      timeout: 5000,
+    });
+    await page.screenshot({
+      path: path.join(__dirname, '/screenshots/add-review-modal.png'),
+      type: 'png',
+      fullpage: true,
+    });
+  });
+
+  test('should close add-review modal when the cancel button is clicked', async () => {
+    await page.setViewport({
+      width: 2560,
+      height: 1440,
+    });
+    await page.waitForSelector('.add-review-btn');
+    await page.click('.add-review-btn');
+    await page.waitForSelector('.add-review-modal', {
+      visible: true,
+      timeout: 5000,
+    });
+    await page.screenshot({
+      path: path.join(__dirname, '/screenshots/add-review-modal.png'),
+      type: 'png',
+      fullpage: true,
+    });
+    await page.waitForSelector('.close-review-modal');
+    await page.click('.close-review-modal');
+    page.waitForSelector('.review-modal-content').catch((err) => {
+      expect(err).toBeTruthy();
+    });
+  });
 });
 
 /* ******************* UNIT TESTS ******************* */

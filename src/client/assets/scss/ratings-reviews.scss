@@ -510,6 +510,23 @@ $modalBgColor: skyblue;
   input[type='file'] {
     transform: scale(4);
   }
+  .add-review-modal-text-input::placeholder {
+    font-size: 32px;
+  }
+  .review-image-previews-container {
+    position: relative;
+    top: 40px;
+  }
+  .close-review-modal {
+    position: relative;
+    transform: scale(4);
+    top: 180px;
+    left: 38px;
+  }
+  .add-review-modal-text-input {
+    font-size: 32px;
+    line-height: 32px;
+  }
   .review-modal-content input[type='submit'] {
     position: relative;
     top: 70px;

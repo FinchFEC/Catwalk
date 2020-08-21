@@ -255,6 +255,7 @@ export default React.forwardRef((props, ref) => (
     name={props.name}
     changeSort={props.changeSort}
     sort={props.sort}
+    onClose={props.onClose}
   />
 ));
 
@@ -269,4 +270,5 @@ AddReviewModal.propTypes = {
   name: PropTypes.string.isRequired,
   changeSort: PropTypes.func.isRequired,
   sort: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
 };

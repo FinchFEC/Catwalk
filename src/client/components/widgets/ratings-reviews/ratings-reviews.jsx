@@ -145,6 +145,7 @@ class RatingsReviews extends React.Component {
                 name={this.props.productInfo.name}
                 changeSort={this.props.changeSort}
                 sort={this.props.sort}
+                onClose={this.handleCloseReviewModal}
               />
             )}
           {this.state.selectedImgUrl && (
