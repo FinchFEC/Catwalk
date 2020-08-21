@@ -1,4 +1,4 @@
-var intialState = {
+const intialState = {
   product_id: "6",
   results: [
     {

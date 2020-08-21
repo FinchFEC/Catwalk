@@ -16,6 +16,12 @@
   }
 }
 
+.related-image {
+  margin: auto;
+  width: 170px;
+  height: 240px;
+}
+
 .tile .star-container {
   scroll-snap-align: none;
   width: auto;
@@ -98,4 +104,8 @@
 .modal {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+#add-outfit-btn {
+  height: 400px;
 }

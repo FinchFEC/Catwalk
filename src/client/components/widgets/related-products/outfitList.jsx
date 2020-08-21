@@ -50,18 +50,38 @@ const selectedOutfit = [
   },
 ];
 
-const OutfitList = () => (
-  <div>
-    <button type="button">{"<"}</button>
-    <div id="container-2">
-      {selectedOutfit.map((item) => (
-        <OutfitItem item={item} />
-      ))}
+const OutfitList = ({ currentInfo, rerender, currentStyles }) => {
+  function addCurrentProductToLocal(event) {
+    event.preventDefault();
+    localStorage.setItem(
+      currentInfo.id.toString(),
+      JSON.stringify(currentInfo)
+    );
+    rerender();
+  }
+  const arrOfOutfitInfos = [];
+  for (let i = 0; i < localStorage.length; i++) {
+    arrOfOutfitInfos.push(localStorage.getItem(localStorage.key(i)));
+  }
+  return (
+    <div>
+      {/* <button type="button">{"<"}</button> */}
+      <div id="container-2">
+        <div className="tile" id="add-outfit-btn" onClick={addCurrentProductToLocal}>
+          Add Current Item To Outfit
+        </div>
+        {arrOfOutfitInfos.map((stringifiedObj) => (
+          <OutfitItem stringifiedObj={stringifiedObj} rerender={rerender} />
+        ))}
+      </div>
+      {/* <button type="button">{">"}</button> */}
     </div>
-    <button type="button">{">"}</button>
-  </div>
-);
+  );
+};
 
-OutfitList.propTypes = {};
+OutfitList.propTypes = {
+  currentInfo: PropTypes.object.isRequired,
+  rerender: PropTypes.func.isRequired,
+};
 
 export default OutfitList;

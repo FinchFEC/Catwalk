@@ -10,6 +10,7 @@ function mapStateToProps(state) {
     productId: state.productId,
     currentInfo: state.currentInfo,
     relatedRatings: state.relatedRatings,
+    currentStyles: state.styles,
   };
 }
 
@@ -32,7 +33,7 @@ function mapDispatchToProps(dispatch) {
     },
     navigateToProduct(prodId) {
       dispatch(actionCreators.navigateToProduct(prodId));
-    }
+    },
   };
 }
 
