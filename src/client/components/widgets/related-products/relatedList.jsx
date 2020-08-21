@@ -46,14 +46,14 @@ const RelatedList = ({
 
   return (
     <div>
-      <button
+      {/* <button
         id="rel_slide_left"
         value="left"
         type="button"
         onClick={scrollItems}
       >
         {"<"}
-      </button>
+      </button> */}
       <div className="container-1">
         {arrOfItemsAndImages.map((item) => (
           <RelatedItem
@@ -72,14 +72,14 @@ const RelatedList = ({
           compared={compared}
         />
       )}
-      <button
+      {/* <button
         id="rel_slide_right"
         value="right"
         type="button"
         onClick={scrollItems}
       >
         {">"}
-      </button>
+      </button> */}
     </div>
   );
 };
