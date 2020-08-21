@@ -38,10 +38,9 @@ const RelatedItem = ({
         id={`box-${item.info.data.id}`}
       >
         <img
+          className="related-image"
           src={itemUrl}
           alt={item.image.data.results[0].photos[0].thumbnail_url}
-          width="170px"
-          height="240px"
         />
         <p>{item.info.data.category}</p>
         <h3>{item.info.data.name}</h3>
