@@ -46,6 +46,7 @@ class RelatedMaster extends React.Component {
           productId={this.props.productId}
           currentInfo={this.props.currentInfo}
           rerender={this.rerender}
+          currentStyles={this.props.currentStyles}
         />
       </div>
     );

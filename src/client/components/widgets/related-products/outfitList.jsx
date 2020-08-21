@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import OutfitItem from "./outfitItem.jsx";
-import { divide } from "lodash";
 
 const selectedOutfit = [
   {
@@ -51,7 +50,7 @@ const selectedOutfit = [
   },
 ];
 
-const OutfitList = ({ currentInfo, rerender }) => {
+const OutfitList = ({ currentInfo, rerender, currentStyles }) => {
   function addCurrentProductToLocal(event) {
     event.preventDefault();
     localStorage.setItem(
