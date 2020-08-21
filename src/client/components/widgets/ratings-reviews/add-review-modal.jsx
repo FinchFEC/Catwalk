@@ -21,6 +21,8 @@ class AddReviewModal extends React.Component {
       error: false,
       success: false,
     };
+    console.log('sort:', props.sort);
+    console.log('typeof sort:', typeof props.sort);
     this.handleStarClick = this.handleStarClick.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -47,13 +49,14 @@ class AddReviewModal extends React.Component {
         recommend: this.state.recommend,
         name: this.state.username,
         email: this.state.email,
-        // photos: this.state.images,
-        photos: ['https://images.unsplash.com/photo-1560769629-975ec94e6a86'],
+        photos: this.state.images,
+        // photos: ['https://images.unsplash.com/photo-1560769629-975ec94e6a86'],
         characteristics: this.state.characteristics,
       })
       .then((data) => {
         console.log('successfully posted new review');
         console.log(data);
+        this.props.changeSort(this.props.sort);
         this.setState({
           success: true,
           error: false,
@@ -250,7 +253,8 @@ export default React.forwardRef((props, ref) => (
     onClick={props.onClick}
     productId={props.productId}
     name={props.name}
-    onClose={props.onClose}
+    changeSort={props.changeSort}
+    sort={props.sort}
   />
 ));
 
@@ -263,5 +267,6 @@ AddReviewModal.propTypes = {
   ]).isRequired,
   onClick: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
-  onClose: PropTypes.func.isRequired,
+  changeSort: PropTypes.func.isRequired,
+  sort: PropTypes.string.isRequired,
 };
