@@ -3,6 +3,7 @@ import getReviewMetadata from '../../../apiHelpers/getReviewMetadata';
 export default function getReviewMetadataThunk() {
   return (dispatch, getState) => {
     getReviewMetadata(getState().productId).then((data) => {
+      // console.log('get review metadata:', data.data);
       dispatch({ type: 'GET_REVIEW_RATINGS', ratings: data.data.ratings });
       let ratingsCount = 0; // number of ratings
       let totalRating = 0;

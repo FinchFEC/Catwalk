@@ -20,6 +20,8 @@ class RatingsReviews extends React.Component {
       selectedImgUrl: '',
       selectedImgId: '',
     };
+    console.log('sort:', props.sort);
+    console.log('typeof sort:', typeof props.sort);
     this.handleAddReviewBtnClick = this.handleAddReviewBtnClick.bind(this);
     this.handleModalClick = this.handleModalClick.bind(this);
     this.handleFilterClick = this.handleFilterClick.bind(this);
@@ -136,6 +138,8 @@ class RatingsReviews extends React.Component {
                 onClick={this.handleModalClick}
                 productId={this.props.productId}
                 name={this.props.productInfo.name}
+                changeSort={this.props.changeSort}
+                sort={this.props.sort}
               />
             )}
           {this.state.selectedImgUrl && (
