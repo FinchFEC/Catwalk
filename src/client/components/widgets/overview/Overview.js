@@ -6,30 +6,33 @@ import ProductInformation from "./ProductInformation.js";
 import Description from "./Description.js";
 
 const Overview = (props) => {
-  //const styles = props.styles;
+  const styles = props.styles;
+  props.getStylesByProductId(props.productId);
+
   const changeView = (type) => {
     setView(type);
   };
 
   const [view, setView] = useState("main");
-  const [stylesState, setStyles] = useState(props.styles);
-  const [currentStyle, changeCurrentStyle] = useState(props.styles[0]);
+  const [stylesState, setStyles] = useState([]);
+  const currentStyle = props.styles[0];
+  //const [currentStyle, changeCurrentStyle] = useState([]);
 
-  const findDefault = (styles) => {
-    for (var i = 0; i < styles.length; i++) {
-      if (styles[i]["default?"] === 1) {
-        changeCurrentStyle(props.styles[i]);
-      }
-    }
-  };
-
-  // useEffect(() => {
-  //   setStyles(styles);
-  // });
+  console.log("state: ", stylesState);
+  // const findDefault = (styles) => {
+  //   for (var i = 0; i < styles.length; i++) {
+  //     if (styles[i]["default?"] === 1) {
+  //       changeCurrentStyle(stylesState[i]);
+  //     }
+  //   }
+  // };
+  //   useEffect(() => {
+  //     findDefault(stylesState);
+  //   }, [props.productId]);
 
   useEffect(() => {
-    findDefault(stylesState);
-  });
+    setStyles(props.styles);
+  }, [props.productId]);
 
   return (
     <div className="overview-component">
