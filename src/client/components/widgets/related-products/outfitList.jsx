@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import OutfitItem from "./outfitItem.jsx";
+import { divide } from "lodash";
 
 const selectedOutfit = [
   {
@@ -51,7 +52,7 @@ const selectedOutfit = [
 ];
 
 const OutfitList = ({ currentInfo, rerender }) => {
-  function addCurretnProductToLocal(event) {
+  function addCurrentProductToLocal(event) {
     event.preventDefault();
     localStorage.setItem(
       currentInfo.id.toString(),
@@ -67,9 +68,9 @@ const OutfitList = ({ currentInfo, rerender }) => {
     <div>
       {/* <button type="button">{"<"}</button> */}
       <div id="container-2">
-        <button onClick={addCurretnProductToLocal} type="button">
+        <div className="tile" id="add-outfit-btn" onClick={addCurrentProductToLocal}>
           Add Current Item To Outfit
-        </button>
+        </div>
         {arrOfOutfitInfos.map((stringifiedObj) => (
           <OutfitItem stringifiedObj={stringifiedObj} rerender={rerender} />
         ))}
