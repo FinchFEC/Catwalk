@@ -8,7 +8,7 @@ function ReviewTilesContainer(props) {
   let reviews = props.reviews;
   if (props.filters.length > 0) {
     reviews = reviews.filter((review) => {
-      if (rops.filters.includes(review.rating)) {
+      if (props.filters.includes(review.rating)) {
         return true;
       }
       return false;
