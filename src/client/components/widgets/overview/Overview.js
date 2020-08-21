@@ -6,8 +6,7 @@ import ProductInformation from "./ProductInformation.js";
 import Description from "./Description.js";
 
 const Overview = (props) => {
-  const styles = props.styles;
-  props.getStylesByProductId(props.productId);
+  //props.getStylesByProductId(props.productId);
 
   const changeView = (type) => {
     setView(type);
@@ -15,10 +14,12 @@ const Overview = (props) => {
 
   const [view, setView] = useState("main");
   const [stylesState, setStyles] = useState([]);
-  const currentStyle = props.styles[0];
+
   //const [currentStyle, changeCurrentStyle] = useState({});
 
-  console.log("state: ", stylesState);
+  //console.log("styles from props: ", props.styles.results);
+  const currentStyle = props.styles.results[0];
+  console.log("CURRENT STYLE", currentStyle);
   // const findDefault = (styles) => {
   //   for (var i = 0; i < styles.length; i++) {
   //     if (styles[i]["default?"] === 1) {
@@ -28,7 +29,7 @@ const Overview = (props) => {
   // };
 
   useEffect(() => {
-    setStyles(props.styles);
+    setStyles((state) => props.getStylesByProductId(props.productId));
   }, [props.productId]);
 
   // useEffect(() => {

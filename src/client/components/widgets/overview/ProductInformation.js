@@ -22,7 +22,20 @@ const ProductInformation = ({
         </div>
         <div className="product-category">{currentInfo.category}</div>
         <div className="product-title">{currentInfo.name}</div>
-        <div className="product-price"></div>
+        <div className="product-price">
+          {parseInt(currentStyle.sale_price) > 0 ? (
+            <div>
+              <span>
+                $<del>{currentStyle.original_price}</del>
+              </span>
+              <span id="sale">
+                <strong> ON SALE: ${currentStyle.sale_price}</strong>
+              </span>
+            </div>
+          ) : (
+            <div>${currentStyle.original_price}</div>
+          )}
+        </div>
       </div>
       <StyleSelector styles={styles} currentStyle={currentStyle} />
       <AddToCart />
@@ -31,16 +44,3 @@ const ProductInformation = ({
 };
 
 export default ProductInformation;
-
-// {parseInt(currentStyle.sale_price) > 0 ? (
-//   <div>
-//     <span>
-//       $<del>{currentStyle.original_price}</del>
-//     </span>
-//     <span id="sale">
-//       <strong> ON SALE: ${currentStyle.sale_price}</strong>
-//     </span>
-//   </div>
-// ) : (
-//   <div>${currentStyle.original_price}</div>
-// )}

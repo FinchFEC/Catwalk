@@ -6,7 +6,9 @@ import PhotoCarousel from "./PhotoCarousel.js";
 const CurrentPhoto = ({ changeView, currentStyle }) => {
   return (
     <div className="current-photo-container">
-      <div id="current-photo"></div>
+      <div id="current-photo">
+        <img src={currentStyle.photos[0].url} />
+      </div>
       <PhotoCarousel />
       <span id="left-arrow">
         <FaArrowLeft />

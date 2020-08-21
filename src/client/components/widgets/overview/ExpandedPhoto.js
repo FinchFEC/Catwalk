@@ -7,7 +7,9 @@ import PhotoCarousel from "./PhotoCarousel.js";
 const ExpandedPhoto = ({ changeView, currentStyle }) => {
   return (
     <div className="expanded-photo-container">
-      <div id="current-photo2"></div>
+      <div id="current-photo2">
+        <img src={currentStyle.photos[0].url} />
+      </div>
       <PhotoCarousel />
       <span id="left-arrow">
         <FaArrowLeft />
