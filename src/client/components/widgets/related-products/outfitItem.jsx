@@ -17,11 +17,11 @@ const OutfitItem = ({ stdObj, rerender }) => {
         id="close"
         icon={["far", "times-circle"]}
       />
-      <img className="related-image" src="" alt="outfit item" />
+      <img className="related-image" src={stdObj.url} alt="outfit item" />
       <h3>{stdObj.name}</h3>
       <p>{stdObj.type}</p>
       <p>${stdObj.default_price}</p>
-      <StaticStars rating={3.5} />
+      <StaticStars rating={stdObj.rating} />
     </div>
   );
 };

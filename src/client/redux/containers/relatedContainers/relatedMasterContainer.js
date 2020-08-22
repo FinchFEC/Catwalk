@@ -11,6 +11,7 @@ function mapStateToProps(state) {
     currentInfo: state.currentInfo,
     relatedRatings: state.relatedRatings,
     currentStyles: state.styles,
+    avgRating: state.avgRating,
   };
 }
 

@@ -46,6 +46,7 @@ class RelatedMaster extends React.Component {
           currentInfo={this.props.currentInfo}
           rerender={this.rerender}
           currentStyles={this.props.currentStyles}
+          avgRating={this.props.avgRating}
         />
       </div>
     );
@@ -65,7 +66,8 @@ RelatedMaster.propTypes = {
   getAllRelatedReviews: PropTypes.func.isRequired,
   relatedRatings: PropTypes.array.isRequired,
   navigateToProduct: PropTypes.func.isRequired,
-  currentStyles: PropTypes.object.isRequired
+  currentStyles: PropTypes.object.isRequired,
+  avgRating: PropTypes.number.isRequired,
 };
 
 export default RelatedMaster;
