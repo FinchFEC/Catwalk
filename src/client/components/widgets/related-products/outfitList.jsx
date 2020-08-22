@@ -62,18 +62,24 @@ const OutfitList = ({ currentInfo, rerender, currentStyles }) => {
   const arrOfOutfitInfos = [];
   for (let i = 0; i < localStorage.length; i++) {
     if (Number(localStorage.key(i)) < 15) {
-      arrOfOutfitInfos.push(localStorage.getItem(localStorage.key(i)));
+      arrOfOutfitInfos.push(
+        JSON.parse(localStorage.getItem(localStorage.key(i)))
+      );
     }
   }
   return (
     <div>
       {/* <button type="button">{"<"}</button> */}
       <div id="container-2">
-        <h4 className="tile" id="add-outfit-btn" onClick={addCurrentProductToLocal}>
+        <h4
+          className="tile"
+          id="add-outfit-btn"
+          onClick={addCurrentProductToLocal}
+        >
           Add Current Item To Outfit
         </h4>
-        {arrOfOutfitInfos.map((stringifiedObj, i) => (
-          <OutfitItem stringifiedObj={stringifiedObj} rerender={rerender} key={i} />
+        {arrOfOutfitInfos.map((stdObj, i) => (
+          <OutfitItem stdObj={stdObj} rerender={rerender} key={i} />
         ))}
       </div>
       {/* <button type="button">{">"}</button> */}
@@ -84,6 +90,7 @@ const OutfitList = ({ currentInfo, rerender, currentStyles }) => {
 OutfitList.propTypes = {
   currentInfo: PropTypes.object.isRequired,
   rerender: PropTypes.func.isRequired,
+  currentStyles: PropTypes.object.isRequired,
 };
 
 export default OutfitList;
