@@ -3,7 +3,7 @@ import "../../../assets/scss/overview.scss";
 import { GrFormCheckmark } from "react-icons/gr";
 
 const StyleSelector = ({ styles, currentStyle }) => {
-  console.log("style in styleseklector: ", styles);
+  // console.log("style in styleseklector: ", styles);
   return (
     <div className="style-selector">
       <div className="style-type">STYLE > {currentStyle.name}</div>

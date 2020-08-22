@@ -117,3 +117,6 @@ dist/bundle.js
 
 # TernJS port file
 .tern-port
+
+# audits
+FEC_Audit_8-20.pdf

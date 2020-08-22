@@ -6,7 +6,20 @@ import ComparisonModal from "./comparisonModal";
 const relatedItems = [];
 for (let i = 0; i < 25; i++) {
   relatedItems.push({
-    data: { results: [{ photos: [{ url: "", thumbnail_url: "" }] }] },
+    data: {
+      results: [
+        {
+          photos: [
+            {
+              url:
+                "https://images.unsplash.com/photo-1514327605112-b887c0e61c0a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+              thumbnail_url:
+                "https://images.unsplash.com/photo-1514327605112-b887c0e61c0a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+            },
+          ],
+        },
+      ],
+    },
   });
 }
 

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 // import ComparisonModalContainer from "../../../redux/containers/relatedContainers/comparisonModalContainer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import StaticStars from "../ratings-reviews/static-stars";
+import {calcAvgRating} from "../../../../dataManipulationHelpers";
 
 const RelatedItem = ({
   item,
@@ -10,18 +11,12 @@ const RelatedItem = ({
   changeCompared,
   navigateToProduct,
 }) => {
-  const itemUrl = item.image.data.results[0].photos[0].url;
-  let ratingsCount = 0; // number of ratings
-  let totalRating = 0;
-
-  item.rating.data.results.forEach((thing) => {
-    ratingsCount += 1;
-    totalRating += thing.rating;
-  });
-  let avgRating = Number((totalRating / ratingsCount).toFixed(2));
-  if (isNaN(avgRating)) {
-    avgRating = 0;
+  let itemUrl = item.image.data.results[0].photos[0].url;
+  if (!itemUrl) {
+    itemUrl =
+      "https://sciences.ucf.edu/psychology/wp-content/uploads/sites/63/2019/09/No-Image-Available.png";
   }
+  const avgRating = calcAvgRating(item.rating.data.results);
   return (
     <div className="tile-parent">
       <FontAwesomeIcon
@@ -29,7 +24,7 @@ const RelatedItem = ({
           toggleComparison();
           changeCompared(item.info);
         }}
-        icon={["fas", "star"]}
+        icon={["fa", "star"]}
         className="star_icon_alt"
       />
       <div
@@ -40,7 +35,7 @@ const RelatedItem = ({
         <img
           className="related-image"
           src={itemUrl}
-          alt={item.image.data.results[0].photos[0].thumbnail_url}
+          alt="some article of clothing"
         />
         <p>{item.info.data.category}</p>
         <h3>{item.info.data.name}</h3>
