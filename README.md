@@ -1,8 +1,16 @@
 # FEC-Project
 
-FEC-Project
-
 [![Build Status](https://travis-ci.org/FinchFEC/FEC-Project.svg?branch=master)](https://travis-ci.org/FinchFEC/FEC-Project)
+
+## About
+The goal of this project was to build the product page of a clothing retailer's e-commerce website.
+
+## Tech Stack
+- [React](https://reactjs.org/)
+- [Redux](https://redux.js.org/)
+- [SASS](https://sass-lang.com/)
+- [Redux-Thunk](https://github.com/reduxjs/redux-thunk)
+- [Webpack](https://webpack.js.org/)
 
 ## Building and running on localhost
 
@@ -26,7 +34,9 @@ npm run build-dev
 
 ## Running
 
-Open the file `dist/index.html` in your browser
+```
+npm start
+```
 
 ## Testing
 
