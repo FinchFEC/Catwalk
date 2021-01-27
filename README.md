@@ -18,6 +18,9 @@ The goal of this project was to build the product page of a clothing retailer's 
 ### Ratings-Reviews Widget
 ![](demo/ratings-reviews-demo.gif)
 
+## Stats
+![](demo/stats.jpg)
+
 ## Building and running on localhost
 
 First install dependencies:
