@@ -1,6 +1,5 @@
 # Catwalk
 
-## About
 The goal of this project was to build the product page of a clothing retailer's e-commerce website.
 
 ## Tech Stack
