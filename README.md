@@ -1,7 +1,5 @@
 # Catwalk
 
-[![Build Status](https://travis-ci.org/FinchFEC/FEC-Project.svg?branch=master)](https://travis-ci.org/FinchFEC/FEC-Project)
-
 ## About
 The goal of this project was to build the product page of a clothing retailer's e-commerce website.
 
